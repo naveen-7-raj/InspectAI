@@ -24,7 +24,7 @@
   "processed_sampling_rate_hz": 12000,
   "processed_signal_length": 2048,
   "model_name": "VibrationCNN1D",
-  "processing_time_ms": 17.94,
+  "processing_time_ms": 17.58,
   "gradcam_heatmap": [
     0.0,
     0.0,

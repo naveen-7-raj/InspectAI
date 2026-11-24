@@ -85,7 +85,7 @@ streamlit run frontend/app.py --server.port 8501
 
 ### Scene C: Live Simulated Vibration Streaming
 1. **Action in Browser**:
-   - Click the green **Start Simulation** button in the sidebar.
+   - Click the green **Start Replay** button in the sidebar.
    - Observe the live dynamic waveform visualizer updating continuously.
    - Observe the KPI summary cards:
      - *Status*: `Active Simulation`

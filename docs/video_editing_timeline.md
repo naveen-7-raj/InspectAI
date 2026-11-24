@@ -48,7 +48,7 @@
 
 ### Scene 5: Streamlit Live Monitoring (1:15 - 1:38)
 - **Footage**: 1080p OBS screen recording of the Streamlit dashboard (`http://localhost:8501`).
-- **Action Shown**: Presenter selects `118.mat (Ball Fault)` and hits **Start Simulation**. The dynamic waveform chart updates sequentially at the simulated 42 ms interval.
+- **Action Shown**: Presenter selects `118.mat (Ball Fault)` and hits **Start Replay**. The dynamic waveform chart updates sequentially at the simulated 42 ms interval.
 - **Visual Cue**: Red/amber status indicator showing active streaming.
 
 ### Scene 6: Telemetry & Probabilities (1:38 - 1:58)

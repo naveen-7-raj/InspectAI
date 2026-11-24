@@ -50,7 +50,7 @@
 
 ### Scene 4: Streamlit Dashboard & WebSocket Telemetry (1:05 – 1:30)
 - **Duration**: 25 seconds
-- **Screen Content**: Streamlit console at `http://localhost:8501`. Presenter selects recording `118.mat` (Ball Fault) and clicks "Start Simulation".
+- **Screen Content**: Streamlit console at `http://localhost:8501`. Presenter selects recording `118.mat` (Ball Fault) and clicks "Start Replay".
 - **Narration**: *"Here is our Streamlit monitoring dashboard. To simulate continuous sensor monitoring without physical hardware, InspectAI features a WebSocket streaming gateway that replays pre-recorded CWRU signals chunk-by-chunk..."*
 - **Required Asset**: Live Streamlit UI or `docs/images/demo/02_simulated_streaming_active.png`.
 - **Action**: Show live waveform plot dynamically refreshing at the simulated step rate.

@@ -21,7 +21,7 @@
     "Outer Race Fault": 1.8e-05
   },
   "model_name": "VibrationCNN1D",
-  "inference_time_ms": 2.94,
+  "inference_time_ms": 3.54,
   "waveform": [
     -0.07380196452140808,
     -0.16950051486492157,

@@ -194,7 +194,7 @@ def render_scores_figure(uncalibrated_scores: Dict[str, float]) -> plt.Figure:
 
     ax.set_yticks(y_pos)
     ax.set_yticklabels(classes, fontsize=9.5, fontweight="bold", color="#e0e6ed")
-    ax.set_xlim(0, 1.05)
+    ax.set_xlim(0, 1.15)
     ax.set_xlabel("Uncalibrated Model Softmax Score", fontsize=9.5, fontweight="bold", color="#a6b0cf")
     ax.set_title(
         "Diagnostic Category Scores (Model Output Sensitivity, Not Empirical Probabilities)",
@@ -319,10 +319,12 @@ def apply_custom_styles() -> None:
             font-weight: 600;
         }
         .metric-value {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: #f0f4f8;
             margin-top: 4px;
+            line-height: 1.25;
+            word-break: break-word;
         }
         .status-badge {
             display: inline-block;
@@ -330,6 +332,7 @@ def apply_custom_styles() -> None:
             border-radius: 4px;
             font-size: 0.85rem;
             font-weight: 600;
+            white-space: nowrap;
         }
         .badge-healthy {
             background-color: #1b382b;
@@ -363,7 +366,6 @@ def apply_custom_styles() -> None:
 def main() -> None:
     st.set_page_config(
         page_title="InspectAI – Industrial Health Monitor",
-        page_icon="⚙️",
         layout="wide",
         initial_sidebar_state="expanded",
     )
@@ -375,7 +377,7 @@ def main() -> None:
     # Sidebar Controls
     # --------------------------------------------------------------------------
     with st.sidebar:
-        st.markdown("### ⚙️ InspectAI Control Panel")
+        st.markdown("### InspectAI Control Panel")
         st.caption("Explainable Edge Vibration Diagnosis")
 
         st.markdown("---")
@@ -431,14 +433,14 @@ def main() -> None:
         col_btn1, col_btn2 = st.columns(2)
         with col_btn1:
             start_clicked = st.button(
-                "▶ Start Replay",
+                "Start Replay",
                 use_container_width=True,
                 type="primary",
                 disabled=st.session_state["is_streaming"],
             )
         with col_btn2:
             stop_clicked = st.button(
-                "⏹ Stop Replay",
+                "Stop Replay",
                 use_container_width=True,
                 disabled=not st.session_state["is_streaming"],
             )
@@ -644,7 +646,7 @@ def main() -> None:
                                 sampling_rate_hz=msg.get("sampling_rate_hz", 12000),
                             )
                             with xai_placeholder.container():
-                                st.markdown("#### 🔍 Explainable AI (1D Grad-CAM Attribution)")
+                                st.markdown("#### Explainable AI (1D Grad-CAM Attribution)")
                                 st.pyplot(fig_cam, use_container_width=True)
                                 st.markdown(
                                     """
@@ -660,7 +662,7 @@ def main() -> None:
 
                         # 5. Update Recent History Table
                         with history_placeholder.container():
-                            st.markdown("#### 📋 Recent Stream Telemetry")
+                            st.markdown("#### Recent Stream Telemetry")
                             df_hist = pd.DataFrame(st.session_state["prediction_history"])
                             st.dataframe(df_hist, use_container_width=True, hide_index=True)
 
