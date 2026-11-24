@@ -1,0 +1,82 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments & Secrets
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.streamlit/secrets.toml
+
+# IDE & Editor configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Data Directories (Exclude raw .mat and processed .npz arrays from git tracking)
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/cwru/download_manifest.csv
+!data/raw/cwru/download_manifest.json
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/window_metadata.csv
+!data/processed/window_split_metadata.csv
+
+# Model weights, checkpoints, and exported models
+models/checkpoints/*
+!models/checkpoints/.gitkeep
+models/exported/*
+!models/exported/.gitkeep
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.joblib
+
+# Outputs, visualizations and logs
+outputs/reports/*
+!outputs/reports/.gitkeep
+outputs/figures/*
+!outputs/figures/.gitkeep
+logs/
+*.log
+
+# OS-generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store

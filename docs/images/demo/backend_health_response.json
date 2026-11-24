@@ -1,0 +1,15 @@
+{
+  "status": "healthy",
+  "model_loaded": true,
+  "model_name": "VibrationCNN1D",
+  "supported_classes": [
+    "Normal",
+    "Ball Fault",
+    "Inner Race Fault",
+    "Outer Race Fault"
+  ],
+  "device": "cpu",
+  "gradcam_available": true,
+  "normalizer_fitted": true,
+  "api_version": "0.1.0"
+}

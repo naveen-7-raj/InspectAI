@@ -1,0 +1,122 @@
+# ==============================================================================
+# InspectAI - Centralized Project Configuration
+# Explainable Industrial Machine Health Monitoring System
+# ==============================================================================
+
+project:
+  name: "InspectAI"
+  version: "0.1.0"
+  description: "Explainable Industrial Machine Health Monitoring System"
+  seed: 42
+  device: "cpu"  # Tailored for CPU execution (Intel / AMD, 16GB RAM)
+
+paths:
+  raw_data_dir: "data/raw"
+  interim_data_dir: "data/interim"
+  processed_data_dir: "data/processed"
+  model_checkpoint_dir: "models/checkpoints"
+  model_export_dir: "models/exported"
+  reports_dir: "outputs/reports"
+  figures_dir: "outputs/figures"
+
+dataset:
+  name: "CWRU_Bearing"  # Default benchmark: Case Western Reserve University Bearing Dataset
+  sampling_rate_hz: 12000
+  channels: ["DE_time", "FE_time"]  # Drive-End and Fan-End accelerometer vibration signals
+  classes:
+    - "Normal"
+    - "Ball_Fault"
+    - "Inner_Race_Fault"
+    - "Outer_Race_Fault"
+
+preprocessing:
+  target_sampling_rate_hz: 12000
+  resample_method: "resample_poly"  # Polyphase anti-aliased resampling (scipy.signal.resample_poly)
+  remove_dc: true                   # Zero-mean subtraction to eliminate accelerometer sensor offset
+  filtering:
+    enabled: true                   # Enable Butterworth filter (set false to compare with raw signals)
+    type: "bandpass"                # Filter type: "bandpass", "highpass", or "none"
+    low_cutoff_hz: 20.0             # Cutoff below 1X shaft rotational frequency (~29 Hz at 1797 RPM)
+    high_cutoff_hz: 5000.0          # Upper cutoff below Nyquist (6000 Hz) to eliminate acoustic noise
+    order: 4                        # 4th-order zero-phase Butterworth filter (sosfiltfilt)
+
+  # Downstream parameters for window segmentation (Phase 3.2)
+  window_size: 2048       # Length of vibration window in samples
+  step_size: 512          # Overlap stride (75% overlap for segmentation)
+  normalize: "z_score"    # "z_score", "min_max", or "robust"
+
+windowing:
+  window_size: 2048                # Length of vibration window in samples (2048 samples = ~170.7 ms at 12 kHz)
+  step_size: 512                   # Stride between consecutive windows (512 samples = 75% overlap)
+  overlap_ratio: 0.75              # Calculated overlap ratio: (2048 - 512) / 2048 = 0.75
+  sampling_rate_hz: 12000          # Nominal sampling rate after preprocessing
+  drop_incomplete_window: true     # Discard trailing samples shorter than a full window (no zero-padding)
+  storage_format: "npz"            # Efficient numerical array format for CPU PyTorch DataLoader
+
+dataset_split:
+  random_seed: 42
+  group_column: "source_file"      # Grouping variable to prevent overlapping window leakage
+  test_recordings:
+    Normal: "97.mat"               # Baseline healthy motor recording (0 HP, 1796 RPM)
+    Ball_Fault: "185.mat"          # Rolling element fault (0 HP, 0.014" defect)
+    Inner_Race_Fault: "169.mat"    # Inner raceway fault (0 HP, 0.014" defect)
+    Outer_Race_Fault: "197.mat"    # Outer raceway fault @ 6:00 (0 HP, 0.014" defect)
+  validation_strategy: "stratified_group_kfold"
+  n_validation_folds: 2
+
+features:
+  time_domain:
+    - "rms"
+    - "peak_to_peak"
+    - "kurtosis"
+    - "skewness"
+    - "crest_factor"
+    - "shape_factor"
+    - "impulse_factor"
+  spectral:
+    n_fft: 1024
+    hop_length: 256
+    window: "hann"
+    spectrogram_type: "stft"  # "stft", "mel", or "cwt"
+
+model:
+  architecture: "1D_CNN"  # "1D_CNN" for raw signals or "2D_CNN" for spectrograms
+  num_classes: 4
+  input_channels: 1
+  input_length: 2048
+  conv_filters: [32, 64, 128]
+  kernel_sizes: [15, 7, 3]
+  pool_sizes: [4, 4, 2]
+  fc_units: [128, 64]
+  dropout_rate: 0.3
+
+training:
+  device: "cpu"           # CPU execution default
+  seed: 42                # Reproducible random seed
+  batch_size: 32          # Optimized for 16GB RAM CPU execution
+  epochs: 30              # Maximum training epochs
+  learning_rate: 0.001
+  optimizer: "AdamW"
+  loss: "CrossEntropyLoss"
+  weight_decay: 0.0001
+  lr_scheduler:
+    type: "ReduceLROnPlateau"
+    patience: 3
+    factor: 0.5
+  early_stopping:
+    patience: 7           # Early stopping patience
+    min_delta: 0.0001
+
+explainability:
+  methods:
+    - "grad_cam"
+    - "integrated_gradients"
+  target_layer: "conv3"   # Last convolutional layer for Grad-CAM
+  captum_steps: 50
+
+streaming:
+  host: "127.0.0.1"
+  port: 8000
+  buffer_size: 4096
+  stream_delay_seconds: 0.1  # Simulated packet emission interval
+  anomaly_threshold: 0.75     # Softmax failure probability trigger

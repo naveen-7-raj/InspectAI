@@ -1,0 +1,30 @@
+# Git & Cache
+.git/
+.gitignore
+.pytest_cache/
+__pycache__/
+*.py[cod]
+
+# Virtual Environments & Secrets
+.venv/
+venv/
+env/
+.env
+.streamlit/secrets.toml
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Documentation & Logs
+docs/
+logs/
+*.log
+
+# Large binary datasets (mounted as read-only volumes in docker-compose)
+data/raw/cwru/*.mat
+data/processed/*.npz
+outputs/figures/
+
