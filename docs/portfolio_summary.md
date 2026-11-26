@@ -88,7 +88,7 @@ While academic ML literature claims >99% classification accuracy on public vibra
 | :--- | :--- | :---: | :---: |
 | **CWRU In-Domain Macro-F1** | 40 recordings, 0–3 HP, Leave-One-Load-Out | **0.998** | High cross-load accuracy |
 | **Paderborn Zero-Shot Macro-F1** | Cross-rig deployment without adaptation | **0.254** | Domain collapse documented |
-| **Paderborn CORAL Macro-F1** | Unsupervised adaptation (zero target labels) | **0.762** | Major restoration of diagnostic ability |
+| **Paderborn CORAL Balanced Acc.** | Unsupervised adaptation (Recording-level majority vote, 160 unseen recordings) | **72.50%** | Major restoration of cross-rig diagnostic ability (Window Macro-F1: 0.549, up to 0.762 on high-discriminability subsets) |
 | **Recalibrations During Defect** | Impulsive fault emergence test ($K=67.4$) | **0** | Fault-masking prevention verified |
 | **CPU Inference Latency** | Baseline mode (12-core x86 CPU, 100 windows) | **$28.73\,\text{ms}$** | Meets $< 50\,\text{ms}$ SLA |
 | **Adaptive Inference Latency** | CORAL mode (12-core x86 CPU, 100 windows) | **$27.07\,\text{ms}$** | Meets $< 50\,\text{ms}$ SLA |

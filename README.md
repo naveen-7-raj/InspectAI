@@ -6,13 +6,25 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.32%2B-FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Prometheus](https://img.shields.io/badge/Prometheus-Metrics%20Exposed-E6522C.svg?logo=prometheus&logoColor=white)](https://prometheus.io/)
 [![Tests Passing](https://img.shields.io/badge/Tests-300%20Passing%20(0%20Failures)-brightgreen.svg)](#17-automated-testing--validation)
-[![License](https://img.shields.io/badge/License-MIT%20Portfolio-lightgrey.svg)](#license)
+[![License](https://img.shields.io/badge/License-Pending%20Decision-yellow.svg)](#17-license--citations)
 
 > **Important Operational & Scope Notice**:  
 > InspectAI is an applied machine learning engineering portfolio system designed to demonstrate robust deep learning, unsupervised domain adaptation, and real-time streaming architectures on edge CPU hardware.  
 > - **Steady-State Classification**: InspectAI classifies fixed 2,048-sample vibration windows into four fault categories (`Normal`, `Ball Fault`, `Inner Race Fault`, `Outer Race Fault`). It does **not** estimate Remaining Useful Life (RUL) or perform early incipient degradation prognosis.  
 > - **Simulated Streaming Telemetry**: Telemetry streaming is achieved by replaying authentic laboratory-recorded vibration datasets (CWRU and Paderborn) at calibrated physical sampling intervals ($42.67\,\text{ms}$ per window at 12 kHz). It is **not** connected to physical factory sensors or live industrial motor hardware.  
 > - **Safety Classification**: InspectAI is an engineering demonstrator and research system; it is **not** safety-certified or production-warranted for critical plant infrastructure.
+
+---
+
+## Executive Summary (30-Second Overview)
+
+| Dimension | Specification |
+| :--- | :--- |
+| **Problem Solved** | Rolling element bearing failure accounts for >40% of rotating machinery downtime. Standard deep learning models fail in real plants due to **window-overlap data leakage**, **motor load/speed variations**, and **cross-machine domain collapse**. |
+| **Technical Innovation** | **Dual-Branch Spectral Fusion** (`SpectralFusionCNN`, 89,604 parameters) fusing 1D waveforms with log-scaled Hilbert envelope spectra; **Unsupervised CORAL Domain Adaptation** aligning second-order feature statistics ($d=576$); and **Heuristic Safety Guardrails** (kurtosis & posterior suppression) preventing adapting away genuine defects. |
+| **Demonstrated System** | Complete CPU edge streaming pipeline with **FastAPI** REST/WebSocket backend ($1.62\,\text{ms}$ model latency, 96.2% headroom, Prometheus `/metrics`) and **Streamlit** condition monitoring console with real-time simulated telemetry replay, live FFT spectra, and 1D temporal/spectral Grad-CAM explainability. |
+| **Verified Results** | **99.81% Macro-F1** across motor loads (0–3 HP) on CWRU benchmark. Recovers Paderborn cross-rig recording balanced accuracy from **19.38%** (zero-shot) to **72.50%** (unsupervised adapted) with **97.5% healthy recall** across 160 unseen recordings. 300 passing automated unit/integration tests. |
+| **Local Reproduction** | `git clone https://github.com/naveen-7-raj/InspectAI.git` → `pip install -r requirements.txt` → `python -m uvicorn backend.main:app` & `streamlit run frontend/app.py` (CPU-only, no GPU or dataset download needed). |
 
 ---
 
@@ -26,13 +38,13 @@ Rolling element bearings represent the single most common failure point in indus
 4. **Catastrophic Adaptation in Production**: In adaptive monitoring, an unsupervised algorithm that blindly adapts to distribution shifts risks adapting away genuine defect signatures, converting a damaged bearing into the model's new definition of "normal."
 
 ### What InspectAI Delivers
-InspectAI is an end-to-end, production-hardened machine health monitoring system engineered to address these challenges with scientific rigor:
+InspectAI is an end-to-end, defensively engineered machine health monitoring system designed to address these challenges with scientific rigor:
 - **Digital Signal Preprocessing**: Polyphase anti-aliasing resampling to 12 kHz, DC offset removal, and 4th-order zero-phase Butterworth bandpass filtering (20 Hz – 5,000 Hz).
 - **Dual-Branch Spectral Fusion**: Fuses 1D raw waveforms ($L=2048$) with log-scaled Hilbert envelope spectra ($K=1025$) via `SpectralFusionCNN` (89,604 parameters), capturing both transient temporal shocks and kinematic fault frequencies (BPFI, BPFO, BSF).
-- **Leakage-Free Validation**: Strict recording-level partitioning guaranteeing zero window overlap across train, validation, and evaluation splits.
-- **Unsupervised CORAL Domain Adaptation**: Aligns second-order feature statistics ($d=576$) from external test rigs without requiring target fault labels, restoring Paderborn macro F1 from $\approx 0.25$ (zero-shot) to $\approx 0.76$ (adapted).
-- **Heuristic Industrial Safety Guardrails**: A dedicated `DriftMonitor` continuously inspects signal kurtosis and defect posteriors to suppress adaptation whenever fault symptoms emerge, guaranteeing that defect indications are alerted rather than masked.
-- **Real-Time Edge CPU Throughput**: End-to-end inference in $27.1\,\text{ms}$ on commodity x86 CPUs ($243.5$ windows/second), delivering $10.4\times$ real-time headroom over physical arrival rates.
+- **Leakage-Free Validation**: Strict recording-level partitioning enforcing complete isolation with zero window overlap across train, validation, and evaluation splits.
+- **Unsupervised CORAL Domain Adaptation**: Aligns second-order feature statistics ($d=576$) from external test rigs without requiring target fault labels, lifting Paderborn cross-rig recording balanced accuracy from $19.38\%$ (zero-shot) to $72.50\%$ (adapted) across 160 unseen recordings.
+- **Heuristic Industrial Safety Guardrails**: A dedicated `DriftMonitor` continuously inspects signal kurtosis and defect posteriors to suppress adaptation whenever fault symptoms emerge, designed to ensure defect indications are alerted rather than adapted away.
+- **Real-Time Edge CPU Throughput**: Single-window model forward pass executes in **$1.62\,\text{ms}$** (mean) / **$2.57\,\text{ms}$** (P95) on CPU ($96.2\%$ real-time headroom over the $42.67\,\text{ms}$ window arrival budget); full HTTP REST request-response cycles execute in $\approx 27.1\,\text{ms}$ ($243.5\text{ windows/sec}$, $10.4\times$ headroom).
 
 ---
 
@@ -206,11 +218,15 @@ A transformation matrix $A = C_T^{-1/2} C_S^{1/2}$ is computed to whiten target 
 
 $$z_{\text{target}} = (x - \mu_T) A + \mu_S$$
 
-| Evaluation Protocol | Target Dataset | Target Fault Labels Used? | Macro F1 | Diagnostic Status |
-| :--- | :--- | :---: | :---: | :--- |
-| **CWRU In-Domain Test** | CWRU (Unseen loads) | N/A (Supervised Test) | **0.998** | High accuracy across motor loads |
-| **Paderborn Zero-Shot** | Paderborn (Pilot 4 classes) | None (Zero-Shot) | **0.254** | Domain collapse; failure to generalize |
-| **Paderborn CORAL Adapted** | Paderborn (Recording-Disjoint) | **None (100% Unsupervised)** | **0.762** | Major restoration of cross-rig diagnostic ability |
+| Evaluation Protocol | Target Dataset & Evaluation Split | Target Labels Used? | Window Bal. Acc. | Window Macro-F1 | Recording Bal. Acc. (Majority Vote) | Diagnostic Status |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **CWRU In-Domain Test** | CWRU LOLO (0–3 HP, 7,038 windows) | N/A (Supervised) | **99.77%** | **0.9981** | **100.0%** | Precise across operational motor loads |
+| **Paderborn Zero-Shot** | Paderborn (160 unseen recordings) | None (Zero-Shot) | **22.09%** | **0.2541** | **19.38%** | Domain collapse; severe cross-rig failure |
+| **Paderborn CORAL Adapted** | Paderborn (160 unseen recordings) | **None (100% Unsupervised)** | **57.41%** | **0.5494** | **72.50%** | Substantial recovery; 97.5% healthy recall |
+
+> **Metric Clarification & The 0.762 Figure**:  
+> - **Window-Level vs. Recording-Level**: Raw sliding windows evaluated in isolation yield **57.41% balanced accuracy** (mean window Macro-F1: **0.5494**, reaching up to **0.7240** on low-load condition `N15_M07_F04`). When individual window predictions are aggregated over full recordings via majority voting, recording-level balanced accuracy reaches **72.50%** across all conditions (and up to **90.00%** on `N15_M07_F04`).
+> - **Cross-Condition Consistency**: In earlier single-condition investigations (Phase 16/17), a Macro-F1 of **0.762** was reported on high-discriminability fault subsets (e.g. Inner Race Fault F1 = **0.764** and condition `N15_M07_F04` recording F1 = **0.899**). Across the entire multi-condition benchmark of 160 unseen test recordings (including the severe 40% rotational speed reduction to 900 RPM in `N09_M07_F10`), the verified aggregate window Macro-F1 is **0.5494** and recording-level balanced accuracy is **72.50%**.
 
 ![Paderborn Adapted Prediction](docs/assets/paderborn_adapted_prediction.png)
 
@@ -274,7 +290,7 @@ All benchmarks were independently measured in Phase 20 across 100 baseline reque
 
 ### Step 1 — Clone Repository
 ```powershell
-git clone https://github.com/your-username/InspectAI.git
+git clone https://github.com/naveen-7-raj/InspectAI.git
 cd InspectAI
 ```
 
@@ -363,7 +379,8 @@ Expected output:
 
 ## 17. License & Citations
 
-Distributed under the MIT License. See `LICENSE` for details.
+### Licensing Notice
+> **Notice**: An official open-source license decision is currently pending project owner approval. All rights are reserved until an official open-source license is selected and attached. This repository is provided for review, portfolio evaluation, and academic research demonstration.
 
 ### Academic Citations
 - **CWRU Bearing Data Center**: K.A. Loparo, *Bearings Vibration Data Set*, Case Western Reserve University, 2012.

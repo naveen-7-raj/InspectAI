@@ -12,7 +12,7 @@ InspectAI is distributed with the pre-trained, production-verified `SpectralFusi
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/<owner>/InspectAI.git
+git clone https://github.com/naveen-7-raj/InspectAI.git
 cd InspectAI
 ```
 
