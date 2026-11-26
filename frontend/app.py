@@ -93,6 +93,8 @@ def build_websocket_url(
     replay_speed: float = 1.0,
     include_gradcam: bool = False,
     include_waveform: bool = True,
+    inference_mode: Optional[str] = None,
+    calibrate_first: Optional[bool] = None,
 ) -> str:
     """Construct full WebSocket stream URL from base HTTP URL."""
     clean_url = base_url.strip().rstrip("/")
@@ -109,10 +111,17 @@ def build_websocket_url(
     waveform_param = "true" if include_waveform else "false"
     clean_rec = recording_id.replace(".mat", "").strip()
 
-    return (
-        f"{ws_base}/api/v1/stream/{clean_rec}"
-        f"?replay_speed={replay_speed}&include_gradcam={gradcam_param}&include_waveform={waveform_param}"
-    )
+    query_parts = [
+        f"replay_speed={replay_speed}",
+        f"include_gradcam={gradcam_param}",
+        f"include_waveform={waveform_param}",
+    ]
+    if inference_mode is not None:
+        query_parts.append(f"inference_mode={inference_mode}")
+    if calibrate_first is not None:
+        query_parts.append(f"calibrate_first={'true' if calibrate_first else 'false'}")
+
+    return f"{ws_base}/api/v1/stream/{clean_rec}?" + "&".join(query_parts)
 
 
 def parse_stream_message(raw_msg: Union[str, bytes, dict]) -> Dict[str, Any]:
@@ -429,6 +438,23 @@ def main() -> None:
             help="Computes activation gradients on conv3 layer. Disabled by default for low CPU latency.",
         )
 
+        st.markdown("#### Adaptive Inference & Calibration")
+        inference_mode_sel = st.radio(
+            "Inference Strategy",
+            options=["adaptive", "baseline"],
+            format_func=lambda x: "Adaptive (CORAL Alignment)" if x == "adaptive" else "Baseline (Frozen Release Model)",
+            index=0,
+            disabled=st.session_state["is_streaming"],
+            help="Adaptive mode applies unsupervised covariance alignment for cross-rig domain transfer.",
+        )
+
+        calibrate_first = st.checkbox(
+            "Online Calibration (Buffer initial windows)",
+            value=True,
+            disabled=(st.session_state["is_streaming"] or inference_mode_sel == "baseline"),
+            help="Buffers initial unlabelled stream windows to compute target covariance before adapting predictions.",
+        )
+
         st.markdown("---")
         col_btn1, col_btn2 = st.columns(2)
         with col_btn1:
@@ -494,13 +520,14 @@ def main() -> None:
     def render_idle_dashboard():
         """Render initial or paused dashboard state."""
         lat_pred = st.session_state["latest_prediction"]
-        pred_label = f"Predicted: {lat_pred['predicted_class']}" if lat_pred else "Awaiting Stream"
+        pred_label = f"{lat_pred['predicted_class']}" if lat_pred else "Awaiting Stream"
         pred_color = CLASS_COLOR_MAP.get(lat_pred["predicted_class"], "#8c9ba5") if lat_pred else "#8c9ba5"
-        lat_latency = f"{lat_pred['inference_time_ms']:.1f} ms" if lat_pred else "--"
+        base_pred = lat_pred.get("baseline_predicted_class", "--") if lat_pred else "--"
+        mode_label = lat_pred.get("inference_mode", "Baseline").title() if lat_pred else "Baseline"
         win_count = st.session_state["total_windows_streamed"]
 
         with kpi_placeholder.container():
-            col1, col2, col3, col4 = st.columns(4)
+            col1, col2, col3, col4, col5 = st.columns(5)
             with col1:
                 st.markdown(
                     f'<div class="metric-card"><div class="metric-title">Active Recording</div><div class="metric-value">{rec_id_selected}.mat</div></div>',
@@ -508,7 +535,7 @@ def main() -> None:
                 )
             with col2:
                 st.markdown(
-                    f'<div class="metric-card"><div class="metric-title">Windows Streamed</div><div class="metric-value">{win_count}</div></div>',
+                    f'<div class="metric-card"><div class="metric-title">Inference Mode</div><div class="metric-value">{mode_label}</div></div>',
                     unsafe_allow_html=True,
                 )
             with col3:
@@ -518,7 +545,12 @@ def main() -> None:
                 )
             with col4:
                 st.markdown(
-                    f'<div class="metric-card"><div class="metric-title">Inference Latency</div><div class="metric-value">{lat_latency}</div></div>',
+                    f'<div class="metric-card"><div class="metric-title">Baseline Comparison</div><div class="metric-value" style="color: #8c9ba5;">{base_pred}</div></div>',
+                    unsafe_allow_html=True,
+                )
+            with col5:
+                st.markdown(
+                    f'<div class="metric-card"><div class="metric-title">Windows Streamed</div><div class="metric-value">{win_count}</div></div>',
                     unsafe_allow_html=True,
                 )
 
@@ -547,6 +579,8 @@ def main() -> None:
             replay_speed=replay_speed,
             include_gradcam=enable_gradcam,
             include_waveform=True,
+            inference_mode=inference_mode_sel,
+            calibrate_first=calibrate_first,
         )
 
         logger.info(f"Connecting to WebSocket: {ws_url}")
@@ -582,8 +616,10 @@ def main() -> None:
                         history_entry = {
                             "Seq #": msg["sequence_number"],
                             "Start Time (s)": round(msg["window_start_seconds"], 3),
+                            "Mode": msg.get("inference_mode", "baseline").upper(),
                             "Predicted Class": msg["predicted_class"],
-                            "Softmax Score": f"{msg['uncalibrated_scores'][msg['predicted_class']]:.2%}",
+                            "Baseline Prediction": msg.get("baseline_predicted_class", "--"),
+                            "Confidence (Uncalibrated)": f"{msg['uncalibrated_scores'][msg['predicted_class']]:.2%}",
                             "Latency (ms)": f"{msg['inference_time_ms']:.2f}",
                         }
                         st.session_state["prediction_history"] = update_prediction_history(
@@ -593,8 +629,11 @@ def main() -> None:
                         # 1. Update KPI Row
                         pred_class = msg["predicted_class"]
                         pred_color = CLASS_COLOR_MAP.get(pred_class, "#8c9ba5")
+                        mode_str = msg.get("inference_mode", "baseline").title()
+                        base_class = msg.get("baseline_predicted_class", "--")
+
                         with kpi_placeholder.container():
-                            col1, col2, col3, col4 = st.columns(4)
+                            col1, col2, col3, col4, col5 = st.columns(5)
                             with col1:
                                 st.markdown(
                                     f'<div class="metric-card"><div class="metric-title">Active Recording</div><div class="metric-value">{rec_id_selected}.mat</div></div>',
@@ -602,19 +641,30 @@ def main() -> None:
                                 )
                             with col2:
                                 st.markdown(
-                                    f'<div class="metric-card"><div class="metric-title">Windows Streamed</div><div class="metric-value">{st.session_state["total_windows_streamed"]}</div></div>',
+                                    f'<div class="metric-card"><div class="metric-title">Inference Mode</div><div class="metric-value">{mode_str}</div></div>',
                                     unsafe_allow_html=True,
                                 )
                             with col3:
                                 st.markdown(
-                                    f'<div class="metric-card"><div class="metric-title">Diagnostic State</div><div class="metric-value" style="color: {pred_color};">Predicted: {pred_class}</div></div>',
+                                    f'<div class="metric-card"><div class="metric-title">Diagnostic State</div><div class="metric-value" style="color: {pred_color};">{pred_class}</div></div>',
                                     unsafe_allow_html=True,
                                 )
                             with col4:
                                 st.markdown(
-                                    f'<div class="metric-card"><div class="metric-title">Inference Latency</div><div class="metric-value">{msg["inference_time_ms"]:.1f} ms</div></div>',
+                                    f'<div class="metric-card"><div class="metric-title">Baseline Compare</div><div class="metric-value" style="color: #8c9ba5;">{base_class}</div></div>',
                                     unsafe_allow_html=True,
                                 )
+                            with col5:
+                                st.markdown(
+                                    f'<div class="metric-card"><div class="metric-title">Windows Streamed</div><div class="metric-value">{st.session_state["total_windows_streamed"]}</div></div>',
+                                    unsafe_allow_html=True,
+                                )
+
+                            # Telemetry Warning if Fallback or Calibrating
+                            if msg.get("inference_mode") == "calibrating":
+                                st.warning("Calibration Active: Buffering initial unlabelled stream windows to compute covariance.")
+                            elif msg.get("inference_mode") == "adaptive_fallback":
+                                st.info("Adaptive Fallback: Domain adapter not calibrated; falling back to unadapted baseline.")
 
                         # 2. Update Waveform Visualization
                         if "waveform" in msg and msg["waveform"]:

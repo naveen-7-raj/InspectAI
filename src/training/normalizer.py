@@ -1,4 +1,4 @@
-"""Training-only global signal normalization for vibration time-series."""
+"""Training-only signal normalization for vibration time-series supporting multiple strategies."""
 
 import json
 import logging
@@ -9,18 +9,32 @@ import torch
 
 logger = logging.getLogger("InspectAI.Normalizer")
 
+SUPPORTED_STRATEGIES = {"global", "instance", "none"}
+
 
 class VibrationNormalizer:
-    """Computes global scalar mean and standard deviation from training data only.
+    """Configurable signal normalizer supporting global, instance, and passthrough strategies.
 
-    Ensures zero data leakage from validation or test partitions and preserves
-    relative amplitude dynamics across all windows.
+    Strategies:
+    - 'global': Computes scalar mean and standard deviation from training data only.
+      Ensures zero data leakage from validation or test partitions and preserves relative
+      amplitude dynamics across all windows.
+    - 'instance': Computes mean and standard deviation independently for each individual
+      window (per-sample normalization). Eliminates absolute amplitude bias while protecting
+      against zero-variance/constant signals.
+    - 'none': Passthrough mode that preserves original physical amplitudes without modification.
     """
 
-    def __init__(self, epsilon: float = 1e-8) -> None:
+    def __init__(self, epsilon: float = 1e-8, strategy: str = "global") -> None:
         if epsilon <= 0:
             raise ValueError(f"Epsilon must be positive, got {epsilon}.")
+        clean_strategy = str(strategy).lower().strip()
+        if clean_strategy not in SUPPORTED_STRATEGIES:
+            raise ValueError(
+                f"Unrecognized normalization strategy '{strategy}'. Supported: {sorted(list(SUPPORTED_STRATEGIES))}."
+            )
         self.epsilon = float(epsilon)
+        self.strategy = clean_strategy
         self.mean: Optional[float] = None
         self.std: Optional[float] = None
         self.is_fitted: bool = False
@@ -57,7 +71,10 @@ class VibrationNormalizer:
         windows: np.ndarray,
         source_recording_ids: Optional[Sequence[str]] = None,
     ) -> "VibrationNormalizer":
-        """Calculate global scalar mean and std across all training sample points.
+        """Fit normalization parameters.
+
+        For 'global', calculates scalar mean and std across all training sample points.
+        For 'instance' and 'none', records metadata and marks fitted state.
 
         Args:
             windows: 2D numpy array of shape (N_train, window_size) or 1D array.
@@ -67,23 +84,37 @@ class VibrationNormalizer:
             self: Fitted normalizer instance.
         """
         valid_data = self._validate_data(windows, name="training_windows")
-
-        # Global mean and standard deviation across all points
-        self.mean = float(np.mean(valid_data))
-        self.std = float(np.std(valid_data))
         self.fit_sample_count = len(valid_data) if valid_data.ndim == 2 else 1
         self.fit_recording_ids = sorted(list(set(source_recording_ids))) if source_recording_ids else []
-        self.is_fitted = True
 
-        logger.info(
-            f"Fitted VibrationNormalizer on {self.fit_sample_count} training windows "
-            f"(mean={self.mean:+.6e}, std={self.std:.6e}, eps={self.epsilon:.1e}, "
-            f"recordings={self.fit_recording_ids})."
-        )
+        if self.strategy == "global":
+            self.mean = float(np.mean(valid_data))
+            self.std = float(np.std(valid_data))
+            logger.info(
+                f"Fitted VibrationNormalizer(strategy='global') on {self.fit_sample_count} training windows "
+                f"(mean={self.mean:+.6e}, std={self.std:.6e}, eps={self.epsilon:.1e}, "
+                f"recordings={self.fit_recording_ids})."
+            )
+        elif self.strategy == "instance":
+            self.mean = 0.0
+            self.std = 1.0
+            logger.info(
+                f"Initialized VibrationNormalizer(strategy='instance') for {self.fit_sample_count} training windows "
+                f"(eps={self.epsilon:.1e}, recordings={self.fit_recording_ids})."
+            )
+        elif self.strategy == "none":
+            self.mean = 0.0
+            self.std = 1.0
+            logger.info(
+                f"Initialized VibrationNormalizer(strategy='none') for {self.fit_sample_count} training windows "
+                f"(recordings={self.fit_recording_ids})."
+            )
+
+        self.is_fitted = True
         return self
 
     def transform(self, windows: np.ndarray) -> np.ndarray:
-        """Apply fitted global normalization to input windows.
+        """Apply normalization to input windows according to configured strategy.
 
         Args:
             windows: 1D or 2D array of vibration windows.
@@ -91,27 +122,71 @@ class VibrationNormalizer:
         Returns:
             np.ndarray: Normalized array with same shape and dtype float32.
         """
-        if not self.is_fitted or self.mean is None or self.std is None:
-            raise RuntimeError("VibrationNormalizer must be fitted before transforming data.")
+        if not self.is_fitted:
+            raise RuntimeError(f"VibrationNormalizer (strategy='{self.strategy}') must be fitted before transforming data.")
 
         valid_data = self._validate_data(windows, name="transform_input")
-        # Global z-score standardization with epsilon protection
-        normalized = (valid_data - self.mean) / (self.std + self.epsilon)
-        return normalized.astype(np.float32)
+
+        if self.strategy == "global":
+            if self.mean is None or self.std is None:
+                raise RuntimeError("VibrationNormalizer with strategy='global' requires fitted mean and std.")
+            normalized = (valid_data - self.mean) / (self.std + self.epsilon)
+            return normalized.astype(np.float32)
+
+        elif self.strategy == "instance":
+            d64 = valid_data.astype(np.float64)
+            if d64.ndim == 1:
+                w_mean = float(np.mean(d64))
+                w_std = float(np.std(d64))
+                ptp = float(np.ptp(d64))
+                if w_std < self.epsilon or ptp < 1e-5:
+                    return np.zeros_like(valid_data, dtype=np.float32)
+                return ((d64 - w_mean) / w_std).astype(np.float32)
+            else:
+                w_mean = np.mean(d64, axis=-1, keepdims=True)
+                w_std = np.std(d64, axis=-1, keepdims=True)
+                ptp = np.max(d64, axis=-1, keepdims=True) - np.min(d64, axis=-1, keepdims=True)
+                zero_mask = (w_std < self.epsilon) | (ptp < 1e-5)
+                denom = np.maximum(w_std, self.epsilon)
+                normalized = np.where(zero_mask, 0.0, (d64 - w_mean) / denom)
+                return normalized.astype(np.float32)
+
+        elif self.strategy == "none":
+            return valid_data.astype(np.float32)
+
+        raise RuntimeError(f"Unsupported strategy '{self.strategy}'.")
 
     def transform_tensor(self, tensor: torch.Tensor) -> torch.Tensor:
-        """Apply fitted normalization to PyTorch tensor.
+        """Apply normalization to PyTorch tensor according to configured strategy.
 
         Args:
-            tensor: PyTorch float tensor.
+            tensor: PyTorch float tensor (e.g. shape (1, L) or (B, 1, L)).
 
         Returns:
             torch.Tensor: Normalized float32 tensor.
         """
-        if not self.is_fitted or self.mean is None or self.std is None:
-            raise RuntimeError("VibrationNormalizer must be fitted before transforming tensor.")
+        if not self.is_fitted:
+            raise RuntimeError(f"VibrationNormalizer (strategy='{self.strategy}') must be fitted before transforming tensor.")
 
-        return ((tensor - self.mean) / (self.std + self.epsilon)).float()
+        if self.strategy == "global":
+            if self.mean is None or self.std is None:
+                raise RuntimeError("VibrationNormalizer with strategy='global' requires fitted mean and std.")
+            return ((tensor - self.mean) / (self.std + self.epsilon)).float()
+
+        elif self.strategy == "instance":
+            t64 = tensor.double()
+            w_mean = t64.mean(dim=-1, keepdim=True)
+            w_std = t64.std(dim=-1, keepdim=True, unbiased=False)
+            ptp = t64.max(dim=-1, keepdim=True).values - t64.min(dim=-1, keepdim=True).values
+            zero_mask = (w_std < self.epsilon) | (ptp < 1e-5)
+            denom = torch.clamp(w_std, min=self.epsilon)
+            normalized = (t64 - w_mean) / denom
+            return torch.where(zero_mask, torch.zeros_like(t64), normalized).float()
+
+        elif self.strategy == "none":
+            return tensor.float()
+
+        raise RuntimeError(f"Unsupported strategy '{self.strategy}'.")
 
     def fit_transform(
         self,
@@ -123,7 +198,7 @@ class VibrationNormalizer:
         return self.transform(windows)
 
     def inverse_transform(self, normalized_windows: np.ndarray) -> np.ndarray:
-        """Reconstruct original physical amplitude values (in g).
+        """Reconstruct original physical amplitude values (in g) when supported.
 
         Args:
             normalized_windows: Array of normalized samples.
@@ -131,16 +206,29 @@ class VibrationNormalizer:
         Returns:
             np.ndarray: Physical vibration acceleration in g.
         """
-        if not self.is_fitted or self.mean is None or self.std is None:
+        if not self.is_fitted:
             raise RuntimeError("VibrationNormalizer must be fitted before inverse transform.")
 
         valid_data = self._validate_data(normalized_windows, name="inverse_input")
-        unnormalized = (valid_data * (self.std + self.epsilon)) + self.mean
-        return unnormalized
+
+        if self.strategy == "global":
+            if self.mean is None or self.std is None:
+                raise RuntimeError("VibrationNormalizer with strategy='global' requires fitted mean and std.")
+            return (valid_data * (self.std + self.epsilon)) + self.mean
+        elif self.strategy == "instance":
+            raise RuntimeError(
+                "Inverse transform is not supported for strategy='instance' because window-specific "
+                "statistics are not preserved globally."
+            )
+        elif self.strategy == "none":
+            return valid_data
+
+        raise RuntimeError(f"Unsupported strategy '{self.strategy}'.")
 
     def to_dict(self) -> Dict[str, Any]:
         """Export parameters and provenance metadata to a dictionary."""
         return {
+            "strategy": self.strategy,
             "mean": self.mean,
             "std": self.std,
             "epsilon": self.epsilon,
@@ -150,7 +238,7 @@ class VibrationNormalizer:
         }
 
     def save(self, file_path: Union[str, Path]) -> Path:
-        """Persist fitted normalization parameters to a JSON file."""
+        """Persist normalization parameters and strategy to a JSON file."""
         if not self.is_fitted:
             raise RuntimeError("Cannot save unfitted VibrationNormalizer.")
 
@@ -160,12 +248,12 @@ class VibrationNormalizer:
         with open(path, "w", encoding="utf-8") as f:
             json.dump(self.to_dict(), f, indent=2)
 
-        logger.info(f"Saved VibrationNormalizer parameters to: {path}")
+        logger.info(f"Saved VibrationNormalizer (strategy='{self.strategy}') to: {path}")
         return path
 
     @classmethod
     def load(cls, file_path: Union[str, Path]) -> "VibrationNormalizer":
-        """Load fitted normalization parameters from a JSON file."""
+        """Load normalization parameters and strategy from a JSON file."""
         path = Path(file_path).resolve()
         if not path.is_file():
             raise FileNotFoundError(f"Normalizer parameter file not found: {path}")
@@ -173,13 +261,17 @@ class VibrationNormalizer:
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        instance = cls(epsilon=data.get("epsilon", 1e-8))
-        instance.mean = float(data["mean"])
-        instance.std = float(data["std"])
+        strategy = data.get("strategy", "global")
+        instance = cls(epsilon=data.get("epsilon", 1e-8), strategy=strategy)
+        instance.mean = float(data["mean"]) if data["mean"] is not None else None
+        instance.std = float(data["std"]) if data["std"] is not None else None
         instance.is_fitted = bool(data["is_fitted"])
         instance.fit_sample_count = int(data.get("fit_sample_count", 0))
         instance.fit_recording_ids = list(data.get("fit_recording_ids", []))
 
-        logger.info(f"Loaded VibrationNormalizer from: {path} (mean={instance.mean:.6e}, std={instance.std:.6e})")
+        logger.info(
+            f"Loaded VibrationNormalizer from: {path} (strategy='{instance.strategy}', "
+            f"mean={instance.mean if instance.mean is not None else 0.0:.6e}, "
+            f"std={instance.std if instance.std is not None else 0.0:.6e})"
+        )
         return instance
-

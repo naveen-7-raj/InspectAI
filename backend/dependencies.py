@@ -2,12 +2,14 @@
 
 from dataclasses import dataclass, field
 import logging
+import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 from fastapi import Request
 import torch
 
 from src.explainability.explainer import VibrationExplainer, DEFAULT_CLASS_NAMES
+from src.inference.domain_adapter import DomainAdapter
 from src.inference.predictor import StreamingPredictor
 from src.models.cnn_1d import VibrationCNN1D
 from src.preprocessing.signal_cleaner import SignalCleaner
@@ -26,6 +28,7 @@ class AppState:
     signal_cleaner: Optional[SignalCleaner] = None
     predictor: Optional[StreamingPredictor] = None
     explainer: Optional[VibrationExplainer] = None
+    domain_adapter: Optional[DomainAdapter] = None
     class_names: List[str] = field(default_factory=lambda: list(DEFAULT_CLASS_NAMES))
     device: str = "cpu"
     is_loaded: bool = False
@@ -45,6 +48,43 @@ def load_model_artifacts(state: AppState) -> None:
         config = load_config()
         paths = get_resolved_paths(config)
         state.config = config
+
+        # Support optional dynamic loading of final candidate model from models/final/
+        model_dir_env = os.getenv("INSPECTAI_MODEL_DIR", "").strip()
+        use_final = os.getenv("INSPECTAI_USE_FINAL_MODEL", "").lower() in ("1", "true")
+        if use_final or (model_dir_env and Path(model_dir_env).resolve() == Path("models/final").resolve()):
+            final_dir = Path("models/final")
+            logger.info(f"Loading candidate release model from {final_dir} via StreamingPredictor.from_final_model...")
+            predictor = StreamingPredictor.from_final_model(model_dir=final_dir, device="cpu")
+            explainer = VibrationExplainer(
+                model=predictor.model,
+                normalizer=predictor.normalizer,
+                spectral_normalizer=predictor.spectral_normalizer,
+                class_names=predictor.class_names,
+                device="cpu",
+            )
+            state.model = predictor.model
+            state.normalizer = predictor.normalizer
+            state.signal_cleaner = SignalCleaner.from_config(config)
+            state.predictor = predictor
+            state.explainer = explainer
+            state.class_names = predictor.class_names
+            state.device = "cpu"
+            state.is_loaded = True
+            state.load_error = None
+
+            cwru_path = Path("data/processed/cwru_segmented_windows.npz")
+            if cwru_path.is_file():
+                try:
+                    adapter = DomainAdapter.from_processed_cwru(cwru_path, predictor=predictor)
+                    state.domain_adapter = adapter
+                    predictor.domain_adapter = adapter
+                    logger.info("Candidate release model and domain adapter successfully initialized.")
+                except Exception as exc:
+                    logger.warning(f"Domain adapter reference init deferred: {exc}")
+
+            logger.info("Candidate release model (SpectralFusionCNN) successfully loaded into backend state.")
+            return
 
         ckpt_path = paths["model_checkpoint_dir"] / "inspectai_final_cnn.pth"
         norm_path = paths["model_checkpoint_dir"] / "inspectai_final_normalizer.json"

@@ -7,6 +7,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 
 from backend.dependencies import AppState, get_app_state
 from backend.schemas import PredictionRequest, PredictionResponse
+from src.monitoring.metrics import record_prediction, record_api_error
 
 logger = logging.getLogger("InspectAI.PredictionRoute")
 router = APIRouter(tags=["Prediction"])
@@ -111,6 +112,7 @@ def predict_vibration(
             pred_result = state.predictor.predict_window(
                 window=processed.signal,
                 is_normalized=False,
+                mode=payload.inference_mode,
             )
 
             pred_class = pred_result["predicted_class"]
@@ -120,11 +122,13 @@ def predict_vibration(
             class_prob_map = pred_result["class_probabilities"]
 
     except ValueError as val_err:
+        record_api_error("/api/v1/predict", type(val_err).__name__)
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=str(val_err),
         )
     except Exception as exc:
+        record_api_error("/api/v1/predict", type(exc).__name__)
         logger.exception("Inference execution failed.")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -132,6 +136,15 @@ def predict_vibration(
         )
 
     elapsed_ms = round((time.perf_counter() - start_time) * 1000.0, 2)
+    elapsed_sec = time.perf_counter() - start_time
+    is_adapted_flag = pred_result.get("is_adapted", False) if not payload.explain else False
+    inf_mode_val = pred_result.get("inference_mode", payload.inference_mode) if not payload.explain else "baseline"
+    record_prediction(
+        predicted_class=pred_class,
+        inference_mode=inf_mode_val,
+        is_adapted=is_adapted_flag,
+        latency_seconds=elapsed_sec,
+    )
 
     return PredictionResponse(
         predicted_class=pred_class,
@@ -143,10 +156,15 @@ def predict_vibration(
         input_sampling_rate_hz=fs_in,
         processed_sampling_rate_hz=fs_target,
         processed_signal_length=processed_samples,
-        model_name="VibrationCNN1D",
+        model_name="SpectralFusionCNN" if getattr(state.predictor, "is_dual_branch", False) else "VibrationCNN1D",
         processing_time_ms=elapsed_ms,
         gradcam_heatmap=gradcam_heatmap,
         target_class=target_class_label,
         important_regions=important_regions,
+        inference_mode=pred_result.get("inference_mode", payload.inference_mode) if not payload.explain else "baseline",
+        is_adapted=pred_result.get("is_adapted", False) if not payload.explain else False,
+        adapter_telemetry=pred_result.get("adapter_telemetry") if not payload.explain else None,
+        baseline_predicted_class=pred_result.get("baseline_predicted_class") if not payload.explain else None,
+        baseline_probabilities=pred_result.get("baseline_probabilities") if not payload.explain else None,
     )
 

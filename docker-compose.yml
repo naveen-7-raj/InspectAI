@@ -1,29 +1,44 @@
+# ==============================================================================
+# InspectAI - Production Multi-Container Orchestration (Phase 19)
+# ==============================================================================
+
 services:
   # ============================================================================
-  # InspectAI Prediction & WebSocket Streaming Backend
+  # InspectAI Prediction, Streaming & Prometheus Metrics Backend
   # ============================================================================
   backend:
     build:
       context: .
       dockerfile: Dockerfile
+    image: inspectai-backend:latest
     container_name: inspectai_backend
     restart: unless-stopped
-    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --workers 1
     ports:
       - "8000:8000"
     environment:
       - FASTAPI_HOST=0.0.0.0
       - FASTAPI_PORT=8000
       - DEVICE=cpu
+      - INSPECTAI_USE_FINAL_MODEL=1
     volumes:
       - ./data:/app/data:ro
       - ./models:/app/models:ro
+      - ./configs:/app/configs:ro
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/api/v1/health || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 3
       start_period: 5s
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 4G
+        reservations:
+          cpus: "0.5"
+          memory: 1G
 
   # ============================================================================
   # InspectAI Streamlit Monitoring Dashboard
@@ -32,22 +47,36 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: inspectai-frontend:latest
     container_name: inspectai_frontend
     restart: unless-stopped
-    command: streamlit run frontend/app.py --server.port 8501 --server.address 0.0.0.0
+    command: streamlit run frontend/app.py --server.port 8501 --server.address 0.0.0.0 --browser.gatherUsageStats false
     ports:
       - "8501:8501"
     environment:
       - BACKEND_URL=http://backend:8000
-      - STREAMLIT_HOST=0.0.0.0
-      - STREAMLIT_PORT=8501
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
     depends_on:
       backend:
         condition: service_healthy
     volumes:
       - ./data:/app/data:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8501/_stcore/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 2G
+        reservations:
+          cpus: "0.2"
+          memory: 512M
 
 networks:
   default:
     name: inspectai_network
-

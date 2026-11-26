@@ -54,6 +54,10 @@ data/processed/*
 !data/processed/.gitkeep
 !data/processed/window_metadata.csv
 !data/processed/window_split_metadata.csv
+data/external/*
+!data/external/.gitkeep
+!data/external/manifest.csv
+!data/external/manifest.json
 
 # Model weights, checkpoints, and exported models
 models/checkpoints/*
@@ -62,6 +66,7 @@ models/exported/*
 !models/exported/.gitkeep
 *.pt
 *.pth
+!models/final/inspectai_final_model.pth
 *.onnx
 *.pkl
 *.joblib

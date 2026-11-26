@@ -12,6 +12,7 @@ from backend.dependencies import AppState, load_model_artifacts
 from backend.routes.health import router as health_router
 from backend.routes.prediction import router as prediction_router
 from backend.routes.streaming import router as streaming_router
+from backend.routes.metrics import router as metrics_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("InspectAI.FastAPI")
@@ -106,6 +107,7 @@ async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONR
 app.include_router(health_router, prefix="/api/v1")
 app.include_router(prediction_router, prefix="/api/v1")
 app.include_router(streaming_router, prefix="/api/v1")
+app.include_router(metrics_router)
 
 
 # Root-level health endpoint for backwards compatibility and load balancers

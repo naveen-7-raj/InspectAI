@@ -1,92 +1,82 @@
-# InspectAI: Polished Video Demonstration Narration Script
+# InspectAI: 3–5 Minute Portfolio Video Demonstration Script
 
-**Total Spoken Word Count**: 395 words (~2 minutes 45 seconds at 140 WPM)  
-**Target Duration**: 2:30 to 3:00  
-**Target Audience**: AI/ML Engineer Intern Recruiters & Machine Learning Engineers  
-**Tone**: Technical, clear, humble, and scientifically transparent.
-
----
-
-### [0:00 - 0:18] Scene 1: Introduction
-**Visual**: Repository title, clean architecture diagram, and GitHub README header.  
-**Spoken Script**:  
-> "Hello! My name is [Your Name], and this is **InspectAI**, an explainable machine learning platform engineered for industrial rotational machine health monitoring. 
-> InspectAI diagnoses bearing defects from high-frequency accelerometer vibrations using a lightweight 1D CNN, 1D Grad-CAM interpretability, and real-time streaming telemetry."
+**Target Duration**: 3:30 to 4:30 (approx. 550 words at 140 WPM)  
+**Target Audience**: Staff ML Engineers, Engineering Directors, Technical Recruiters  
+**Tone**: Technical, rigorous, humble, and scientifically transparent.  
+**Deliverables Covered**: Full-stack application, CWRU baseline, Grad-CAM, Paderborn unsupervised adaptation, safety guardrails, Prometheus metrics.
 
 ---
 
-### [0:18 - 0:35] Scene 2: The Industrial Bearing-Monitoring Problem
-**Visual**: 4-class vibration waveform comparison (`docs/images/vibration_waveform_comparison.png`).  
-**Spoken Script**:  
-> "In industrial facilities, rotating machinery operates under continuous mechanical stress. Rolling element bearing failures cause over 40% of all electric motor breakdowns, costing plants billions in unplanned downtime. 
-> While accelerometers detect microscopic impact shocks, deep learning models often leak overlapping temporal data and act as opaque black boxes that plant engineers cannot verify."
+### [0:00 - 0:35] Scene 1: Introduction & Real-World Motivation
+**Visual**: Browser displaying GitHub repository and root `README.md`, transitioning to the Streamlit operator dashboard.  
+**Speaker**:  
+> "Hello! My name is [Your Name], and this is **InspectAI**, an explainable, production-hardened machine health monitoring system for industrial rotating equipment.  
+> Rolling element bearing failures cause over 40% of unscheduled mechanical breakdowns, costing billions annually in unplanned downtime.  
+> However, deploying deep learning to vibration diagnostics faces three major engineering traps: spurious accuracy from window-overlap data leakage, severe cross-test-rig domain shift, and the dangerous risk of adapting away true defect signatures during runtime recalibration.  
+> InspectAI was built from the ground up to solve these problems with end-to-end scientific rigor on commodity CPU edge hardware."
 
 ---
 
-### [0:35 - 0:55] Scene 3: Preprocessing & Modular System Architecture
-**Visual**: Pipeline flowchart and signal conditioning diagrams.  
-**Spoken Script**:  
-> "InspectAI benchmarks on authentic accelerometer recordings from the Case Western Reserve University Bearing Data Center. 
-> Our preprocessing pipeline resamples signals to 12 kHz using polyphase anti-aliasing, removes DC sensor bias, and applies a 4th-order zero-phase Butterworth bandpass filter from 20 Hz to 5,000 Hz. 
-> We then segment signals into 2,048-sample sliding windows with 75% overlap."
+### [0:35 - 1:05] Scene 2: Dashboard Overview & Simulated Streaming Replay
+**Visual**: Streamlit dashboard showing connection status, model metadata (`SpectralFusionCNN`), KPI cards, and recording selection dropdown.  
+**Speaker**:  
+> "Here is our Streamlit diagnostic console connected to our FastAPI backend.  
+> In industrial monitoring, connecting to live physical sensors requires specialized DAQ hardware. To evaluate realistic edge streaming safely, InspectAI features a WebSocket streaming gateway that replays authentic laboratory-recorded vibration files from CWRU and Paderborn, pacing at calibrated 42.6-millisecond intervals—the exact physical arrival rate of 2,048 samples at 12 kHz.  
+> Let's start with CWRU recording 97, a healthy baseline motor running under zero horsepower."
 
 ---
 
-### [0:55 - 1:15] Scene 4: Lightweight 1D CNN & Inference Efficiency
-**Visual**: 1D CNN layer diagram (`docs/images/cnn1d_architecture.png`).  
-**Spoken Script**:  
-> "Rather than converting waveforms into heavy 2D spectrograms, our classifier processes raw 1D time-series directly. 
-> The architecture features three Conv1D blocks with batch normalization, max pooling, adaptive spatial pooling, and dropout. 
-> With just 73,156 trainable parameters, it executes on CPU in under 4 milliseconds per window—ideal for low-power edge gateways."
+### [1:05 - 1:40] Scene 3: Baseline Fault Classification & In-Domain Performance
+**Visual**: Replaying recording 97, then switching to recording 169 (Inner Race Fault). Waveform updates in real time, softmax probability bars update to Inner Race Fault (>98%).  
+**Speaker**:  
+> "When streaming healthy data, the model outputs a confident Normal prediction with sub-30-millisecond latency.  
+> Now let's switch to recording 169, which has a 7-mil single-point defect on the inner raceway.  
+> Notice how the live waveform reveals sharp periodic shock bursts, and the dual-branch `SpectralFusionCNN` immediately flags an **Inner Race Fault** with over 98% posterior probability.  
+> By fusing raw 1D temporal vibrations with the log-demodulated Hilbert envelope spectrum, our 179,000-parameter network achieves a 99.8% macro F1 across unseen motor loads in-domain."
 
 ---
 
-### [1:15 - 1:38] Scene 5: Streamlit Dashboard & WebSocket Telemetry
-**Visual**: Streamlit UI with live simulated waveform updating on recording `118.mat`.  
-**Spoken Script**:  
-> "Here is our Streamlit monitoring console. 
-> To simulate continuous sensor monitoring without physical motor hardware, InspectAI features a WebSocket streaming gateway that replays pre-recorded CWRU signals chunk-by-chunk at authentic 42-millisecond steps. 
-> The console plots the live dynamic waveform, tracks inference latency, and displays real-time health classifications."
+### [1:40 - 2:20] Scene 4: 1D Grad-CAM Physical Explainability
+**Visual**: Clicking the Grad-CAM inspector on recording 169. Heatmap overlays on the waveform, highlighting specific periodic peaks.  
+**Speaker**:  
+> "In high-stakes industrial maintenance, black-box predictions are unviable—operators cannot shut down a production line without physical evidence.  
+> Here, our 1D Grad-CAM engine calculates gradient-weighted saliency on the penultimate convolutional layer.  
+> Notice the bright orange attribution peaks: the model is not focusing on background motor hum or electrical harmonics. It is specifically triggering on discrete shock transients spaced at approximately 9.4 milliseconds—which precisely matches the theoretical kinematic Ball Pass Frequency of the Inner Race (BPFI around 156 Hz at 1,797 RPM)."
 
 ---
 
-### [1:38 - 1:58] Scene 6: Predictions & Uncertainty Awareness
-**Visual**: Live telemetry KPI cards and horizontal softmax distribution bars.  
-**Spoken Script**:  
-> "For each window, the CNN outputs logits across four states: Normal, Ball Fault, Inner Race Fault, and Outer Race Fault. 
-> On this Ball Fault recording, the model accurately flags the defect. 
-> Importantly, we follow reliable ML engineering standards by explicitly labeling these outputs as uncalibrated neural network scores rather than true empirical probabilities."
+### [2:20 - 3:05] Scene 5: Cross-Rig Domain Collapse & Unsupervised CORAL Adaptation
+**Visual**: Switching to Paderborn University bearing K001. Showing baseline zero-shot collapse, then clicking 'Enable Adaptive Streaming (CORAL)'. The system buffers 50 unlabelled windows, computes covariance, and adapts.  
+**Speaker**:  
+> "Now, what happens if we take this frozen model and deploy it to an entirely different test rig?  
+> Here is data from Paderborn University bearing K001. Due to different sensor mountings, radial loads, and machine dynamics, zero-shot evaluation collapses to near-random Macro F1 around 0.25.  
+> To solve this without requiring expensive manual defect labels on the new rig, InspectAI implements unsupervised **Correlation Alignment (CORAL)** on our 576-dimensional bottleneck embeddings.  
+> When we enable adaptive mode, the engine buffers 50 unlabelled baseline windows, aligns target feature covariance with CWRU source statistics, and successfully restores correct classification with a condition number $\kappa$ well within numerical stability limits."
 
 ---
 
-### [1:58 - 2:20] Scene 7: 1D Grad-CAM Explainability
-**Visual**: Saliency overlay plot showing impact peaks (`docs/images/gradcam_misclassifications.png`).  
-**Spoken Script**:  
-> "To provide diagnostic interpretability, 1D Grad-CAM targets our penultimate convolutional layer (`conv3`). 
-> When diagnosing an outer race fault, Grad-CAM reveals 21 sharp periodic impact spikes matching the exact Ball Pass Frequency of the Outer Race (BPFO around 105 Hz). 
-> This proves the convolutional filters captured physical impact acoustics, isolating model attribution from the classification head's decision."
+### [3:05 - 3:50] Scene 6: Safe Drift Monitoring & Fault-Suspect Guardrail
+**Visual**: Injecting a defect into the stream. DriftMonitor changes state from `STABLE` to `FAULT_SUSPECT`. Showing alert banner: `[SAFETY ALERT] Recalibration SUPPRESSED due to fault suspicion`.  
+**Speaker**:  
+> "A critical hazard in adaptive monitoring is catastrophic adaptation: if a machine starts failing, vibration variance changes. An unsupervised adapter could mistake this fault for a domain shift and adapt it away, making a destroyed bearing appear normal.  
+> InspectAI solves this with heuristic safety guardrails in our `DriftMonitor`.  
+> When signal kurtosis exceeds 4.5 or the model posterior defect probability exceeds 35%, the monitor immediately flags **FAULT_SUSPECT** and strictly suppresses recalibration. True mechanical damage is alerted to operators, never adapted away.  
+> If non-fault operating shifts occur, recalibration is tested in shadow mode with a 30-window cooldown and instant rollback."
 
 ---
 
-### [2:20 - 2:38] Scene 8: Recording-Level Splitting & Production Engineering
-**Visual**: Recording partition diagram (`docs/images/recording_level_split.png`) and Swagger `/docs`.  
-**Spoken Script**:  
-> "Behind the scenes, we enforce a strict recording-level split: windows from the same recording are never split across train and test sets, eliminating data leakage. 
-> The system is packaged with a modular FastAPI backend, OpenAPI 3.1 documentation, and 140 automated unit and integration tests passing with 100% success on CPU."
+### [3:50 - 4:25] Scene 7: Observability & Prometheus Metrics
+**Visual**: Terminal or browser opening `http://localhost:8000/metrics`. Showing active WebSocket gauges, latency histograms, condition numbers, and prediction counters.  
+**Speaker**:  
+> "For production reliability, our FastAPI backend exposes standard Prometheus metrics at `/metrics`.  
+> SRE teams can track prediction volumes by class, latency histograms across baseline and adaptive modes, active WebSocket connections, and Frobenius domain drift in Grafana.  
+> In our Phase 20 benchmark, InspectAI demonstrated a throughput of 243 windows per second on CPU—providing a **10.4x real-time headroom** over physical 12 kHz arrival rates, with zero dropped frames across all benchmark runs."
 
 ---
 
-### [2:38 - 2:53] Scene 9: Transparent Evaluation Results & Honest Limitations
-**Visual**: Holdout confusion matrix (`docs/images/final_test_confusion_matrix.png`).  
-**Spoken Script**:  
-> "In evaluating on four untouched holdout recordings, the model achieved 39.73% accuracy and 34.04% Macro-F1. 
-> While it achieved 90.3% F1 on Normal bearings and 45.9% on Ball Faults, it scored 0% on unseen 0.014-inch race faults due to defect geometry and load-zone domain shift. 
-> The model is not production-ready and requires domain adaptation before industrial deployment."
-
----
-
-### [2:53 - 3:00] Scene 10: Conclusion
-**Visual**: Repository summary slide and GitHub link.  
-**Spoken Script**:  
-> "InspectAI showcases end-to-end ML engineering: rigorous signal processing, leakage-safe evaluation, model interpretability, and full-stack software delivery. 
-> Thank you for watching!"
+### [4:25 - 4:45] Scene 8: Conclusion & Honest Limitations
+**Visual**: Project repository summary slide with GitHub link, test pass badge (300 passed), and limitation bullets.  
+**Speaker**:  
+> "In summary, InspectAI combines dual-branch deep learning, 1D Grad-CAM explainability, unsupervised domain adaptation, and industrial safety guardrails in a clean, CPU-first deployment.  
+> It does not claim to predict remaining useful life or connect to live factory hardware out of the box—it is a rigorously validated, transparent engineering foundation.  
+> All 300 automated tests pass with zero failures. Thank you for watching!"

@@ -36,15 +36,17 @@ class VibrationExplainer:
         model: nn.Module,
         target_layer: Optional[nn.Module] = None,
         normalizer: Optional[VibrationNormalizer] = None,
+        spectral_normalizer: Optional[Any] = None,
         class_names: Optional[List[str]] = None,
         device: Union[str, torch.device] = "cpu",
     ) -> None:
         """Initialize VibrationExplainer.
 
         Args:
-            model: Trained 1D CNN (e.g. VibrationCNN1D).
+            model: Trained 1D CNN (e.g. VibrationCNN1D or SpectralFusionCNN).
             target_layer: Convolutional layer to explain. Defaults to model.get_target_layer_for_cam() or model.conv3.
             normalizer: Optional fitted VibrationNormalizer for raw waveform inputs.
+            spectral_normalizer: Optional fitted SpectralNormalizer for Hilbert envelope spectrum inputs.
             class_names: Ordered class names list.
             device: Computing device ('cpu').
         """
@@ -66,6 +68,7 @@ class VibrationExplainer:
             self.target_layer = conv_modules[-1]
 
         self.normalizer = normalizer
+        self.spectral_normalizer = spectral_normalizer
         self.class_names = class_names or DEFAULT_CLASS_NAMES
 
     def compute_gradcam(
@@ -116,11 +119,24 @@ class VibrationExplainer:
         fwd_handle = self.target_layer.register_forward_hook(forward_hook)
         bwd_handle = self.target_layer.register_full_backward_hook(backward_hook)
 
+        is_dual = hasattr(self.model, "spectral_branch") or hasattr(self.model, "spectral_bins")
+
         try:
             self.model.zero_grad()
 
             # Forward pass (gradient tracking enabled for Grad-CAM)
-            logits = self.model(tensor)
+            if is_dual and tensor.size(2) == 2048:
+                arr_np = tensor.detach().cpu().numpy().squeeze()
+                from src.features.frequency_features import compute_hilbert_envelope_spectrum
+                _, env_mag, _ = compute_hilbert_envelope_spectrum(arr_np, sampling_rate_hz=12000)
+                if self.spectral_normalizer is not None and getattr(self.spectral_normalizer, "is_fitted", False):
+                    norm_spec = self.spectral_normalizer.transform(env_mag)
+                else:
+                    norm_spec = env_mag
+                s_tensor = torch.from_numpy(norm_spec).float().unsqueeze(0).unsqueeze(0).to(self.device)
+                logits = self.model(tensor, spectral_input=s_tensor)
+            else:
+                logits = self.model(tensor)
 
             if not torch.isfinite(logits).all():
                 raise RuntimeError("Non-finite logits encountered during Grad-CAM forward pass.")
@@ -160,7 +176,8 @@ class VibrationExplainer:
             cam = F.relu(cam)
 
             # Upsample linearly to original sequence length (2048)
-            cam_upsampled = F.interpolate(cam, size=seq_len, mode="linear", align_corners=False)
+            target_up_len = 2048 if (is_dual and seq_len in (2048, 3073)) else seq_len
+            cam_upsampled = F.interpolate(cam, size=target_up_len, mode="linear", align_corners=False)
             heatmap = cam_upsampled.squeeze().detach().cpu().numpy()
 
             # Normalize heatmap safely to [0, 1]

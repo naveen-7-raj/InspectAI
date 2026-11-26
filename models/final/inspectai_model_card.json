@@ -1,0 +1,69 @@
+{
+  "model_details": {
+    "name": "InspectAI SpectralFusionCNN",
+    "version": "1.0-final",
+    "type": "Dual-Branch 1D Waveform & Hilbert Envelope Spectrum Convolutional Neural Network",
+    "framework": "PyTorch 2.13.0+cpu",
+    "developer": "InspectAI Systems Engineering",
+    "license": "Proprietary / Industrial Diagnostic Research",
+    "checkpoint_sha256": "a612eb9ebcc758dcd078f975414eec2c9409904b30de5fb24588c19990e7542e",
+    "waveform_normalizer_sha256": "2b3db205cd2d95ead19c8ec5d14e4b2d9a8e6133ae0f0aef05e7c2bf0f1db3c1",
+    "spectral_normalizer_sha256": "ed39cd3615212d83c24e66a49c46fc0c07e4e9f33320e95a3cc0d3a6567a3fac"
+  },
+  "intended_use": {
+    "primary_domain": "Industrial rolling element bearing condition monitoring and fault classification.",
+    "target_classes": [
+      "Normal",
+      "Ball Fault",
+      "Inner Race Fault",
+      "Outer Race Fault"
+    ],
+    "operating_context": "Deep groove ball bearings (SKF 6205 series) operating under variable motor load (0 to 3 HP, 1,720 to 1,797 RPM).",
+    "sampling_frequency_hz": 12000,
+    "input_window_duration_ms": 170.67
+  },
+  "validation_benchmark_summary": {
+    "protocol": "3-Fold Leave-One-Load-Out (LOLO) Cross-Validation",
+    "evaluated_windows": 7038,
+    "evaluated_recordings": 30,
+    "cross_load_metrics": {
+      "fold_1_1hp_f1": 1.0,
+      "fold_2_2hp_f1": 0.9943,
+      "fold_3_3hp_f1": 1.0,
+      "pooled_macro_f1": 0.9981,
+      "pooled_accuracy": 0.9977,
+      "rec_172_3hp_accuracy": 1.0
+    },
+    "per_class_f1": {
+      "Normal": 1.0,
+      "Ball Fault": 0.9965,
+      "Inner Race Fault": 0.997,
+      "Outer Race Fault": 0.9989
+    },
+    "inference_latency": {
+      "single_window_median_ms": 1.2024,
+      "single_window_p95_ms": 1.9295,
+      "throughput_windows_per_second": 831
+    }
+  },
+  "training_data": {
+    "dataset_name": "Case Western Reserve University (CWRU) Bearing Data Center",
+    "channels": [
+      "Drive End (DE) accelerometer"
+    ],
+    "development_recordings_count": 36,
+    "total_training_windows": 8448,
+    "permanently_quarantined_recordings": [
+      "169",
+      "185",
+      "197",
+      "97"
+    ]
+  },
+  "ethical_and_operational_limitations": {
+    "cross_machine_transfer": "Validated on CWRU motor-driven test rig only. Domain adaptation or fine-tuning is required before transferring to different bearing geometries or gearboxes.",
+    "early_failure_prediction": "The model classifies active mechanical defect signatures; it does not forecast remaining useful life (RUL) or incipient metallurgical fatigue prior to surface spalling.",
+    "unseen_fault_modes": "Detects Normal, Ball, Inner Race, and Outer Race faults. Unmodeled failure modes (e.g., cage fracture, severe misalignment, electrical fluting) may yield uncertain predictions.",
+    "uncalibrated_probabilities": "Softmax scores represent model class attribution and do not equal empirical Bayesian posterior probabilities."
+  }
+}

@@ -6,6 +6,12 @@ from typing import Optional
 from fastapi import APIRouter, Query, WebSocket, WebSocketDisconnect, status
 
 from backend.dependencies import AppState
+from src.monitoring.metrics import (
+    record_adapter_telemetry,
+    record_api_error,
+    record_prediction,
+    record_websocket_connection,
+)
 from src.streaming.simulator import (
     ALLOWED_RECORDING_IDS,
     CWRUStreamSimulator,
@@ -32,6 +38,14 @@ async def stream_vibration(
         default=True,
         description="Whether to include authentic 2,048 preprocessed window samples in prediction packet.",
     ),
+    inference_mode: str = Query(
+        default="baseline",
+        description="Inference mode: 'baseline' (unadapted frozen model) or 'adaptive' (CORAL domain adaptation).",
+    ),
+    calibrate_first: bool = Query(
+        default=False,
+        description="Whether to buffer initial unlabelled streamed windows to calibrate domain adapter.",
+    ),
 ) -> None:
     """Stream simulated real-time CWRU vibration windows and CNN predictions via WebSocket.
 
@@ -41,6 +55,7 @@ async def stream_vibration(
     It does not connect to a physical live motor or sensor.
     """
     await websocket.accept()
+    record_websocket_connection(+1)
 
     # 1. Validate Recording Identifier
     clean_id = normalize_recording_id(recording_id)
@@ -102,16 +117,52 @@ async def stream_vibration(
     )
 
     # 5. Stream Sequential Windows
+    adapter = getattr(state, "domain_adapter", None)
+    if adapter is not None and calibrate_first:
+        adapter.reset()
+
     try:
         async for window_data in simulator.stream_windows(replay_speed=replay_speed):
             t0 = time.perf_counter()
+            samples = window_data["samples"]
 
-            # Execute forward pass using existing loaded model
-            pred = state.predictor.predict_window(
-                window=window_data["samples"],
-                is_normalized=False,
-            )
+            # If calibrating first, collect unlabelled feature embedding
+            if calibrate_first and adapter is not None and not adapter.is_fitted:
+                try:
+                    feat = state.predictor.extract_features(samples, is_normalized=False)
+                    calib_info = adapter.collect_calibration_sample(feat)
+                    if calib_info["is_ready_to_fit"]:
+                        adapter.fit()
+                except Exception as exc:
+                    logger.warning(f"Error during streaming calibration sample collection: {exc}")
+
+                pred = state.predictor.predict_window(
+                    window=samples,
+                    is_normalized=False,
+                    mode="baseline",
+                )
+                current_mode = "calibrating" if not adapter.is_fitted else "adaptive"
+            else:
+                pred = state.predictor.predict_window(
+                    window=samples,
+                    is_normalized=False,
+                    mode=inference_mode,
+                )
+                current_mode = pred.get("inference_mode", inference_mode)
+
             inf_time_ms = round((time.perf_counter() - t0) * 1000.0, 2)
+            elapsed_sec = time.perf_counter() - t0
+            record_prediction(
+                predicted_class=pred["predicted_class"],
+                inference_mode=current_mode,
+                is_adapted=pred.get("is_adapted", False),
+                latency_seconds=elapsed_sec,
+            )
+            if pred.get("adapter_telemetry"):
+                record_adapter_telemetry(
+                    condition_number=pred["adapter_telemetry"].get("condition_number"),
+                    drift_frobenius=pred["adapter_telemetry"].get("drift_frobenius"),
+                )
 
             msg = {
                 "event": "prediction",
@@ -125,7 +176,12 @@ async def stream_vibration(
                 "class_id": pred["class_id"],
                 "logits": pred["logits"],
                 "uncalibrated_scores": pred["class_probabilities"],
-                "model_name": "VibrationCNN1D",
+                "inference_mode": current_mode,
+                "is_adapted": pred.get("is_adapted", False),
+                "baseline_predicted_class": pred.get("baseline_predicted_class", pred["predicted_class"]),
+                "baseline_scores": pred.get("baseline_probabilities", pred["class_probabilities"]),
+                "adapter_telemetry": pred.get("adapter_telemetry"),
+                "model_name": "SpectralFusionCNN" if getattr(state.predictor, "is_dual_branch", False) else "VibrationCNN1D",
                 "inference_time_ms": inf_time_ms,
             }
 
@@ -157,6 +213,7 @@ async def stream_vibration(
     except WebSocketDisconnect:
         logger.info(f"WebSocket client disconnected cleanly from stream for recording {clean_id}.")
     except Exception as exc:
+        record_api_error("/api/v1/stream", type(exc).__name__)
         logger.exception(f"Unexpected streaming error for recording {clean_id}: {exc}")
         try:
             await websocket.send_json({
@@ -167,4 +224,6 @@ async def stream_vibration(
             await websocket.close(code=status.WS_1011_INTERNAL_ERROR)
         except Exception:
             pass
+    finally:
+        record_websocket_connection(-1)
 

@@ -29,6 +29,10 @@ class PredictionRequest(BaseModel):
         description="Optional class ID (0-3) or class name to explain. Defaults to predicted class.",
         examples=[None, "Ball Fault", 1],
     )
+    inference_mode: str = Field(
+        default="baseline",
+        description="Inference mode: 'baseline' (unadapted frozen model) or 'adaptive' (CORAL domain adaptation).",
+    )
 
     @field_validator("signal")
     @classmethod
@@ -97,6 +101,26 @@ class PredictionResponse(BaseModel):
     important_regions: Optional[List[Dict[str, Any]]] = Field(
         default=None,
         description="Detected contiguous temporal intervals where attribution exceeds threshold.",
+    )
+    inference_mode: str = Field(
+        default="baseline",
+        description="Executed mode: 'baseline' or 'adaptive'.",
+    )
+    is_adapted: bool = Field(
+        default=False,
+        description="Whether domain adaptation was applied.",
+    )
+    adapter_telemetry: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Diagnostic telemetry from domain adapter.",
+    )
+    baseline_predicted_class: Optional[str] = Field(
+        default=None,
+        description="Unadapted baseline class prediction.",
+    )
+    baseline_probabilities: Optional[Dict[str, float]] = Field(
+        default=None,
+        description="Unadapted baseline softmax probabilities.",
     )
 
     model_config = {
