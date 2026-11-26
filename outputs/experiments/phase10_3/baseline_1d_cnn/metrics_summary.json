@@ -1,0 +1,190 @@
+{
+  "architecture": "baseline_1d_cnn",
+  "parameter_count": 106244,
+  "pooled_oof_accuracy": 0.8626,
+  "pooled_oof_macro_f1": 0.8378,
+  "mean_fold_accuracy": 0.8704,
+  "mean_fold_macro_f1": 0.8039,
+  "mean_cpu_latency_ms": 1.006,
+  "total_duration_sec": 44.64,
+  "folds": [
+    {
+      "architecture": "baseline_1d_cnn",
+      "fold": 0,
+      "parameters": 106244,
+      "duration_sec": 23.68,
+      "best_epoch": 3,
+      "total_epochs": 10,
+      "val_loss": 3.6016,
+      "val_accuracy": 0.7995,
+      "val_macro_f1": 0.6669,
+      "cpu_latency_ms": 1.102,
+      "train_recordings": [
+        "100",
+        "222",
+        "105",
+        "234"
+      ],
+      "val_recordings": [
+        "98",
+        "99",
+        "118",
+        "209",
+        "130"
+      ]
+    },
+    {
+      "architecture": "baseline_1d_cnn",
+      "fold": 1,
+      "parameters": 106244,
+      "duration_sec": 20.96,
+      "best_epoch": 3,
+      "total_epochs": 10,
+      "val_loss": 0.2236,
+      "val_accuracy": 0.9414,
+      "val_macro_f1": 0.9409,
+      "cpu_latency_ms": 0.91,
+      "train_recordings": [
+        "98",
+        "99",
+        "118",
+        "209",
+        "130"
+      ],
+      "val_recordings": [
+        "100",
+        "222",
+        "105",
+        "234"
+      ]
+    }
+  ],
+  "per_class": {
+    "Normal": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 700
+    },
+    "Ball Fault": {
+      "precision": 0.6606,
+      "recall": 1.0,
+      "f1_score": 0.7956,
+      "support": 471
+    },
+    "Inner Race Fault": {
+      "precision": 0.8248,
+      "recall": 0.4829,
+      "f1_score": 0.6092,
+      "support": 468
+    },
+    "Outer Race Fault": {
+      "precision": 1.0,
+      "recall": 0.8981,
+      "f1_score": 0.9463,
+      "support": 471
+    }
+  },
+  "confusion_matrix": [
+    [
+      700,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      471,
+      0,
+      0
+    ],
+    [
+      0,
+      242,
+      226,
+      0
+    ],
+    [
+      0,
+      0,
+      48,
+      423
+    ]
+  ],
+  "per_recording": {
+    "100": {
+      "n_samples": 234,
+      "true_class": "Normal",
+      "accuracy": 1.0,
+      "pred_distribution": {
+        "Normal": 234
+      }
+    },
+    "105": {
+      "n_samples": 233,
+      "true_class": "Inner Race Fault",
+      "accuracy": 0.97,
+      "pred_distribution": {
+        "Inner Race Fault": 226,
+        "Ball Fault": 7
+      }
+    },
+    "118": {
+      "n_samples": 236,
+      "true_class": "Ball Fault",
+      "accuracy": 1.0,
+      "pred_distribution": {
+        "Ball Fault": 236
+      }
+    },
+    "130": {
+      "n_samples": 235,
+      "true_class": "Outer Race Fault",
+      "accuracy": 1.0,
+      "pred_distribution": {
+        "Outer Race Fault": 235
+      }
+    },
+    "209": {
+      "n_samples": 235,
+      "true_class": "Inner Race Fault",
+      "accuracy": 0.0,
+      "pred_distribution": {
+        "Ball Fault": 235
+      }
+    },
+    "222": {
+      "n_samples": 235,
+      "true_class": "Ball Fault",
+      "accuracy": 1.0,
+      "pred_distribution": {
+        "Ball Fault": 235
+      }
+    },
+    "234": {
+      "n_samples": 236,
+      "true_class": "Outer Race Fault",
+      "accuracy": 0.7966,
+      "pred_distribution": {
+        "Outer Race Fault": 188,
+        "Inner Race Fault": 48
+      }
+    },
+    "98": {
+      "n_samples": 233,
+      "true_class": "Normal",
+      "accuracy": 1.0,
+      "pred_distribution": {
+        "Normal": 233
+      }
+    },
+    "99": {
+      "n_samples": 233,
+      "true_class": "Normal",
+      "accuracy": 1.0,
+      "pred_distribution": {
+        "Normal": 233
+      }
+    }
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "baseline_waveform": {
+    "configuration": "baseline_waveform",
+    "spectral_type": null,
+    "parameters": 73156,
+    "oof_accuracy": 0.8469,
+    "oof_macro_f1": 0.8109,
+    "mean_latency_ms": 1.409,
+    "fold_metrics": [
+      {
+        "configuration": "baseline_waveform",
+        "fold": 0,
+        "parameters": 73156,
+        "duration_sec": 29.38,
+        "best_epoch": 1,
+        "total_epochs": 8,
+        "val_loss": 2.1755,
+        "val_accuracy": 0.7995,
+        "val_macro_f1": 0.6667,
+        "cpu_latency_ms": 1.505,
+        "train_recordings": [
+          "100",
+          "222",
+          "105",
+          "234"
+        ],
+        "val_recordings": [
+          "98",
+          "99",
+          "118",
+          "209",
+          "130"
+        ]
+      },
+      {
+        "configuration": "baseline_waveform",
+        "fold": 1,
+        "parameters": 73156,
+        "duration_sec": 35.03,
+        "best_epoch": 2,
+        "total_epochs": 9,
+        "val_loss": 0.3459,
+        "val_accuracy": 0.9062,
+        "val_macro_f1": 0.9057,
+        "cpu_latency_ms": 1.312,
+        "train_recordings": [
+          "98",
+          "99",
+          "118",
+          "209",
+          "130"
+        ],
+        "val_recordings": [
+          "100",
+          "222",
+          "105",
+          "234"
+        ]
+      }
+    ],
+    "confusion_matrix": [
+      [
+        700,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        471,
+        0,
+        0
+      ],
+      [
+        0,
+        48,
+        185,
+        235
+      ],
+      [
+        0,
+        0,
+        40,
+        431
+      ]
+    ],
+    "classification_report": {
+      "Normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 700.0
+      },
+      "Ball Fault": {
+        "precision": 0.9075144508670521,
+        "recall": 1.0,
+        "f1-score": 0.9515151515151515,
+        "support": 471.0
+      },
+      "Inner Race Fault": {
+        "precision": 0.8222222222222222,
+        "recall": 0.3952991452991453,
+        "f1-score": 0.5339105339105339,
+        "support": 468.0
+      },
+      "Outer Race Fault": {
+        "precision": 0.6471471471471472,
+        "recall": 0.9150743099787686,
+        "f1-score": 0.7581354441512753,
+        "support": 471.0
+      },
+      "accuracy": 0.8469194312796209,
+      "macro avg": {
+        "precision": 0.8442209550591053,
+        "recall": 0.8275933638194785,
+        "f1-score": 0.8108902823942401,
+        "support": 2110.0
+      },
+      "weighted avg": {
+        "precision": 0.8611590581349232,
+        "recall": 0.8469194312796209,
+        "f1-score": 0.8318083224782071,
+        "support": 2110.0
+      }
+    },
+    "recording_breakdown": {
+      "100": {
+        "true_class": "Normal",
+        "count": 234,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Normal": 234
+        }
+      },
+      "105": {
+        "true_class": "Inner Race Fault",
+        "count": 233,
+        "accuracy": 0.794,
+        "pred_distribution": {
+          "Inner Race Fault": 185,
+          "Ball Fault": 48
+        }
+      },
+      "118": {
+        "true_class": "Ball Fault",
+        "count": 236,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Ball Fault": 236
+        }
+      },
+      "130": {
+        "true_class": "Outer Race Fault",
+        "count": 235,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Outer Race Fault": 235
+        }
+      },
+      "209": {
+        "true_class": "Inner Race Fault",
+        "count": 235,
+        "accuracy": 0.0,
+        "pred_distribution": {
+          "Outer Race Fault": 235
+        }
+      },
+      "222": {
+        "true_class": "Ball Fault",
+        "count": 235,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Ball Fault": 235
+        }
+      },
+      "234": {
+        "true_class": "Outer Race Fault",
+        "count": 236,
+        "accuracy": 0.8305,
+        "pred_distribution": {
+          "Outer Race Fault": 196,
+          "Inner Race Fault": 40
+        }
+      },
+      "98": {
+        "true_class": "Normal",
+        "count": 233,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Normal": 233
+        }
+      },
+      "99": {
+        "true_class": "Normal",
+        "count": 233,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Normal": 233
+        }
+      }
+    }
+  },
+  "waveform_plus_fft": {
+    "configuration": "waveform_plus_fft",
+    "spectral_type": "fft",
+    "parameters": 89604,
+    "oof_accuracy": 0.7915,
+    "oof_macro_f1": 0.7654,
+    "mean_latency_ms": 2.042,
+    "fold_metrics": [
+      {
+        "configuration": "waveform_plus_fft",
+        "fold": 0,
+        "parameters": 89604,
+        "duration_sec": 34.61,
+        "best_epoch": 1,
+        "total_epochs": 8,
+        "val_loss": 1.6653,
+        "val_accuracy": 0.7995,
+        "val_macro_f1": 0.6667,
+        "cpu_latency_ms": 2.18,
+        "train_recordings": [
+          "100",
+          "222",
+          "105",
+          "234"
+        ],
+        "val_recordings": [
+          "98",
+          "99",
+          "118",
+          "209",
+          "130"
+        ]
+      },
+      {
+        "configuration": "waveform_plus_fft",
+        "fold": 1,
+        "parameters": 89604,
+        "duration_sec": 43.69,
+        "best_epoch": 3,
+        "total_epochs": 10,
+        "val_loss": 0.6903,
+        "val_accuracy": 0.7814,
+        "val_macro_f1": 0.7317,
+        "cpu_latency_ms": 1.904,
+        "train_recordings": [
+          "98",
+          "99",
+          "118",
+          "209",
+          "130"
+        ],
+        "val_recordings": [
+          "100",
+          "222",
+          "105",
+          "234"
+        ]
+      }
+    ],
+    "confusion_matrix": [
+      [
+        700,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        471,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        233,
+        235
+      ],
+      [
+        0,
+        0,
+        205,
+        266
+      ]
+    ],
+    "classification_report": {
+      "Normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 700.0
+      },
+      "Ball Fault": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 471.0
+      },
+      "Inner Race Fault": {
+        "precision": 0.5319634703196348,
+        "recall": 0.49786324786324787,
+        "f1-score": 0.5143487858719646,
+        "support": 468.0
+      },
+      "Outer Race Fault": {
+        "precision": 0.530938123752495,
+        "recall": 0.564755838641189,
+        "f1-score": 0.5473251028806584,
+        "support": 471.0
+      },
+      "accuracy": 0.7914691943127962,
+      "macro avg": {
+        "precision": 0.7657253985180326,
+        "recall": 0.7656547716261092,
+        "f1-score": 0.7654184721881558,
+        "support": 2110.0
+      },
+      "weighted avg": {
+        "precision": 0.7914837727000068,
+        "recall": 0.7914691943127962,
+        "f1-score": 0.7912347655188956,
+        "support": 2110.0
+      }
+    },
+    "recording_breakdown": {
+      "100": {
+        "true_class": "Normal",
+        "count": 234,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Normal": 234
+        }
+      },
+      "105": {
+        "true_class": "Inner Race Fault",
+        "count": 233,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Inner Race Fault": 233
+        }
+      },
+      "118": {
+        "true_class": "Ball Fault",
+        "count": 236,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Ball Fault": 236
+        }
+      },
+      "130": {
+        "true_class": "Outer Race Fault",
+        "count": 235,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Outer Race Fault": 235
+        }
+      },
+      "209": {
+        "true_class": "Inner Race Fault",
+        "count": 235,
+        "accuracy": 0.0,
+        "pred_distribution": {
+          "Outer Race Fault": 235
+        }
+      },
+      "222": {
+        "true_class": "Ball Fault",
+        "count": 235,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Ball Fault": 235
+        }
+      },
+      "234": {
+        "true_class": "Outer Race Fault",
+        "count": 236,
+        "accuracy": 0.1314,
+        "pred_distribution": {
+          "Inner Race Fault": 205,
+          "Outer Race Fault": 31
+        }
+      },
+      "98": {
+        "true_class": "Normal",
+        "count": 233,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Normal": 233
+        }
+      },
+      "99": {
+        "true_class": "Normal",
+        "count": 233,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Normal": 233
+        }
+      }
+    }
+  },
+  "waveform_plus_hilbert": {
+    "configuration": "waveform_plus_hilbert",
+    "spectral_type": "hilbert",
+    "parameters": 89604,
+    "oof_accuracy": 0.7825,
+    "oof_macro_f1": 0.7555,
+    "mean_latency_ms": 2.188,
+    "fold_metrics": [
+      {
+        "configuration": "waveform_plus_hilbert",
+        "fold": 0,
+        "parameters": 89604,
+        "duration_sec": 32.93,
+        "best_epoch": 1,
+        "total_epochs": 8,
+        "val_loss": 1.5843,
+        "val_accuracy": 0.7995,
+        "val_macro_f1": 0.6667,
+        "cpu_latency_ms": 1.886,
+        "train_recordings": [
+          "100",
+          "222",
+          "105",
+          "234"
+        ],
+        "val_recordings": [
+          "98",
+          "99",
+          "118",
+          "209",
+          "130"
+        ]
+      },
+      {
+        "configuration": "waveform_plus_hilbert",
+        "fold": 1,
+        "parameters": 89604,
+        "duration_sec": 49.51,
+        "best_epoch": 4,
+        "total_epochs": 11,
+        "val_loss": 0.973,
+        "val_accuracy": 0.7612,
+        "val_macro_f1": 0.693,
+        "cpu_latency_ms": 2.49,
+        "train_recordings": [
+          "98",
+          "99",
+          "118",
+          "209",
+          "130"
+        ],
+        "val_recordings": [
+          "100",
+          "222",
+          "105",
+          "234"
+        ]
+      }
+    ],
+    "confusion_matrix": [
+      [
+        700,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        471,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        233,
+        235
+      ],
+      [
+        0,
+        0,
+        224,
+        247
+      ]
+    ],
+    "classification_report": {
+      "Normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 700.0
+      },
+      "Ball Fault": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 471.0
+      },
+      "Inner Race Fault": {
+        "precision": 0.5098468271334792,
+        "recall": 0.49786324786324787,
+        "f1-score": 0.5037837837837837,
+        "support": 468.0
+      },
+      "Outer Race Fault": {
+        "precision": 0.5124481327800829,
+        "recall": 0.524416135881104,
+        "f1-score": 0.5183630640083945,
+        "support": 471.0
+      },
+      "accuracy": 0.7824644549763033,
+      "macro avg": {
+        "precision": 0.7555737399783905,
+        "recall": 0.755569845936088,
+        "f1-score": 0.7555367119480446,
+        "support": 2110.0
+      },
+      "weighted avg": {
+        "precision": 0.7824508936672452,
+        "recall": 0.7824644549763033,
+        "f1-score": 0.7824264521131586,
+        "support": 2110.0
+      }
+    },
+    "recording_breakdown": {
+      "100": {
+        "true_class": "Normal",
+        "count": 234,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Normal": 234
+        }
+      },
+      "105": {
+        "true_class": "Inner Race Fault",
+        "count": 233,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Inner Race Fault": 233
+        }
+      },
+      "118": {
+        "true_class": "Ball Fault",
+        "count": 236,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Ball Fault": 236
+        }
+      },
+      "130": {
+        "true_class": "Outer Race Fault",
+        "count": 235,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Outer Race Fault": 235
+        }
+      },
+      "209": {
+        "true_class": "Inner Race Fault",
+        "count": 235,
+        "accuracy": 0.0,
+        "pred_distribution": {
+          "Outer Race Fault": 235
+        }
+      },
+      "222": {
+        "true_class": "Ball Fault",
+        "count": 235,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Ball Fault": 235
+        }
+      },
+      "234": {
+        "true_class": "Outer Race Fault",
+        "count": 236,
+        "accuracy": 0.0508,
+        "pred_distribution": {
+          "Inner Race Fault": 224,
+          "Outer Race Fault": 12
+        }
+      },
+      "98": {
+        "true_class": "Normal",
+        "count": 233,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Normal": 233
+        }
+      },
+      "99": {
+        "true_class": "Normal",
+        "count": 233,
+        "accuracy": 1.0,
+        "pred_distribution": {
+          "Normal": 233
+        }
+      }
+    }
+  }
+}

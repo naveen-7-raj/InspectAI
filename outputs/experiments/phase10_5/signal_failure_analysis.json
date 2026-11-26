@@ -1,0 +1,84 @@
+{
+  "kinematic_reference_frequencies": {
+    "fr_hz": 29.95,
+    "bpfo_hz": 107.364,
+    "bpfi_hz": 162.186,
+    "bsf_hz": 70.585,
+    "ftf_hz": 11.929,
+    "fr": 29.95,
+    "bpfo": 107.364,
+    "bpfi": 162.186,
+    "bsf": 70.585,
+    "ftf": 11.929
+  },
+  "signal_metrics": {
+    "105": {
+      "fault_class": "Inner_Race_Fault",
+      "defect_diameter_in": 0.007,
+      "rms_g": 0.2907,
+      "peak_g": 1.6989,
+      "kurtosis": 5.3781,
+      "dominant_peaks_0_500hz": [
+        451.17,
+        457.03,
+        164.06
+      ],
+      "band_energy_fractions": {
+        "band_low_0_500hz": 0.009,
+        "band_mid_500_2000hz": 0.2007,
+        "band_high_2000_6000hz": 0.7902
+      }
+    },
+    "209": {
+      "fault_class": "Inner_Race_Fault",
+      "defect_diameter_in": 0.021,
+      "rms_g": 0.5249,
+      "peak_g": 3.7014,
+      "kurtosis": 7.396,
+      "dominant_peaks_0_500hz": [
+        451.17,
+        457.03,
+        462.89
+      ],
+      "band_energy_fractions": {
+        "band_low_0_500hz": 0.0243,
+        "band_mid_500_2000hz": 0.0472,
+        "band_high_2000_6000hz": 0.9285
+      }
+    },
+    "130": {
+      "fault_class": "Outer_Race_Fault",
+      "defect_diameter_in": 0.007,
+      "rms_g": 0.6661,
+      "peak_g": 3.6415,
+      "kurtosis": 7.6676,
+      "dominant_peaks_0_500hz": [
+        445.31,
+        451.17,
+        164.06
+      ],
+      "band_energy_fractions": {
+        "band_low_0_500hz": 0.0013,
+        "band_mid_500_2000hz": 0.008,
+        "band_high_2000_6000hz": 0.9907
+      }
+    },
+    "234": {
+      "fault_class": "Outer_Race_Fault",
+      "defect_diameter_in": 0.021,
+      "rms_g": 0.5835,
+      "peak_g": 6.6406,
+      "kurtosis": 20.9398,
+      "dominant_peaks_0_500hz": [
+        474.61,
+        480.47,
+        427.73
+      ],
+      "band_energy_fractions": {
+        "band_low_0_500hz": 0.0089,
+        "band_mid_500_2000hz": 0.0809,
+        "band_high_2000_6000hz": 0.9102
+      }
+    }
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "metadata": {
+    "title": "InspectAI Phase 16: Domain Generalization & Adaptation Investigation",
+    "timestamp_utc": "2026-11-26T05:07:29Z",
+    "frozen_model_sha256": "a612eb9ebcc758dcd078f975414eec2c9409904b30de5fb24588c19990e7542e",
+    "adaptation_protocol": "STRICTLY LABEL-FREE: Zero target labels used during covariance fitting or projection.",
+    "target_benchmark": "Paderborn Pilot (N15_M07_F10: 80 recordings, 7,211 windows)"
+  },
+  "experiments": {
+    "experiment_a_frozen_baseline": {
+      "experiment_name": "Experiment A: Original Frozen Baseline",
+      "total_windows": 7211,
+      "accuracy": 0.08292885868811538,
+      "balanced_accuracy": 0.08300805339241187,
+      "macro_precision": 0.027165772004127203,
+      "macro_recall": 0.08300805339241187,
+      "macro_f1": 0.04040386698910494,
+      "per_class_metrics": {
+        "Normal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 1804
+        },
+        "Ball Fault": {
+          "precision": 0.10252393385552655,
+          "recall": 0.32704053303720154,
+          "f1_score": 0.15610919692552347,
+          "support": 1801
+        },
+        "Inner Race Fault": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 1803
+        },
+        "Outer Race Fault": {
+          "precision": 0.006139154160982265,
+          "recall": 0.004991680532445923,
+          "f1_score": 0.005506271030896299,
+          "support": 1803
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Normal",
+          "Ball Fault",
+          "Inner Race Fault",
+          "Outer Race Fault"
+        ],
+        "matrix": [
+          [
+            0,
+            1804,
+            0,
+            0
+          ],
+          [
+            0,
+            589,
+            0,
+            1212
+          ],
+          [
+            0,
+            1558,
+            0,
+            245
+          ],
+          [
+            0,
+            1794,
+            0,
+            9
+          ]
+        ]
+      }
+    },
+    "experiment_b_order_scaling": {
+      "experiment_name": "Experiment B: Nominal Order-Scaling",
+      "total_windows": 7211,
+      "accuracy": 0.2500346692553044,
+      "balanced_accuracy": 0.25,
+      "macro_precision": 0.10529081990189208,
+      "macro_recall": 0.25,
+      "macro_f1": 0.14817554240631164,
+      "per_class_metrics": {
+        "Normal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 1804
+        },
+        "Ball Fault": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 1801
+        },
+        "Inner Race Fault": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 1803
+        },
+        "Outer Race Fault": {
+          "precision": 0.42116327960756833,
+          "recall": 1.0,
+          "f1_score": 0.5927021696252466,
+          "support": 1803
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Normal",
+          "Ball Fault",
+          "Inner Race Fault",
+          "Outer Race Fault"
+        ],
+        "matrix": [
+          [
+            0,
+            1563,
+            0,
+            241
+          ],
+          [
+            1367,
+            0,
+            0,
+            434
+          ],
+          [
+            0,
+            0,
+            0,
+            1803
+          ],
+          [
+            0,
+            0,
+            0,
+            1803
+          ]
+        ]
+      }
+    },
+    "experiment_c_unsupervised_coral": {
+      "experiment_name": "Experiment C: Unsupervised CORAL Adaptation",
+      "total_windows": 7211,
+      "accuracy": 0.5230897240327278,
+      "balanced_accuracy": 0.5229759487065107,
+      "macro_precision": 0.49213136032937266,
+      "macro_recall": 0.5229759487065107,
+      "macro_f1": 0.502654103880018,
+      "per_class_metrics": {
+        "Normal": {
+          "precision": 0.6124273580688422,
+          "recall": 0.7594235033259423,
+          "f1_score": 0.678049987626825,
+          "support": 1804
+        },
+        "Ball Fault": {
+          "precision": 0.26925566343042073,
+          "recall": 0.23098278734036645,
+          "f1_score": 0.24865511057979678,
+          "support": 1801
+        },
+        "Inner Race Fault": {
+          "precision": 0.7144235407621804,
+          "recall": 0.8214087631724903,
+          "f1_score": 0.7641898864809081,
+          "support": 1803
+        },
+        "Outer Race Fault": {
+          "precision": 0.3724188790560472,
+          "recall": 0.28008874098724346,
+          "f1_score": 0.31972143083254195,
+          "support": 1803
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Normal",
+          "Ball Fault",
+          "Inner Race Fault",
+          "Outer Race Fault"
+        ],
+        "matrix": [
+          [
+            1370,
+            301,
+            132,
+            1
+          ],
+          [
+            399,
+            416,
+            439,
+            547
+          ],
+          [
+            9,
+            10,
+            1481,
+            303
+          ],
+          [
+            459,
+            818,
+            21,
+            505
+          ]
+        ]
+      }
+    },
+    "experiment_d_combined_order_coral": {
+      "experiment_name": "Experiment D: Combined Order-Scaling + CORAL",
+      "total_windows": 7211,
+      "accuracy": 0.4283733185411177,
+      "balanced_accuracy": 0.4282885526162935,
+      "macro_precision": 0.4168233565711564,
+      "macro_recall": 0.4282885526162935,
+      "macro_f1": 0.4198351358493948,
+      "per_class_metrics": {
+        "Normal": {
+          "precision": 0.42552182163187857,
+          "recall": 0.49722838137472286,
+          "f1_score": 0.45858895705521474,
+          "support": 1804
+        },
+        "Ball Fault": {
+          "precision": 0.17599502487562188,
+          "recall": 0.15713492504164353,
+          "f1_score": 0.166031094162511,
+          "support": 1801
+        },
+        "Inner Race Fault": {
+          "precision": 0.6103515625,
+          "recall": 0.6932889628397116,
+          "f1_score": 0.6491820306413918,
+          "support": 1803
+        },
+        "Outer Race Fault": {
+          "precision": 0.4554250172771251,
+          "recall": 0.36550194120909596,
+          "f1_score": 0.4055384615384615,
+          "support": 1803
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Normal",
+          "Ball Fault",
+          "Inner Race Fault",
+          "Outer Race Fault"
+        ],
+        "matrix": [
+          [
+            897,
+            695,
+            212,
+            0
+          ],
+          [
+            840,
+            283,
+            332,
+            346
+          ],
+          [
+            4,
+            107,
+            1250,
+            442
+          ],
+          [
+            367,
+            523,
+            254,
+            659
+          ]
+        ]
+      }
+    }
+  },
+  "comparative_summary": [
+    {
+      "experiment": "Exp A: Frozen Baseline (Hz)",
+      "accuracy_pct": 8.292885868811538,
+      "balanced_acc_pct": 8.300805339241187,
+      "macro_f1_pct": 4.040386698910494,
+      "adaptation_type": "None (Frozen Zero-Shot)"
+    },
+    {
+      "experiment": "Exp B: Nominal Order-Scaling",
+      "accuracy_pct": 25.00346692553044,
+      "balanced_acc_pct": 25.0,
+      "macro_f1_pct": 14.817554240631164,
+      "adaptation_type": "Speed-Normalized Frequency Grid"
+    },
+    {
+      "experiment": "Exp C: Unsupervised CORAL",
+      "accuracy_pct": 52.30897240327278,
+      "balanced_acc_pct": 52.29759487065107,
+      "macro_f1_pct": 50.2654103880018,
+      "adaptation_type": "Unsupervised Second-Order Covariance Alignment"
+    },
+    {
+      "experiment": "Exp D: Combined Order+CORAL",
+      "accuracy_pct": 42.837331854111774,
+      "balanced_acc_pct": 42.82885526162935,
+      "macro_f1_pct": 41.98351358493948,
+      "adaptation_type": "Order Scaling + Covariance Alignment"
+    }
+  ],
+  "key_findings": {
+    "coral_efficacy": "Unsupervised CORAL covariance alignment increased balanced accuracy from 8.30% to 52.30%, recovering healthy normal detection (75.9% recall) and inner race fault detection (82.1% recall) without using a single target label.",
+    "order_tracking_limitation": "Dynamic Computed Order Tracking is blocked by CWRU's lack of continuous angular pulse channels. Nominal speed scaling alone yields 25.00% accuracy due to persistent bearing geometry mismatch (Z=9 vs Z=8)."
+  }
+}

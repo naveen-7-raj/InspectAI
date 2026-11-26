@@ -1,0 +1,253 @@
+{
+  "experiment_name": "Phase 14 Domain-Shift Diagnostics & Explainability",
+  "reference_dataset": "CWRU Bearing Dataset (12 kHz Drive-End)",
+  "external_pilot_dataset": "Paderborn University Bearing Dataset (6203 Bearings, 12 kHz Resampled)",
+  "diagnostics_by_class": {
+    "Normal": {
+      "fault_class": "Normal",
+      "cwru_reference": {
+        "num_windows": 816,
+        "signal_metrics": {
+          "rms_mean_g": 0.05850781500339508,
+          "rms_std_g": 0.005159958265721798,
+          "peak_mean_g": 0.20886166393756866,
+          "peak_max_g": 0.30154770612716675,
+          "crest_factor_mean": 3.577659845352173,
+          "kurtosis_excess_mean": -0.04101034626364708,
+          "amplitude_min_g": -0.30154770612716675,
+          "amplitude_max_g": 0.27863311767578125,
+          "spectral_band_energy": {
+            "low_band_pct_20_500hz": 23.481103897094727,
+            "mid_band_pct_500_2000hz": 23.429363250732422,
+            "high_band_pct_2000_5000hz": 52.9588623046875
+          },
+          "envelope_spectral_entropy_mean": 6.505457725524902
+        },
+        "gradcam_metrics": {
+          "attribution_localization_ratio_top10pct": 0.16249779090285302,
+          "attribution_entropy_mean": 7.545397686958313,
+          "num_gradcam_samples_evaluated": 20
+        }
+      },
+      "paderborn_pilot": {
+        "bearing_id": "K001",
+        "source_file": "N15_M07_F10_K001_1.mat",
+        "num_windows": 90,
+        "signal_metrics": {
+          "rms_mean_g": 0.018554648384451866,
+          "rms_std_g": 0.0005294280708767474,
+          "peak_mean_g": 0.10111376643180847,
+          "peak_max_g": 0.14215894043445587,
+          "crest_factor_mean": 5.447824954986572,
+          "kurtosis_excess_mean": 2.365140676498413,
+          "amplitude_min_g": -0.12096380442380905,
+          "amplitude_max_g": 0.14215894043445587,
+          "spectral_band_energy": {
+            "low_band_pct_20_500hz": 5.850372791290283,
+            "mid_band_pct_500_2000hz": 23.37466049194336,
+            "high_band_pct_2000_5000hz": 70.44439697265625
+          },
+          "envelope_spectral_entropy_mean": 6.520765047073365
+        },
+        "gradcam_metrics": {
+          "attribution_localization_ratio_top10pct": 0.1705962635576725,
+          "attribution_entropy_mean": 7.570270633697509,
+          "num_gradcam_samples_evaluated": 20
+        }
+      },
+      "domain_shift_diagnostics": {
+        "rms_amplitude_ratio_pu_vs_cwru": 0.31713105697186966,
+        "kurtosis_excess_delta": 2.40615102276206,
+        "high_frequency_energy_shift_pct": 17.48553466796875,
+        "envelope_entropy_delta": 0.015307321548462482,
+        "gradcam_localization_delta": 0.008098472654819472
+      }
+    },
+    "Ball Fault": {
+      "fault_class": "Ball Fault",
+      "cwru_reference": {
+        "num_windows": 705,
+        "signal_metrics": {
+          "rms_mean_g": 0.13752666115760803,
+          "rms_std_g": 0.03520440682768822,
+          "peak_mean_g": 0.6814814805984497,
+          "peak_max_g": 2.2817564010620117,
+          "crest_factor_mean": 4.763868808746338,
+          "kurtosis_excess_mean": 2.2880001068115234,
+          "amplitude_min_g": -1.9637444019317627,
+          "amplitude_max_g": 2.2817564010620117,
+          "spectral_band_energy": {
+            "low_band_pct_20_500hz": 3.007399797439575,
+            "mid_band_pct_500_2000hz": 8.79285717010498,
+            "high_band_pct_2000_5000hz": 88.15990447998047
+          },
+          "envelope_spectral_entropy_mean": 6.277561597824096
+        },
+        "gradcam_metrics": {
+          "attribution_localization_ratio_top10pct": 0.32900228500366213,
+          "attribution_entropy_mean": 7.110436034202576,
+          "num_gradcam_samples_evaluated": 20
+        }
+      },
+      "paderborn_pilot": {
+        "bearing_id": "KB23",
+        "source_file": "N15_M07_F10_KB23_1.mat",
+        "num_windows": 90,
+        "signal_metrics": {
+          "rms_mean_g": 0.050228334963321686,
+          "rms_std_g": 0.002177148126065731,
+          "peak_mean_g": 0.2504328489303589,
+          "peak_max_g": 0.3125457465648651,
+          "crest_factor_mean": 4.979781150817871,
+          "kurtosis_excess_mean": 2.405984401702881,
+          "amplitude_min_g": -0.3125457465648651,
+          "amplitude_max_g": 0.3062576949596405,
+          "spectral_band_energy": {
+            "low_band_pct_20_500hz": 11.308648109436035,
+            "mid_band_pct_500_2000hz": 47.229000091552734,
+            "high_band_pct_2000_5000hz": 41.38022994995117
+          },
+          "envelope_spectral_entropy_mean": 6.380412817001343
+        },
+        "gradcam_metrics": {
+          "attribution_localization_ratio_top10pct": 0.0,
+          "attribution_entropy_mean": NaN,
+          "num_gradcam_samples_evaluated": 20
+        }
+      },
+      "domain_shift_diagnostics": {
+        "rms_amplitude_ratio_pu_vs_cwru": 0.3652261378868039,
+        "kurtosis_excess_delta": 0.11798429489135742,
+        "high_frequency_energy_shift_pct": -46.7796745300293,
+        "envelope_entropy_delta": 0.10285121917724638,
+        "gradcam_localization_delta": -0.32900228500366213
+      }
+    },
+    "Inner Race Fault": {
+      "fault_class": "Inner Race Fault",
+      "cwru_reference": {
+        "num_windows": 702,
+        "signal_metrics": {
+          "rms_mean_g": 0.33675557374954224,
+          "rms_std_g": 0.13941094279289246,
+          "peak_mean_g": 2.0819146633148193,
+          "peak_max_g": 3.7013909816741943,
+          "crest_factor_mean": 6.539831161499023,
+          "kurtosis_excess_mean": 8.5600004196167,
+          "amplitude_min_g": -3.4438819885253906,
+          "amplitude_max_g": 3.7013909816741943,
+          "spectral_band_energy": {
+            "low_band_pct_20_500hz": 2.047880172729492,
+            "mid_band_pct_500_2000hz": 7.938957214355469,
+            "high_band_pct_2000_5000hz": 89.9814224243164
+          },
+          "envelope_spectral_entropy_mean": 6.179542837142944
+        },
+        "gradcam_metrics": {
+          "attribution_localization_ratio_top10pct": 0.31806048154830935,
+          "attribution_entropy_mean": 6.948693370819091,
+          "num_gradcam_samples_evaluated": 20
+        }
+      },
+      "paderborn_pilot": {
+        "bearing_id": "KI04",
+        "source_file": "N15_M07_F10_KI04_1.mat",
+        "num_windows": 90,
+        "signal_metrics": {
+          "rms_mean_g": 0.0253751277923584,
+          "rms_std_g": 0.0013451181584969163,
+          "peak_mean_g": 0.12161959707736969,
+          "peak_max_g": 0.14233988523483276,
+          "crest_factor_mean": 4.794233322143555,
+          "kurtosis_excess_mean": 1.2837975025177002,
+          "amplitude_min_g": -0.13607612252235413,
+          "amplitude_max_g": 0.14233988523483276,
+          "spectral_band_energy": {
+            "low_band_pct_20_500hz": 1.1194629669189453,
+            "mid_band_pct_500_2000hz": 24.784664154052734,
+            "high_band_pct_2000_5000hz": 73.9771499633789
+          },
+          "envelope_spectral_entropy_mean": 6.390622520446778
+        },
+        "gradcam_metrics": {
+          "attribution_localization_ratio_top10pct": 0.0,
+          "attribution_entropy_mean": NaN,
+          "num_gradcam_samples_evaluated": 20
+        }
+      },
+      "domain_shift_diagnostics": {
+        "rms_amplitude_ratio_pu_vs_cwru": 0.07535176554408919,
+        "kurtosis_excess_delta": -7.276202917098999,
+        "high_frequency_energy_shift_pct": -16.0042724609375,
+        "envelope_entropy_delta": 0.21107968330383375,
+        "gradcam_localization_delta": -0.31806048154830935
+      }
+    },
+    "Outer Race Fault": {
+      "fault_class": "Outer Race Fault",
+      "cwru_reference": {
+        "num_windows": 705,
+        "signal_metrics": {
+          "rms_mean_g": 0.44912776350975037,
+          "rms_std_g": 0.2516423761844635,
+          "peak_mean_g": 2.849586009979248,
+          "peak_max_g": 6.640603065490723,
+          "crest_factor_mean": 5.649815082550049,
+          "kurtosis_excess_mean": 7.2485032081604,
+          "amplitude_min_g": -6.523713111877441,
+          "amplitude_max_g": 6.640603065490723,
+          "spectral_band_energy": {
+            "low_band_pct_20_500hz": 0.5057728886604309,
+            "mid_band_pct_500_2000hz": 4.091586112976074,
+            "high_band_pct_2000_5000hz": 95.37000274658203
+          },
+          "envelope_spectral_entropy_mean": 5.45113018989563
+        },
+        "gradcam_metrics": {
+          "attribution_localization_ratio_top10pct": 0.19041191339492797,
+          "attribution_entropy_mean": 7.487013936042786,
+          "num_gradcam_samples_evaluated": 20
+        }
+      },
+      "paderborn_pilot": {
+        "bearing_id": "KA04",
+        "source_file": "N15_M07_F10_KA04_1.mat",
+        "num_windows": 90,
+        "signal_metrics": {
+          "rms_mean_g": 0.03622749447822571,
+          "rms_std_g": 0.000715916627086699,
+          "peak_mean_g": 0.16725857555866241,
+          "peak_max_g": 0.18596509099006653,
+          "crest_factor_mean": 4.618911266326904,
+          "kurtosis_excess_mean": 2.8147809505462646,
+          "amplitude_min_g": -0.18596509099006653,
+          "amplitude_max_g": 0.1543559581041336,
+          "spectral_band_energy": {
+            "low_band_pct_20_500hz": 8.122279167175293,
+            "mid_band_pct_500_2000hz": 51.54973220825195,
+            "high_band_pct_2000_5000hz": 40.2664909362793
+          },
+          "envelope_spectral_entropy_mean": 6.32541750907898
+        },
+        "gradcam_metrics": {
+          "attribution_localization_ratio_top10pct": 0.14546365886926652,
+          "attribution_entropy_mean": 7.586061978340149,
+          "num_gradcam_samples_evaluated": 20
+        }
+      },
+      "domain_shift_diagnostics": {
+        "rms_amplitude_ratio_pu_vs_cwru": 0.08066188869844904,
+        "kurtosis_excess_delta": -4.433722257614136,
+        "high_frequency_energy_shift_pct": -55.103511810302734,
+        "envelope_entropy_delta": 0.8742873191833498,
+        "gradcam_localization_delta": -0.04494825452566145
+      }
+    }
+  },
+  "key_findings": {
+    "amplitude_scale_shift": "Paderborn signals exhibit distinct physical amplitudes depending on radial load and fault geometry.",
+    "spectral_energy_distribution": "High-frequency resonance content differs between CWRU and Paderborn test rigs due to differing housing stiffness and transducer mountings.",
+    "gradcam_attribution_fidelity": "Grad-CAM heatmaps highlight high-activation transient burst regions without assuming causal truth."
+  },
+  "timestamp_utc": "2026-11-26T04:40:52Z"
+}

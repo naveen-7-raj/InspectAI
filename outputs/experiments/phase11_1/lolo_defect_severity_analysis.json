@@ -1,0 +1,389 @@
+{
+  "fold_1": {
+    "val_load_hp": 1,
+    "train_severity_matrix": [
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 3,
+        "windows": 704
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 2,
+        "windows": 470
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 3,
+        "windows": 705
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 3,
+        "windows": 705
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 2,
+        "windows": 468
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 3,
+        "windows": 704
+      },
+      {
+        "fault_class": "Normal",
+        "fault_size_inches": 0.0,
+        "recordings": 2,
+        "windows": 467
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 3,
+        "windows": 705
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 2,
+        "windows": 469
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 3,
+        "windows": 706
+      }
+    ],
+    "val_severity_matrix": [
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 1,
+        "windows": 235
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 1,
+        "windows": 235
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Normal",
+        "fault_size_inches": 0.0,
+        "recordings": 1,
+        "windows": 233
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 1,
+        "windows": 236
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 1,
+        "windows": 235
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 1,
+        "windows": 235
+      }
+    ],
+    "all_three_severities_in_train": true,
+    "all_three_severities_in_val": true
+  },
+  "fold_2": {
+    "val_load_hp": 2,
+    "train_severity_matrix": [
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 3,
+        "windows": 704
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 2,
+        "windows": 470
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 3,
+        "windows": 704
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 3,
+        "windows": 705
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 2,
+        "windows": 468
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 3,
+        "windows": 704
+      },
+      {
+        "fault_class": "Normal",
+        "fault_size_inches": 0.0,
+        "recordings": 2,
+        "windows": 467
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 3,
+        "windows": 707
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 2,
+        "windows": 470
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 3,
+        "windows": 706
+      }
+    ],
+    "val_severity_matrix": [
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 1,
+        "windows": 235
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 1,
+        "windows": 235
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 1,
+        "windows": 235
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Normal",
+        "fault_size_inches": 0.0,
+        "recordings": 1,
+        "windows": 233
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 1,
+        "windows": 235
+      }
+    ],
+    "all_three_severities_in_train": true,
+    "all_three_severities_in_val": true
+  },
+  "fold_3": {
+    "val_load_hp": 3,
+    "train_severity_matrix": [
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 3,
+        "windows": 704
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 2,
+        "windows": 470
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 3,
+        "windows": 704
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 3,
+        "windows": 703
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 2,
+        "windows": 468
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 3,
+        "windows": 703
+      },
+      {
+        "fault_class": "Normal",
+        "fault_size_inches": 0.0,
+        "recordings": 2,
+        "windows": 466
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 3,
+        "windows": 705
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 2,
+        "windows": 469
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 3,
+        "windows": 706
+      }
+    ],
+    "val_severity_matrix": [
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 1,
+        "windows": 235
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 1,
+        "windows": 235
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 1,
+        "windows": 237
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 1,
+        "windows": 235
+      },
+      {
+        "fault_class": "Normal",
+        "fault_size_inches": 0.0,
+        "recordings": 1,
+        "windows": 234
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.007,
+        "recordings": 1,
+        "windows": 236
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.014,
+        "recordings": 1,
+        "windows": 235
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.021,
+        "recordings": 1,
+        "windows": 235
+      }
+    ],
+    "all_three_severities_in_train": true,
+    "all_three_severities_in_val": true
+  }
+}

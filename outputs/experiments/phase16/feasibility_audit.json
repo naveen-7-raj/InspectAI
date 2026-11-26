@@ -1,0 +1,31 @@
+{
+  "paderborn_speed_channel_audit": {
+    "channel_name": "speed",
+    "sample_rate_hz": 4000.0,
+    "sample_count": 16001,
+    "mean_rpm": 1499.5858154296875,
+    "min_rpm": 1499.3323974609375,
+    "max_rpm": 1499.8109130859375,
+    "signal_nature": "Low-rate (4 kHz) analog/PLC speed estimate, NOT raw encoder pulse train."
+  },
+  "cwru_speed_metadata_audit": {
+    "channels_present": [
+      "X100_DE_time",
+      "X100_FE_time",
+      "X100RPM"
+    ],
+    "rpm_field": "X100RPM",
+    "rpm_value": 1725.0,
+    "has_continuous_tachometer": false,
+    "has_optical_encoder_pulses": false,
+    "has_keyphasor": false,
+    "signal_nature": "Single scalar operating speed, NO continuous angle reference."
+  },
+  "feasibility_assessment": {
+    "dynamic_computed_order_tracking_cot_feasible": false,
+    "cot_infeasibility_rationale": "Genuine dynamic Computed Order Tracking (COT) requires synchronously recorded optical encoder pulses or a 1/rev keyphasor pulse train to reconstruct instantaneous shaft angle theta(t) via zero-crossing interpolation. CWRU provides only a single scalar nominal RPM (e.g. 1797). Simulating synthetic pulses is strictly prohibited by scientific integrity rules.",
+    "nominal_order_scaling_feasible": true,
+    "nominal_order_scaling_rationale": "Speed-normalized order-scaling (order = f / f_shaft_nominal) is technically feasible by re-interpolating the envelope spectrum onto a normalized shaft-order grid (orders 0 to 200). This normalizes for shaft rotational frequency differences between CWRU (29.95 Hz) and Paderborn (25.00 Hz).",
+    "geometric_order_limitation": "Even in the normalized order domain, defect orders differ because CWRU 6205 has 9 balls (BPFO = 3.585 orders, BPFI = 5.415 orders) while Paderborn 6203 has 8 balls (BPFO = 3.053 orders, BPFI = 4.947 orders)."
+  }
+}

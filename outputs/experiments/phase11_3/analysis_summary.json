@@ -1,0 +1,26 @@
+{
+  "phase": "11.3",
+  "title": "Cross-Load Failure Analysis & Root-Cause Investigation",
+  "worst_performing_load": {
+    "load_hp": 3,
+    "accuracy": 0.9736,
+    "macro_f1": 0.978,
+    "misclassified_windows": 62,
+    "root_cause": "Maximum motor torque and rotational slip (1728 RPM) in Fold 3 combined with premature inner-validation early stopping (E*=2) caused intermediate Inner Race fault (Recording 172) to be partially confused with Ball Fault."
+  },
+  "worst_performing_class": {
+    "class_name": "Inner Race Fault",
+    "pooled_recall": 0.9706,
+    "pooled_f1": 0.9851,
+    "misclassified_recording": "172.mat",
+    "misclassified_class_target": "Ball Fault"
+  },
+  "eliminated_failure_modes": {
+    "inner_race_vs_outer_race": "The severe confounding identified in Phase 10.5 (where 0.021\" Inner Race was 100% misclassified as Outer Race) is 100% ELIMINATED in multi-load training. Outer Race precision and recall are 100.00% across all loads."
+  },
+  "gradcam_insights": {
+    "observation": "Grad-CAM heatmaps show that correct predictions produce localized attribution peaks aligned with periodic mechanical impact bursts. In the misclassified windows of 172.mat, attributions are more diffuse and focus on low-frequency modulation envelopes resembling ball-spin frequency modulations.",
+    "epistemic_caveat": "Grad-CAM reflects model attribution, not physical causation."
+  },
+  "execution_duration_sec": 4.27
+}

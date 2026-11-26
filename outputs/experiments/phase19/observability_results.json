@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "Phase 19 Observability & Prometheus Metrics Validation",
+    "timestamp": "2026-11-26T06:32:36Z",
+    "total_windows_profiled": 200
+  },
+  "metrics_endpoint": {
+    "path": "/metrics",
+    "status_code": 200,
+    "content_type": "text/plain; version=1.0.0; charset=utf-8",
+    "exposition_bytes": 4614,
+    "expected_metrics_present": {
+      "inspectai_predictions_total": true,
+      "inspectai_inference_latency_seconds": true,
+      "inspectai_calibration_total": true,
+      "inspectai_adapter_condition_number": true,
+      "inspectai_domain_drift_frobenius": true,
+      "inspectai_active_websockets": true
+    },
+    "all_metrics_registered": true
+  },
+  "latency_profile_ms": {
+    "baseline_mean_ms": 23.094,
+    "baseline_p95_ms": 30.696,
+    "baseline_p99_ms": 39.99,
+    "adaptive_mean_ms": 23.429,
+    "adaptive_p95_ms": 29.122,
+    "adaptive_p99_ms": 53.375,
+    "adaptive_overhead_ms": 0.335
+  },
+  "sample_metrics_snippet": [
+    "inspectai_predictions_total{inference_mode=\"baseline\",is_adapted=\"false\",predicted_class=\"Normal\"} 100.0",
+    "inspectai_predictions_total{inference_mode=\"adaptive\",is_adapted=\"true\",predicted_class=\"Normal\"} 100.0",
+    "inspectai_predictions_created{inference_mode=\"baseline\",is_adapted=\"false\",predicted_class=\"Normal\"} 1.7956747515484622e+09",
+    "inspectai_predictions_created{inference_mode=\"adaptive\",is_adapted=\"true\",predicted_class=\"Normal\"} 1.7956747515685806e+09",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"0.001\"} 0.0",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"0.002\"} 0.0",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"0.005\"} 0.0",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"0.01\"} 25.0",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"0.02\"} 98.0",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"0.05\"} 99.0",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"0.1\"} 100.0",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"0.25\"} 100.0",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"0.5\"} 100.0",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"1.0\"} 100.0",
+    "inspectai_inference_latency_seconds_bucket{inference_mode=\"baseline\",le=\"+Inf\"} 100.0"
+  ]
+}

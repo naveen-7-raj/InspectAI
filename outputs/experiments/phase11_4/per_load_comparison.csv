@@ -1,0 +1,13 @@
+experiment,held_out_load_hp,accuracy,balanced_accuracy,macro_f1,rec_172_acc,rec_172_errs
+baseline,1,1.0,1.0,1.0,,
+baseline,2,1.0,1.0,1.0,,
+baseline,3,0.9672,0.9727,0.9726,0.6709,77.0
+experiment_a,1,0.9983,0.9986,0.9986,,
+experiment_a,2,1.0,1.0,1.0,,
+experiment_a,3,0.9306,0.9423,0.9414,0.3034,163.0
+experiment_b,1,1.0,1.0,1.0,,
+experiment_b,2,0.9932,0.9943,0.9943,,
+experiment_b,3,1.0,1.0,1.0,1.0,0.0
+experiment_c,1,1.0,1.0,1.0,,
+experiment_c,2,1.0,1.0,1.0,,
+experiment_c,3,0.9672,0.9727,0.9726,0.6709,77.0

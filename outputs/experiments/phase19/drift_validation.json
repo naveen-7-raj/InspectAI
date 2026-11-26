@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "title": "Phase 19 Safe Drift Detection & Recalibration Validation",
+    "timestamp": "2026-11-26T06:32:42Z"
+  },
+  "scenarios": {
+    "stationary_normal": {
+      "description": "Continuous stationary telemetry matching initial calibration.",
+      "drift_distance": 0.24172808900825143,
+      "state": "STABLE",
+      "actions_observed": [
+        "NONE"
+      ],
+      "recalibrations_triggered": 0,
+      "passed": true
+    },
+    "operating_condition_shift": {
+      "description": "Rig operating load shift. No defect detected. Shadow recalibration expected.",
+      "drift_distance": 0.09168130858861913,
+      "state": "STABLE",
+      "actions_observed": [
+        "COOLDOWN_ACTIVE",
+        "SHADOW_PROMOTED",
+        "NONE"
+      ],
+      "recalibrations_triggered": 3,
+      "shadow_promoted": true,
+      "passed": true
+    },
+    "fault_emergence_safety_guardrail": {
+      "description": "Impulsive fault emergence with high kurtosis and defect posterior. STRICT SAFETY CHECK: Adaptation MUST be suppressed so fault indications are NOT adapted away.",
+      "recent_kurtosis": 103.46,
+      "recent_fault_prob": 0.85,
+      "is_fault_suspect": true,
+      "state": "FAULT_SUSPECT",
+      "actions_observed": [
+        "SUPPRESSED_FAULT_SUSPECT",
+        "NONE"
+      ],
+      "recalibrations_during_fault": 0,
+      "suppression_alert_triggered": true,
+      "passed": true
+    },
+    "cooldown_enforcement": {
+      "description": "Verifying minimum cooldown interval prevents fluttering recalibrations.",
+      "cooldown_active_observed": true,
+      "cooldown_windows_configured": 30,
+      "passed": true
+    },
+    "rollback_and_fallback": {
+      "description": "Rolling back active adapter to previous valid instance upon instability.",
+      "rollback_success": true,
+      "rollback_count": 1,
+      "state_after_rollback": "STABLE",
+      "passed": true
+    }
+  },
+  "summary": {
+    "all_safety_checks_passed": true,
+    "fault_adapted_away": false,
+    "safety_rule_enforced": "Never automatically adapt away a potential fault indication."
+  }
+}

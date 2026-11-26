@@ -1,0 +1,842 @@
+{
+  "K001": {
+    "bearing_id": "K001",
+    "total_files_found": 80,
+    "sample_inspections": [
+      {
+        "filename": "N15_M07_F10_K001_1.mat",
+        "root_key": "N15_M07_F10_K001_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256001
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256001
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256001
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256001,
+          "duration_seconds": 4.000015625,
+          "min_val": -4.9285888671875,
+          "max_val": 4.3914794921875,
+          "mean_val": -0.018842242658138275,
+          "std_val": 0.40619802474975586,
+          "rms_val": 0.4066348075866699,
+          "peak_val": 4.9285888671875,
+          "crest_factor": 12.120430061641299,
+          "kurtosis": 13.100814819335938
+        }
+      },
+      {
+        "filename": "N15_M01_F10_K001_1.mat",
+        "root_key": "N15_M01_F10_K001_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16005
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256070
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256070
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16005
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16005
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256070
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256070,
+          "duration_seconds": 4.00109375,
+          "min_val": -4.96826171875,
+          "max_val": 4.8980712890625,
+          "mean_val": -0.01404251903295517,
+          "std_val": 0.3960023522377014,
+          "rms_val": 0.39625126123428345,
+          "peak_val": 4.96826171875,
+          "crest_factor": 12.53815969668528,
+          "kurtosis": 14.915305137634277
+        }
+      },
+      {
+        "filename": "N09_M07_F10_K001_1.mat",
+        "root_key": "N09_M07_F10_K001_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16008
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256823
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256823
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16008
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16008
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256823
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256823,
+          "duration_seconds": 4.012859375,
+          "min_val": -4.8797607421875,
+          "max_val": 4.6905517578125,
+          "mean_val": -0.015453606843948364,
+          "std_val": 0.3672950863838196,
+          "rms_val": 0.3676200211048126,
+          "peak_val": 4.8797607421875,
+          "crest_factor": 13.273925056592537,
+          "kurtosis": 20.16506576538086
+        }
+      }
+    ]
+  },
+  "KA04": {
+    "bearing_id": "KA04",
+    "total_files_found": 80,
+    "sample_inspections": [
+      {
+        "filename": "N15_M07_F10_KA04_1.mat",
+        "root_key": "N15_M07_F10_KA04_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256004
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256004
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256004
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256004,
+          "duration_seconds": 4.0000625,
+          "min_val": -3.2196044921875,
+          "max_val": 2.3681640625,
+          "mean_val": 0.04299987107515335,
+          "std_val": 0.47534433007240295,
+          "rms_val": 0.477285236120224,
+          "peak_val": 3.2196044921875,
+          "crest_factor": 6.745661045169851,
+          "kurtosis": 5.605639934539795
+        }
+      },
+      {
+        "filename": "N15_M01_F10_KA04_1.mat",
+        "root_key": "N15_M01_F10_KA04_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256332
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256332
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256332
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256332,
+          "duration_seconds": 4.0051875,
+          "min_val": -3.863525390625,
+          "max_val": 3.90625,
+          "mean_val": 0.042415961623191833,
+          "std_val": 0.5292576551437378,
+          "rms_val": 0.5309545993804932,
+          "peak_val": 3.90625,
+          "crest_factor": 7.3570319025156055,
+          "kurtosis": 6.702798366546631
+        }
+      },
+      {
+        "filename": "N09_M07_F10_KA04_1.mat",
+        "root_key": "N09_M07_F10_KA04_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256001
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256001
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256001
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256001,
+          "duration_seconds": 4.000015625,
+          "min_val": -1.8890380859375,
+          "max_val": 1.6265869140625,
+          "mean_val": 0.04179368168115616,
+          "std_val": 0.2130652219057083,
+          "rms_val": 0.2171255350112915,
+          "peak_val": 1.8890380859375,
+          "crest_factor": 8.700211142080319,
+          "kurtosis": 8.955399513244629
+        }
+      }
+    ]
+  },
+  "KI04": {
+    "bearing_id": "KI04",
+    "total_files_found": 80,
+    "sample_inspections": [
+      {
+        "filename": "N15_M07_F10_KI04_1.mat",
+        "root_key": "N15_M07_F10_KI04_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256001
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256001
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256001
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256001,
+          "duration_seconds": 4.000015625,
+          "min_val": -3.2562255859375,
+          "max_val": 2.6519775390625,
+          "mean_val": -0.015638278797268867,
+          "std_val": 0.35187530517578125,
+          "rms_val": 0.35222262144088745,
+          "peak_val": 3.2562255859375,
+          "crest_factor": 9.244793761879505,
+          "kurtosis": 5.197873115539551
+        }
+      },
+      {
+        "filename": "N15_M01_F10_KI04_1.mat",
+        "root_key": "N15_M01_F10_KI04_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16006
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256732
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256732
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16006
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16006
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256732
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256732,
+          "duration_seconds": 4.0114375,
+          "min_val": -3.8543701171875,
+          "max_val": 4.0008544921875,
+          "mean_val": -0.015296600759029388,
+          "std_val": 0.3590366244316101,
+          "rms_val": 0.3593623638153076,
+          "peak_val": 4.0008544921875,
+          "crest_factor": 11.133203650985783,
+          "kurtosis": 5.562283992767334
+        }
+      },
+      {
+        "filename": "N09_M07_F10_KI04_1.mat",
+        "root_key": "N09_M07_F10_KI04_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16006
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256087
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256087
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16006
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16006
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256087
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256087,
+          "duration_seconds": 4.001359375,
+          "min_val": -3.155517578125,
+          "max_val": 3.0975341796875,
+          "mean_val": -0.013203401118516922,
+          "std_val": 0.20835882425308228,
+          "rms_val": 0.20877674221992493,
+          "peak_val": 3.155517578125,
+          "crest_factor": 15.114314906101162,
+          "kurtosis": 16.450458526611328
+        }
+      }
+    ]
+  },
+  "KB23": {
+    "bearing_id": "KB23",
+    "total_files_found": 80,
+    "sample_inspections": [
+      {
+        "filename": "N15_M07_F10_KB23_1.mat",
+        "root_key": "N15_M07_F10_KB23_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256001
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256001
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256001
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256001,
+          "duration_seconds": 4.000015625,
+          "min_val": -5.99365234375,
+          "max_val": 5.084228515625,
+          "mean_val": -0.01920892857015133,
+          "std_val": 0.6613038778305054,
+          "rms_val": 0.6615827679634094,
+          "peak_val": 5.99365234375,
+          "crest_factor": 9.059565247754218,
+          "kurtosis": 5.686775207519531
+        }
+      },
+      {
+        "filename": "N15_M01_F10_KB23_1.mat",
+        "root_key": "N15_M01_F10_KB23_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256000
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256000
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256000
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256000,
+          "duration_seconds": 4.0,
+          "min_val": -4.571533203125,
+          "max_val": 5.194091796875,
+          "mean_val": -0.015580915845930576,
+          "std_val": 0.5919502377510071,
+          "rms_val": 0.5921552181243896,
+          "peak_val": 5.194091796875,
+          "crest_factor": 8.771503737840705,
+          "kurtosis": 5.750685691833496
+        }
+      },
+      {
+        "filename": "N09_M07_F10_KB23_1.mat",
+        "root_key": "N09_M07_F10_KB23_1",
+        "root_fields": [
+          "Description",
+          "Info",
+          "X",
+          "Y"
+        ],
+        "sampling_rate_hz": 64000.0,
+        "vibration_channel_index": 6,
+        "channels": [
+          {
+            "channel_index": 0,
+            "name": "force",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 1,
+            "name": "phase_current_1",
+            "unit": "[]",
+            "length": 256001
+          },
+          {
+            "channel_index": 2,
+            "name": "phase_current_2",
+            "unit": "[]",
+            "length": 256001
+          },
+          {
+            "channel_index": 3,
+            "name": "speed",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 4,
+            "name": "temp_2_bearing_module",
+            "unit": "[]",
+            "length": 5
+          },
+          {
+            "channel_index": 5,
+            "name": "torque",
+            "unit": "[]",
+            "length": 16001
+          },
+          {
+            "channel_index": 6,
+            "name": "vibration_1",
+            "unit": "[]",
+            "length": 256001
+          }
+        ],
+        "signal_metrics": {
+          "num_samples": 256001,
+          "duration_seconds": 4.000015625,
+          "min_val": -3.6651611328125,
+          "max_val": 3.564453125,
+          "mean_val": -0.01472112163901329,
+          "std_val": 0.2904459238052368,
+          "rms_val": 0.2908187210559845,
+          "peak_val": 3.6651611328125,
+          "crest_factor": 12.602906007821527,
+          "kurtosis": 11.57478141784668
+        }
+      }
+    ]
+  }
+}

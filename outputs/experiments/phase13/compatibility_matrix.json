@@ -1,0 +1,152 @@
+{
+  "phase": "13.2",
+  "timestamp_utc": "2026-11-24T13:42:00Z",
+  "baseline_system": {
+    "name": "InspectAI SpectralFusionCNN",
+    "reference_dataset": "CWRU Bearing Data Center",
+    "sampling_rate_hz": 12000,
+    "input_waveform_length": 2048,
+    "input_spectral_bins": 1025,
+    "supported_classes": [
+      "Normal",
+      "Ball Fault",
+      "Inner Race Fault",
+      "Outer Race Fault"
+    ],
+    "nominal_rpm": 1772,
+    "bearing_type": "SKF 6205-2RS JEM",
+    "kinematic_orders": {
+      "bpfo": 3.585,
+      "bpfi": 5.415,
+      "bsf": 2.357,
+      "ftf": 0.398
+    }
+  },
+  "candidates_evaluated": {
+    "Paderborn_University": {
+      "institution": "Paderborn University (KAt), Germany",
+      "official_url": "https://mb.uni-paderborn.de/kat/forschung/bearing-datacenter",
+      "license": "CC BY-NC 4.0",
+      "bearing_model": "SKF 6203",
+      "native_sampling_rate_hz": 64000,
+      "resampling_factor_to_12khz": "3/16 (0.1875)",
+      "operating_speeds_rpm": [
+        1500,
+        900
+      ],
+      "kinematic_orders": {
+        "bpfo": 3.053,
+        "bpfi": 4.947,
+        "bsf": 1.993,
+        "ftf": 0.382
+      },
+      "class_support": {
+        "Normal": true,
+        "Inner Race Fault": true,
+        "Outer Race Fault": true,
+        "Ball Fault": true
+      },
+      "common_classes_count": 4,
+      "download_size_full_gb": 40.0,
+      "download_size_modular_subset_mb": 75.0,
+      "compatibility_verdict": "SELECTED_PRIMARY",
+      "suitability_score": 9.5,
+      "justification": "Matches all 4 InspectAI classes, formal university provenance under CC BY-NC 4.0, authentic SKF 6203 geometry close to CWRU 6205, high-resolution 64 kHz sampling, modular per-bearing acquisition (~15-20 MB/bearing)."
+    },
+    "MFPT": {
+      "institution": "Society for Machinery Failure Prevention Technology, USA",
+      "official_url": "https://doi.org/10.6084/m9.figshare.28606802",
+      "license": "CC BY 4.0 (Open Access via Figshare)",
+      "bearing_model": "Nice #1012",
+      "native_sampling_rate_hz": [
+        48828,
+        97656
+      ],
+      "resampling_factor_to_12khz": "1000/4069 (0.2458)",
+      "operating_speeds_rpm": [
+        1000
+      ],
+      "kinematic_orders": {
+        "bpfo": 3.245,
+        "bpfi": 4.755,
+        "bsf": 2.551,
+        "ftf": 0.406
+      },
+      "class_support": {
+        "Normal": true,
+        "Inner Race Fault": true,
+        "Outer Race Fault": true,
+        "Ball Fault": false
+      },
+      "common_classes_count": 3,
+      "download_size_full_gb": 0.02,
+      "download_size_modular_subset_mb": 20.0,
+      "compatibility_verdict": "SELECTED_SECONDARY_RESTRICTED",
+      "suitability_score": 8.0,
+      "justification": "Clean MATLAB files, open Figshare DOI, but strictly lacks Ball Fault class; suitable only for restricted 3-class transfer evaluation."
+    },
+    "Southeast_University": {
+      "institution": "Southeast University, China",
+      "official_url": "https://github.com/cathysiyu/Mechanical-datasets",
+      "license": "MIT (GitHub)",
+      "bearing_model": "ER-16K",
+      "native_sampling_rate_hz": 5120,
+      "operating_speeds_rpm": [
+        1200,
+        1800
+      ],
+      "class_support": {
+        "Normal": true,
+        "Inner Race Fault": true,
+        "Outer Race Fault": true,
+        "Ball Fault": true
+      },
+      "common_classes_count": 4,
+      "compatibility_verdict": "REJECTED",
+      "suitability_score": 3.0,
+      "rejection_reason": "Native sampling rate of 5,120 Hz is lower than InspectAI's 12,000 Hz input requirement; Nyquist cutoff of 2,560 Hz creates physical frequency void across InspectAI envelope spectrum."
+    },
+    "Jiangnan_University": {
+      "institution": "Jiangnan University, China",
+      "official_url": "Mirrors only (Original lab portal offline)",
+      "license": "Unspecified / No formal open license",
+      "bearing_model": "Unspecified deep-groove ball bearing",
+      "native_sampling_rate_hz": 50000,
+      "operating_speeds_rpm": [
+        600,
+        800,
+        1000
+      ],
+      "class_support": {
+        "Normal": true,
+        "Inner Race Fault": true,
+        "Outer Race Fault": true,
+        "Ball Fault": true
+      },
+      "common_classes_count": 4,
+      "compatibility_verdict": "REJECTED",
+      "suitability_score": 4.5,
+      "rejection_reason": "Lack of permanent authoritative institutional hosting and explicit open licensing terms."
+    },
+    "IMS_Cincinnati": {
+      "institution": "Univ of Cincinnati / NASA Ames PCoE",
+      "official_url": "https://data.nasa.gov",
+      "license": "Public Domain",
+      "bearing_model": "Rexnord ZA-2115 (Double row roller)",
+      "native_sampling_rate_hz": 20480,
+      "operating_speeds_rpm": [
+        2000
+      ],
+      "class_support": {
+        "Normal": true,
+        "Inner Race Fault": true,
+        "Outer Race Fault": true,
+        "Ball Fault": true
+      },
+      "common_classes_count": 4,
+      "compatibility_verdict": "REJECTED",
+      "suitability_score": 4.0,
+      "rejection_reason": "Continuous run-to-failure fatigue test of 4 simultaneous bearings sharing a single shaft; not compatible with single-bearing discrete steady-state classification."
+    }
+  }
+}

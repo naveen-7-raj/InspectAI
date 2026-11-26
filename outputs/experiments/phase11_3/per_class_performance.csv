@@ -1,0 +1,13 @@
+fold_id,held_out_load_hp,fault_class,precision,recall,f1,support
+1,1,Normal,1.0,1.0,1.0,233
+1,1,Ball Fault,1.0,1.0,1.0,703
+1,1,Inner Race Fault,1.0,1.0,1.0,703
+1,1,Outer Race Fault,1.0,1.0,1.0,706
+2,2,Normal,1.0,1.0,1.0,233
+2,2,Ball Fault,1.0,1.0,1.0,704
+2,2,Inner Race Fault,1.0,1.0,1.0,703
+2,2,Outer Race Fault,1.0,1.0,1.0,703
+3,3,Normal,1.0,1.0,1.0,234
+3,3,Ball Fault,0.9191,1.0,0.9578,704
+3,3,Inner Race Fault,1.0,0.9122,0.9541,706
+3,3,Outer Race Fault,1.0,1.0,1.0,706

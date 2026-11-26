@@ -1,0 +1,51 @@
+{
+  "status": "VERIFIED_DEPLOYMENT_READY",
+  "timestamp_utc": "2026-11-24T13:17:49Z",
+  "model_architecture": "SpectralFusionCNN",
+  "trainable_parameters": 89604,
+  "release_directory": "./models\\final",
+  "artifacts_verified": {
+    "checkpoint": {
+      "path": "./models\\final\\inspectai_final_model.pth",
+      "sha256": "a612eb9ebcc758dcd078f975414eec2c9409904b30de5fb24588c19990e7542e",
+      "bytes": 376857
+    },
+    "waveform_normalizer": {
+      "path": "./models\\final\\inspectai_final_normalizer.json",
+      "sha256": "2b3db205cd2d95ead19c8ec5d14e4b2d9a8e6133ae0f0aef05e7c2bf0f1db3c1",
+      "bytes": 194
+    },
+    "spectral_normalizer": {
+      "path": "./models\\final\\inspectai_final_spectral_normalizer.json",
+      "sha256": "ed39cd3615212d83c24e66a49c46fc0c07e4e9f33320e95a3cc0d3a6567a3fac",
+      "bytes": 56495
+    },
+    "config": {
+      "path": "./models\\final\\inspectai_final_config.json",
+      "bytes": 2532
+    },
+    "model_card": {
+      "path": "./models\\final\\inspectai_model_card.json",
+      "bytes": 3011
+    }
+  },
+  "inference_contracts": {
+    "single_window_prediction": "PASSED",
+    "batch_prediction": "PASSED",
+    "gradcam_explainability": "PASSED",
+    "finite_probabilities": "PASSED",
+    "class_count": 4
+  },
+  "performance_benchmark": {
+    "device": "CPU",
+    "single_window_median_ms": 2.5589,
+    "single_window_p95_ms": 4.2187,
+    "single_window_mean_ms": 2.745,
+    "estimated_throughput_windows_per_second": 391
+  },
+  "production_isolation": {
+    "production_checkpoint_preserved": true,
+    "production_checkpoint_bytes": 1302280
+  },
+  "audit_duration_sec": 0.7
+}

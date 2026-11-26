@@ -1,0 +1,31 @@
+fold_id,held_out_load_hp,fault_class,fault_size_inches,windows,correct,accuracy
+1,1,Ball Fault,0.007,234,234,1.0
+1,1,Ball Fault,0.014,235,235,1.0
+1,1,Ball Fault,0.021,234,234,1.0
+1,1,Inner Race Fault,0.007,235,235,1.0
+1,1,Inner Race Fault,0.014,234,234,1.0
+1,1,Inner Race Fault,0.021,234,234,1.0
+1,1,Normal,0.0,233,233,1.0
+1,1,Outer Race Fault,0.007,236,236,1.0
+1,1,Outer Race Fault,0.014,235,235,1.0
+1,1,Outer Race Fault,0.021,235,235,1.0
+2,2,Ball Fault,0.007,234,234,1.0
+2,2,Ball Fault,0.014,235,235,1.0
+2,2,Ball Fault,0.021,235,235,1.0
+2,2,Inner Race Fault,0.007,235,235,1.0
+2,2,Inner Race Fault,0.014,234,234,1.0
+2,2,Inner Race Fault,0.021,234,234,1.0
+2,2,Normal,0.0,233,233,1.0
+2,2,Outer Race Fault,0.007,234,234,1.0
+2,2,Outer Race Fault,0.014,234,234,1.0
+2,2,Outer Race Fault,0.021,235,235,1.0
+3,3,Ball Fault,0.007,234,234,1.0
+3,3,Ball Fault,0.014,235,235,1.0
+3,3,Ball Fault,0.021,235,235,1.0
+3,3,Inner Race Fault,0.007,237,237,1.0
+3,3,Inner Race Fault,0.014,234,172,0.735
+3,3,Inner Race Fault,0.021,235,235,1.0
+3,3,Normal,0.0,234,234,1.0
+3,3,Outer Race Fault,0.007,236,236,1.0
+3,3,Outer Race Fault,0.014,235,235,1.0
+3,3,Outer Race Fault,0.021,235,235,1.0

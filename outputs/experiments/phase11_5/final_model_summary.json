@@ -1,0 +1,10 @@
+{
+  "model_name": "SpectralFusionCNN",
+  "parameters": 89604,
+  "total_windows": 8448,
+  "final_epoch_loss": 0.00095,
+  "training_duration_sec": 108.53,
+  "checkpoint_sha256": "a612eb9ebcc758dcd078f975414eec2c9409904b30de5fb24588c19990e7542e",
+  "waveform_normalizer_sha256": "2b3db205cd2d95ead19c8ec5d14e4b2d9a8e6133ae0f0aef05e7c2bf0f1db3c1",
+  "spectral_normalizer_sha256": "ed39cd3615212d83c24e66a49c46fc0c07e4e9f33320e95a3cc0d3a6567a3fac"
+}

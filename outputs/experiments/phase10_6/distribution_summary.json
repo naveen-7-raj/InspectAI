@@ -1,0 +1,82 @@
+{
+  "total_recordings": 40,
+  "class_distribution": {
+    "Inner Race Fault": 12,
+    "Ball Fault": 12,
+    "Outer Race Fault": 12,
+    "Normal": 4
+  },
+  "load_distribution": {
+    "0": 10,
+    "1": 10,
+    "2": 10,
+    "3": 10
+  },
+  "fault_size_distribution": {
+    "0.007": 12,
+    "0.014": 12,
+    "0.021": 12,
+    "0.0": 4
+  },
+  "split_distribution": {
+    "multiload_pool": 27,
+    "train": 9,
+    "test": 4
+  },
+  "holdout_count": 4,
+  "non_holdout_count": 36,
+  "historical_count": 13,
+  "newly_acquired_count": 27,
+  "contingency_class_by_load": {
+    "0": {
+      "Ball Fault": 3,
+      "Inner Race Fault": 3,
+      "Normal": 1,
+      "Outer Race Fault": 3
+    },
+    "1": {
+      "Ball Fault": 3,
+      "Inner Race Fault": 3,
+      "Normal": 1,
+      "Outer Race Fault": 3
+    },
+    "2": {
+      "Ball Fault": 3,
+      "Inner Race Fault": 3,
+      "Normal": 1,
+      "Outer Race Fault": 3
+    },
+    "3": {
+      "Ball Fault": 3,
+      "Inner Race Fault": 3,
+      "Normal": 1,
+      "Outer Race Fault": 3
+    }
+  },
+  "contingency_class_by_fault_size": {
+    "0.0": {
+      "Ball Fault": 0,
+      "Inner Race Fault": 0,
+      "Normal": 4,
+      "Outer Race Fault": 0
+    },
+    "0.007": {
+      "Ball Fault": 4,
+      "Inner Race Fault": 4,
+      "Normal": 0,
+      "Outer Race Fault": 4
+    },
+    "0.014": {
+      "Ball Fault": 4,
+      "Inner Race Fault": 4,
+      "Normal": 0,
+      "Outer Race Fault": 4
+    },
+    "0.021": {
+      "Ball Fault": 4,
+      "Inner Race Fault": 4,
+      "Normal": 0,
+      "Outer Race Fault": 4
+    }
+  }
+}

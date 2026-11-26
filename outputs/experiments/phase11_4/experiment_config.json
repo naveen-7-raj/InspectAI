@@ -1,0 +1,50 @@
+{
+  "experiments": [
+    {
+      "id": "baseline",
+      "model": "VibrationCNN1D",
+      "params": 73156,
+      "augmentation": false,
+      "min_epochs": 1
+    },
+    {
+      "id": "experiment_a",
+      "model": "VibrationCNN1D",
+      "params": 73156,
+      "augmentation": true,
+      "min_epochs": 1
+    },
+    {
+      "id": "experiment_b",
+      "model": "SpectralFusionCNN",
+      "params": 89332,
+      "augmentation": false,
+      "min_epochs": 1
+    },
+    {
+      "id": "experiment_c",
+      "model": "VibrationCNN1D",
+      "params": 73156,
+      "augmentation": false,
+      "min_epochs": 5
+    }
+  ],
+  "training": {
+    "batch_size": 32,
+    "max_epochs": 30,
+    "patience": 7,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.0001,
+    "dropout": 0.3,
+    "seed": 42,
+    "optimizer": "AdamW",
+    "loss": "ClassWeightedCrossEntropyLoss"
+  },
+  "validation_protocol": "Leave-One-Load-Out (LOLO) 3 Folds",
+  "protected_holdout_quarantined": [
+    "169",
+    "185",
+    "197",
+    "97"
+  ]
+}

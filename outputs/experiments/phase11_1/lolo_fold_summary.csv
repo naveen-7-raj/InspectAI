@@ -1,0 +1,4 @@
+fold_id,val_load_hp,train_loads_hp,train_recordings,val_recordings,train_windows,val_windows,total_windows,train_normal_recs,val_normal_recs,train_ir_recs,val_ir_recs,train_ball_recs,val_ball_recs,train_or_recs,val_or_recs
+1,1,"[0, 2, 3]",26,10,6103,2345,8448,2,1,8,3,8,3,8,3
+2,2,"[0, 1, 3]",26,10,6105,2343,8448,2,1,8,3,8,3,8,3
+3,3,"[0, 1, 2]",26,10,6098,2350,8448,2,1,8,3,8,3,8,3

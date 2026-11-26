@@ -1,0 +1,341 @@
+{
+  "dataset_name": "CWRU_MultiLoad_40",
+  "total_recordings": 40,
+  "historical_holdout_recordings": [
+    "169",
+    "185",
+    "197",
+    "97"
+  ],
+  "development_recordings": [
+    "100",
+    "105",
+    "106",
+    "107",
+    "108",
+    "118",
+    "119",
+    "120",
+    "121",
+    "130",
+    "131",
+    "132",
+    "133",
+    "170",
+    "171",
+    "172",
+    "186",
+    "187",
+    "188",
+    "198",
+    "199",
+    "200",
+    "209",
+    "210",
+    "211",
+    "212",
+    "222",
+    "223",
+    "224",
+    "225",
+    "234",
+    "235",
+    "236",
+    "237",
+    "98",
+    "99"
+  ],
+  "folds": {
+    "fold_1": {
+      "fold_id": 1,
+      "val_load_hp": 1,
+      "train_loads_hp": [
+        0,
+        2,
+        3
+      ],
+      "train_recording_count": 26,
+      "val_recording_count": 10,
+      "train_recording_ids": [
+        "100",
+        "105",
+        "107",
+        "108",
+        "118",
+        "120",
+        "121",
+        "130",
+        "132",
+        "133",
+        "171",
+        "172",
+        "187",
+        "188",
+        "199",
+        "200",
+        "209",
+        "211",
+        "212",
+        "222",
+        "224",
+        "225",
+        "234",
+        "236",
+        "237",
+        "99"
+      ],
+      "val_recording_ids": [
+        "106",
+        "119",
+        "131",
+        "170",
+        "186",
+        "198",
+        "210",
+        "223",
+        "235",
+        "98"
+      ],
+      "train_window_count": 6103,
+      "val_window_count": 2345,
+      "train_class_counts": {
+        "Inner Race Fault": 8,
+        "Ball Fault": 8,
+        "Outer Race Fault": 8,
+        "Normal": 2
+      },
+      "val_class_counts": {
+        "Inner Race Fault": 3,
+        "Ball Fault": 3,
+        "Outer Race Fault": 3,
+        "Normal": 1
+      },
+      "train_severity_counts": {
+        "0.0": 467,
+        "0.007": 2114,
+        "0.014": 1407,
+        "0.021": 2115
+      },
+      "val_severity_counts": {
+        "0.0": 233,
+        "0.007": 705,
+        "0.014": 704,
+        "0.021": 703
+      },
+      "train_class_windows": {
+        "Ball Fault": 1879,
+        "Inner Race Fault": 1877,
+        "Normal": 467,
+        "Outer Race Fault": 1880
+      },
+      "val_class_windows": {
+        "Ball Fault": 703,
+        "Inner Race Fault": 703,
+        "Normal": 233,
+        "Outer Race Fault": 706
+      },
+      "train_load_windows": {
+        "0": 1410,
+        "2": 2343,
+        "3": 2350
+      },
+      "val_load_windows": {
+        "1": 2345
+      }
+    },
+    "fold_2": {
+      "fold_id": 2,
+      "val_load_hp": 2,
+      "train_loads_hp": [
+        0,
+        1,
+        3
+      ],
+      "train_recording_count": 26,
+      "val_recording_count": 10,
+      "train_recording_ids": [
+        "100",
+        "105",
+        "106",
+        "108",
+        "118",
+        "119",
+        "121",
+        "130",
+        "131",
+        "133",
+        "170",
+        "172",
+        "186",
+        "188",
+        "198",
+        "200",
+        "209",
+        "210",
+        "212",
+        "222",
+        "223",
+        "225",
+        "234",
+        "235",
+        "237",
+        "98"
+      ],
+      "val_recording_ids": [
+        "107",
+        "120",
+        "132",
+        "171",
+        "187",
+        "199",
+        "211",
+        "224",
+        "236",
+        "99"
+      ],
+      "train_window_count": 6105,
+      "val_window_count": 2343,
+      "train_class_counts": {
+        "Inner Race Fault": 8,
+        "Ball Fault": 8,
+        "Outer Race Fault": 8,
+        "Normal": 2
+      },
+      "val_class_counts": {
+        "Inner Race Fault": 3,
+        "Ball Fault": 3,
+        "Outer Race Fault": 3,
+        "Normal": 1
+      },
+      "train_severity_counts": {
+        "0.0": 467,
+        "0.007": 2116,
+        "0.014": 1408,
+        "0.021": 2114
+      },
+      "val_severity_counts": {
+        "0.0": 233,
+        "0.007": 703,
+        "0.014": 703,
+        "0.021": 704
+      },
+      "train_class_windows": {
+        "Ball Fault": 1878,
+        "Inner Race Fault": 1877,
+        "Normal": 467,
+        "Outer Race Fault": 1883
+      },
+      "val_class_windows": {
+        "Ball Fault": 704,
+        "Inner Race Fault": 703,
+        "Normal": 233,
+        "Outer Race Fault": 703
+      },
+      "train_load_windows": {
+        "0": 1410,
+        "1": 2345,
+        "3": 2350
+      },
+      "val_load_windows": {
+        "2": 2343
+      }
+    },
+    "fold_3": {
+      "fold_id": 3,
+      "val_load_hp": 3,
+      "train_loads_hp": [
+        0,
+        1,
+        2
+      ],
+      "train_recording_count": 26,
+      "val_recording_count": 10,
+      "train_recording_ids": [
+        "105",
+        "106",
+        "107",
+        "118",
+        "119",
+        "120",
+        "130",
+        "131",
+        "132",
+        "170",
+        "171",
+        "186",
+        "187",
+        "198",
+        "199",
+        "209",
+        "210",
+        "211",
+        "222",
+        "223",
+        "224",
+        "234",
+        "235",
+        "236",
+        "98",
+        "99"
+      ],
+      "val_recording_ids": [
+        "100",
+        "108",
+        "121",
+        "133",
+        "172",
+        "188",
+        "200",
+        "212",
+        "225",
+        "237"
+      ],
+      "train_window_count": 6098,
+      "val_window_count": 2350,
+      "train_class_counts": {
+        "Inner Race Fault": 8,
+        "Ball Fault": 8,
+        "Outer Race Fault": 8,
+        "Normal": 2
+      },
+      "val_class_counts": {
+        "Inner Race Fault": 3,
+        "Ball Fault": 3,
+        "Outer Race Fault": 3,
+        "Normal": 1
+      },
+      "train_severity_counts": {
+        "0.0": 466,
+        "0.007": 2112,
+        "0.014": 1407,
+        "0.021": 2113
+      },
+      "val_severity_counts": {
+        "0.0": 234,
+        "0.007": 707,
+        "0.014": 704,
+        "0.021": 705
+      },
+      "train_class_windows": {
+        "Ball Fault": 1878,
+        "Inner Race Fault": 1874,
+        "Normal": 466,
+        "Outer Race Fault": 1880
+      },
+      "val_class_windows": {
+        "Ball Fault": 704,
+        "Inner Race Fault": 706,
+        "Normal": 234,
+        "Outer Race Fault": 706
+      },
+      "train_load_windows": {
+        "0": 1410,
+        "1": 2345,
+        "2": 2343
+      },
+      "val_load_windows": {
+        "3": 2350
+      }
+    }
+  }
+}

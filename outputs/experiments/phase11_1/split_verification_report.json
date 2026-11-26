@@ -1,0 +1,184 @@
+{
+  "phase": "11.1",
+  "description": "Multi-Load Leave-One-Load-Out (LOLO) Cross-Validation Design & Integrity Audit",
+  "status": "PASSED",
+  "total_recordings": 40,
+  "protected_holdout_recordings": [
+    "197",
+    "185",
+    "97",
+    "169"
+  ],
+  "development_recordings_count": 36,
+  "number_of_folds": 3,
+  "verification_checks": [
+    {
+      "fold": 1,
+      "check": "train_val_disjoint",
+      "passed": true
+    },
+    {
+      "fold": 1,
+      "check": "train_no_holdout",
+      "passed": true
+    },
+    {
+      "fold": 1,
+      "check": "val_no_holdout",
+      "passed": true
+    },
+    {
+      "fold": 1,
+      "check": "all_4_classes_in_train",
+      "passed": true
+    },
+    {
+      "fold": 1,
+      "check": "all_4_classes_in_val",
+      "passed": true
+    },
+    {
+      "fold": 1,
+      "check": "all_3_fault_sizes_in_train",
+      "passed": true
+    },
+    {
+      "fold": 1,
+      "check": "all_3_fault_sizes_in_val",
+      "passed": true
+    },
+    {
+      "fold": 2,
+      "check": "train_val_disjoint",
+      "passed": true
+    },
+    {
+      "fold": 2,
+      "check": "train_no_holdout",
+      "passed": true
+    },
+    {
+      "fold": 2,
+      "check": "val_no_holdout",
+      "passed": true
+    },
+    {
+      "fold": 2,
+      "check": "all_4_classes_in_train",
+      "passed": true
+    },
+    {
+      "fold": 2,
+      "check": "all_4_classes_in_val",
+      "passed": true
+    },
+    {
+      "fold": 2,
+      "check": "all_3_fault_sizes_in_train",
+      "passed": true
+    },
+    {
+      "fold": 2,
+      "check": "all_3_fault_sizes_in_val",
+      "passed": true
+    },
+    {
+      "fold": 3,
+      "check": "train_val_disjoint",
+      "passed": true
+    },
+    {
+      "fold": 3,
+      "check": "train_no_holdout",
+      "passed": true
+    },
+    {
+      "fold": 3,
+      "check": "val_no_holdout",
+      "passed": true
+    },
+    {
+      "fold": 3,
+      "check": "all_4_classes_in_train",
+      "passed": true
+    },
+    {
+      "fold": 3,
+      "check": "all_4_classes_in_val",
+      "passed": true
+    },
+    {
+      "fold": 3,
+      "check": "all_3_fault_sizes_in_train",
+      "passed": true
+    },
+    {
+      "fold": 3,
+      "check": "all_3_fault_sizes_in_val",
+      "passed": true
+    }
+  ],
+  "fold_summary": [
+    {
+      "fold_id": 1,
+      "val_load_hp": 1,
+      "train_loads_hp": "[0, 2, 3]",
+      "train_recordings": 26,
+      "val_recordings": 10,
+      "train_windows": 6103,
+      "val_windows": 2345,
+      "total_windows": 8448,
+      "train_normal_recs": 2,
+      "val_normal_recs": 1,
+      "train_ir_recs": 8,
+      "val_ir_recs": 3,
+      "train_ball_recs": 8,
+      "val_ball_recs": 3,
+      "train_or_recs": 8,
+      "val_or_recs": 3
+    },
+    {
+      "fold_id": 2,
+      "val_load_hp": 2,
+      "train_loads_hp": "[0, 1, 3]",
+      "train_recordings": 26,
+      "val_recordings": 10,
+      "train_windows": 6105,
+      "val_windows": 2343,
+      "total_windows": 8448,
+      "train_normal_recs": 2,
+      "val_normal_recs": 1,
+      "train_ir_recs": 8,
+      "val_ir_recs": 3,
+      "train_ball_recs": 8,
+      "val_ball_recs": 3,
+      "train_or_recs": 8,
+      "val_or_recs": 3
+    },
+    {
+      "fold_id": 3,
+      "val_load_hp": 3,
+      "train_loads_hp": "[0, 1, 2]",
+      "train_recordings": 26,
+      "val_recordings": 10,
+      "train_windows": 6098,
+      "val_windows": 2350,
+      "total_windows": 8448,
+      "train_normal_recs": 2,
+      "val_normal_recs": 1,
+      "train_ir_recs": 8,
+      "val_ir_recs": 3,
+      "train_ball_recs": 8,
+      "val_ball_recs": 3,
+      "train_or_recs": 8,
+      "val_or_recs": 3
+    }
+  ],
+  "conclusions": {
+    "holdout_protection": "100% verified. Recordings 97, 169, 185, 197 are isolated from all folds.",
+    "leakage_status": "Zero leakage. No recording or window appears in both train and validation.",
+    "class_coverage": "All 4 classes (Normal, IR, Ball, OR) present in both train and val across all 3 folds.",
+    "defect_size_coverage": "All 3 defect sizes (0.007\", 0.014\", 0.021\") present in both train and val across all 3 folds.",
+    "zero_load_exclusion": "0 HP validation fold intentionally omitted to protect the only 0 HP Normal recording (97)."
+  }
+}

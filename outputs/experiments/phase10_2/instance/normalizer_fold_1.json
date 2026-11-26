@@ -1,0 +1,15 @@
+{
+  "strategy": "instance",
+  "mean": 0.0,
+  "std": 1.0,
+  "epsilon": 1e-08,
+  "is_fitted": true,
+  "fit_sample_count": 1172,
+  "fit_recording_ids": [
+    "118",
+    "130",
+    "209",
+    "98",
+    "99"
+  ]
+}

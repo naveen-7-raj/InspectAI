@@ -1,0 +1,338 @@
+{
+  "primary_operating_condition_n15_m07_f10": {
+    "evaluation_name": "Phase 14 Real Paderborn Pilot Zero-Shot Benchmark",
+    "primary_condition_only": true,
+    "pilot_scope": "4-bearing exploratory pilot (K001, KB23, KI04, KA04)",
+    "total_physical_bearings": 4,
+    "total_source_measurements": 80,
+    "total_windows_evaluated": 7211,
+    "total_invalid_windows": 0,
+    "accuracy": 0.08292885868811538,
+    "balanced_accuracy": 0.08300805339241187,
+    "macro_precision": 0.027165772004127203,
+    "macro_recall": 0.08300805339241187,
+    "macro_f1": 0.04040386698910494,
+    "per_class_metrics": {
+      "Normal": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 1804
+      },
+      "Ball Fault": {
+        "precision": 0.10252393385552655,
+        "recall": 0.32704053303720154,
+        "f1_score": 0.15610919692552347,
+        "support": 1801
+      },
+      "Inner Race Fault": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 1803
+      },
+      "Outer Race Fault": {
+        "precision": 0.006139154160982265,
+        "recall": 0.004991680532445923,
+        "f1_score": 0.005506271030896299,
+        "support": 1803
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "Normal",
+        "Ball Fault",
+        "Inner Race Fault",
+        "Outer Race Fault"
+      ],
+      "matrix": [
+        [
+          0,
+          1804,
+          0,
+          0
+        ],
+        [
+          0,
+          589,
+          0,
+          1212
+        ],
+        [
+          0,
+          1558,
+          0,
+          245
+        ],
+        [
+          0,
+          1794,
+          0,
+          9
+        ]
+      ]
+    },
+    "per_bearing_summary": {
+      "K001": {
+        "bearing_id": "K001",
+        "ground_truth_class": "Normal",
+        "bearing_type": "Healthy Reference",
+        "recordings_evaluated": 20,
+        "valid_windows": 1804,
+        "window_level_accuracy": 0.0,
+        "predicted_window_distribution": {
+          "Normal": 0,
+          "Ball Fault": 1804,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 0
+        },
+        "recording_majority_vote_distribution": {
+          "Normal": 0,
+          "Ball Fault": 20,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 0
+        },
+        "mean_confidence": 0.8859458822434864
+      },
+      "KB23": {
+        "bearing_id": "KB23",
+        "ground_truth_class": "Ball Fault",
+        "bearing_type": "Rolling Element Fault",
+        "recordings_evaluated": 20,
+        "valid_windows": 1801,
+        "window_level_accuracy": 0.32704053303720154,
+        "predicted_window_distribution": {
+          "Normal": 0,
+          "Ball Fault": 589,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 1212
+        },
+        "recording_majority_vote_distribution": {
+          "Normal": 0,
+          "Ball Fault": 0,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 20
+        },
+        "mean_confidence": 0.6775951639835468
+      },
+      "KI04": {
+        "bearing_id": "KI04",
+        "ground_truth_class": "Inner Race Fault",
+        "bearing_type": "Inner Race Fault",
+        "recordings_evaluated": 20,
+        "valid_windows": 1803,
+        "window_level_accuracy": 0.0,
+        "predicted_window_distribution": {
+          "Normal": 0,
+          "Ball Fault": 1558,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 245
+        },
+        "recording_majority_vote_distribution": {
+          "Normal": 0,
+          "Ball Fault": 20,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 0
+        },
+        "mean_confidence": 0.5889155306851804
+      },
+      "KA04": {
+        "bearing_id": "KA04",
+        "ground_truth_class": "Outer Race Fault",
+        "bearing_type": "Outer Race Fault",
+        "recordings_evaluated": 20,
+        "valid_windows": 1803,
+        "window_level_accuracy": 0.004991680532445923,
+        "predicted_window_distribution": {
+          "Normal": 0,
+          "Ball Fault": 1794,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 9
+        },
+        "recording_majority_vote_distribution": {
+          "Normal": 0,
+          "Ball Fault": 20,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 0
+        },
+        "mean_confidence": 0.7852632697429911
+      }
+    },
+    "mean_softmax_confidence": 0.7344667368012218,
+    "cpu_latency_ms": {
+      "median_ms": 1.668300000119416,
+      "p95_ms": 3.014750000033928,
+      "p99_ms": 4.078879999997288,
+      "mean_ms": 1.7298186381913203
+    },
+    "execution_timestamp_utc": "2026-11-26T04:37:57Z"
+  },
+  "all_operating_conditions_pooled": {
+    "evaluation_name": "Phase 14 Real Paderborn Pilot Zero-Shot Benchmark",
+    "primary_condition_only": false,
+    "pilot_scope": "4-bearing exploratory pilot (K001, KB23, KI04, KA04)",
+    "total_physical_bearings": 4,
+    "total_source_measurements": 320,
+    "total_windows_evaluated": 28864,
+    "total_invalid_windows": 0,
+    "accuracy": 0.22692627494456763,
+    "balanced_accuracy": 0.22681706110382682,
+    "macro_precision": 0.14247895278643607,
+    "macro_recall": 0.22681706110382682,
+    "macro_f1": 0.14600171602316706,
+    "per_class_metrics": {
+      "Normal": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 7217
+      },
+      "Ball Fault": {
+        "precision": 0.20317756251773195,
+        "recall": 0.6940329502976602,
+        "f1_score": 0.314334085778781,
+        "support": 7223
+      },
+      "Inner Race Fault": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 7216
+      },
+      "Outer Race Fault": {
+        "precision": 0.3667382486280124,
+        "recall": 0.21323529411764705,
+        "f1_score": 0.2696727783138872,
+        "support": 7208
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "Normal",
+        "Ball Fault",
+        "Inner Race Fault",
+        "Outer Race Fault"
+      ],
+      "matrix": [
+        [
+          0,
+          7217,
+          0,
+          0
+        ],
+        [
+          0,
+          5013,
+          0,
+          2210
+        ],
+        [
+          0,
+          6772,
+          0,
+          444
+        ],
+        [
+          0,
+          5671,
+          0,
+          1537
+        ]
+      ]
+    },
+    "per_bearing_summary": {
+      "K001": {
+        "bearing_id": "K001",
+        "ground_truth_class": "Normal",
+        "bearing_type": "Healthy Reference",
+        "recordings_evaluated": 80,
+        "valid_windows": 7217,
+        "window_level_accuracy": 0.0,
+        "predicted_window_distribution": {
+          "Normal": 0,
+          "Ball Fault": 7217,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 0
+        },
+        "recording_majority_vote_distribution": {
+          "Normal": 0,
+          "Ball Fault": 80,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 0
+        },
+        "mean_confidence": 0.8940779314206977
+      },
+      "KB23": {
+        "bearing_id": "KB23",
+        "ground_truth_class": "Ball Fault",
+        "bearing_type": "Rolling Element Fault",
+        "recordings_evaluated": 80,
+        "valid_windows": 7223,
+        "window_level_accuracy": 0.6940329502976602,
+        "predicted_window_distribution": {
+          "Normal": 0,
+          "Ball Fault": 5013,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 2210
+        },
+        "recording_majority_vote_distribution": {
+          "Normal": 0,
+          "Ball Fault": 49,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 31
+        },
+        "mean_confidence": 0.7534826222952096
+      },
+      "KI04": {
+        "bearing_id": "KI04",
+        "ground_truth_class": "Inner Race Fault",
+        "bearing_type": "Inner Race Fault",
+        "recordings_evaluated": 80,
+        "valid_windows": 7216,
+        "window_level_accuracy": 0.0,
+        "predicted_window_distribution": {
+          "Normal": 0,
+          "Ball Fault": 6772,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 444
+        },
+        "recording_majority_vote_distribution": {
+          "Normal": 0,
+          "Ball Fault": 80,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 0
+        },
+        "mean_confidence": 0.728897267300016
+      },
+      "KA04": {
+        "bearing_id": "KA04",
+        "ground_truth_class": "Outer Race Fault",
+        "bearing_type": "Outer Race Fault",
+        "recordings_evaluated": 80,
+        "valid_windows": 7208,
+        "window_level_accuracy": 0.21323529411764705,
+        "predicted_window_distribution": {
+          "Normal": 0,
+          "Ball Fault": 5671,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 1537
+        },
+        "recording_majority_vote_distribution": {
+          "Normal": 0,
+          "Ball Fault": 60,
+          "Inner Race Fault": 0,
+          "Outer Race Fault": 20
+        },
+        "mean_confidence": 0.7747698158406127
+      }
+    },
+    "mean_softmax_confidence": 0.7878058801731405,
+    "cpu_latency_ms": {
+      "median_ms": 1.7393499999798223,
+      "p95_ms": 3.369685000075151,
+      "p99_ms": 4.469677000004138,
+      "mean_ms": 1.9049821992794793
+    },
+    "execution_timestamp_utc": "2026-11-26T04:39:18Z"
+  }
+}

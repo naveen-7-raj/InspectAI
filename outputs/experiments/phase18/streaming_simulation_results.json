@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "title": "Chronological Streaming Replay Simulation",
+    "total_streamed_windows": 100,
+    "calibration_windows": 50,
+    "evaluation_windows": 50
+  },
+  "stream_metrics": {
+    "adapted_accuracy_pct": 24.0,
+    "baseline_accuracy_pct": 0.0,
+    "accuracy_gain_pct": 24.0
+  },
+  "event_log_sample": [
+    {
+      "window_index": 0,
+      "phase": "calibration",
+      "buffered_samples": 1,
+      "progress_pct": 2.0,
+      "status": "CALIBRATING",
+      "adapted": false
+    },
+    {
+      "window_index": 1,
+      "phase": "calibration",
+      "buffered_samples": 2,
+      "progress_pct": 4.0,
+      "status": "CALIBRATING",
+      "adapted": false
+    },
+    {
+      "window_index": 2,
+      "phase": "calibration",
+      "buffered_samples": 3,
+      "progress_pct": 6.0,
+      "status": "CALIBRATING",
+      "adapted": false
+    },
+    {
+      "window_index": 3,
+      "phase": "calibration",
+      "buffered_samples": 4,
+      "progress_pct": 8.0,
+      "status": "CALIBRATING",
+      "adapted": false
+    },
+    {
+      "window_index": 4,
+      "phase": "calibration",
+      "buffered_samples": 5,
+      "progress_pct": 10.0,
+      "status": "CALIBRATING",
+      "adapted": false
+    },
+    {
+      "window_index": 50,
+      "phase": "operational_streaming",
+      "true_class": "Normal",
+      "adapted_prediction": "Normal",
+      "baseline_prediction": "Ball Fault",
+      "status": "READY",
+      "adapted": true
+    },
+    {
+      "window_index": 51,
+      "phase": "operational_streaming",
+      "true_class": "Normal",
+      "adapted_prediction": "Normal",
+      "baseline_prediction": "Ball Fault",
+      "status": "READY",
+      "adapted": true
+    },
+    {
+      "window_index": 52,
+      "phase": "operational_streaming",
+      "true_class": "Normal",
+      "adapted_prediction": "Ball Fault",
+      "baseline_prediction": "Ball Fault",
+      "status": "READY",
+      "adapted": true
+    },
+    {
+      "window_index": 53,
+      "phase": "operational_streaming",
+      "true_class": "Normal",
+      "adapted_prediction": "Ball Fault",
+      "baseline_prediction": "Ball Fault",
+      "status": "READY",
+      "adapted": true
+    },
+    {
+      "window_index": 54,
+      "phase": "operational_streaming",
+      "true_class": "Normal",
+      "adapted_prediction": "Ball Fault",
+      "baseline_prediction": "Ball Fault",
+      "status": "READY",
+      "adapted": true
+    }
+  ]
+}

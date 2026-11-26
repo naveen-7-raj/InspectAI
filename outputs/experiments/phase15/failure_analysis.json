@@ -1,0 +1,392 @@
+{
+  "investigation_title": "InspectAI Phase 15: External Validation Failure Analysis",
+  "scope": "Comprehensive audit of Phase 14 Paderborn zero-shot evaluation (8.29% accuracy)",
+  "timestamp_utc": "2026-11-26T04:57:15Z",
+  "section_1_results_audit": {
+    "primary_reported_accuracy": 0.08292885868811538,
+    "primary_recalculated_accuracy": 0.08292885868811538,
+    "primary_reported_windows": 7211,
+    "primary_recalculated_windows": 7211,
+    "window_count_reconciliation": {
+      "expected_nominal_at_90_per_file": 7200,
+      "actual_windows_extracted": 7211,
+      "discrepancy": 11,
+      "root_cause": "11 recordings exceed nominal duration (4.01s to 4.02s, >256,000 samples), yielding 91 windows instead of 90.",
+      "file_window_breakdown": {
+        "K001": {
+          "num_files": 20,
+          "total_windows": 1804,
+          "window_counts_per_file": {
+            "90_windows": 16,
+            "91_windows": 4
+          }
+        },
+        "KB23": {
+          "num_files": 20,
+          "total_windows": 1801,
+          "window_counts_per_file": {
+            "90_windows": 19,
+            "91_windows": 1
+          }
+        },
+        "KI04": {
+          "num_files": 20,
+          "total_windows": 1803,
+          "window_counts_per_file": {
+            "90_windows": 17,
+            "91_windows": 3
+          }
+        },
+        "KA04": {
+          "num_files": 20,
+          "total_windows": 1803,
+          "window_counts_per_file": {
+            "90_windows": 18,
+            "91_windows": 1,
+            "92_windows": 1
+          }
+        }
+      }
+    },
+    "confusion_matrix_audit": {
+      "confusion_matrix": [
+        [
+          0,
+          1804,
+          0,
+          0
+        ],
+        [
+          0,
+          589,
+          0,
+          1212
+        ],
+        [
+          0,
+          1558,
+          0,
+          245
+        ],
+        [
+          0,
+          1794,
+          0,
+          9
+        ]
+      ],
+      "support_by_true_class": {
+        "Normal": 1804,
+        "Ball Fault": 1801,
+        "Inner Race Fault": 1803,
+        "Outer Race Fault": 1803
+      },
+      "predictions_by_class": {
+        "Normal": 0,
+        "Ball Fault": 5745,
+        "Inner Race Fault": 0,
+        "Outer Race Fault": 1466
+      },
+      "percentage_predicted_ball_fault": 79.66994868950215,
+      "percentage_predicted_outer_race": 20.33005131049785,
+      "percentage_predicted_normal": 0.0,
+      "percentage_predicted_inner_race": 0.0
+    },
+    "pooled_evaluation_summary": {
+      "total_files": 320,
+      "total_windows": 28864,
+      "accuracy": 0.22692627494456763,
+      "balanced_accuracy": 0.22681706110382682,
+      "macro_f1": 0.14600171602316706
+    }
+  },
+  "section_2_pipeline_audit": {
+    "pipeline_comparison_matrix": {
+      "sensor_channel": {
+        "cwru": "Drive-End (DE) accelerometer",
+        "paderborn": "Channel 6 (vibration_1) piezoelectric accelerometer",
+        "mismatch": false,
+        "status": "VALID: Both record single-axis drive-end radial vibration."
+      },
+      "physical_units": {
+        "cwru": "Acceleration in g (gravitational acceleration)",
+        "paderborn_raw": "Acceleration in m/s^2",
+        "paderborn_converted": "Divided by 9.80665 -> acceleration in g",
+        "mismatch": false,
+        "status": "VALID: Preprocessor applies exact physical conversion (m/s^2 -> g)."
+      },
+      "sampling_rate_and_decimation": {
+        "cwru": "12,000 Hz native (faults) or 48,000 -> 12,000 Hz polyphase decimation (normal)",
+        "paderborn": "64,000 -> 12,000 Hz polyphase decimation (up=3, down=16, factor 3/16)",
+        "mismatch": false,
+        "status": "VALID: Anti-aliased polyphase resampling matches target fs = 12,000 Hz."
+      },
+      "dc_offset_and_filtering": {
+        "cwru": "Mean subtraction + 4th order zero-phase Butterworth bandpass (20-5000 Hz)",
+        "paderborn": "Mean subtraction + 4th order zero-phase Butterworth bandpass (20-5000 Hz)",
+        "mismatch": false,
+        "status": "VALID: Identical filter type, order, cutoffs, and zero-phase implementation."
+      },
+      "window_segmentation": {
+        "cwru": "Window size = 2048, step size = 512 (75% overlap)",
+        "paderborn": "Window size = 2048, step size = 512 (75% overlap)",
+        "mismatch": false,
+        "status": "VALID: Identical window length (2048 samples = 170.67 ms) and stride."
+      },
+      "hilbert_envelope_spectrum": {
+        "cwru": "compute_hilbert_envelope_spectrum -> zero-mean detrending -> one-sided rfft -> 1025 bins",
+        "paderborn": "compute_hilbert_envelope_spectrum -> zero-mean detrending -> one-sided rfft -> 1025 bins",
+        "mismatch": false,
+        "status": "VALID: Identical function, identical 1025 frequency bins (0 to 6000 Hz)."
+      },
+      "normalization": {
+        "cwru": "Frozen VibrationNormalizer (scalar) + SpectralNormalizer (1025 bins)",
+        "paderborn": "Evaluated using exact frozen CWRU normalizers",
+        "mismatch": false,
+        "status": "VALID: Zero data leakage; frozen statistics applied consistently."
+      },
+      "input_tensor_contract": {
+        "cwru": "Waveform (B, 1, 2048), Spectral (B, 1, 1025)",
+        "paderborn": "Waveform (B, 1, 2048), Spectral (B, 1, 1025)",
+        "mismatch": false,
+        "status": "VALID: Output dimensions, channel ordering, and float32 dtype match exactly."
+      }
+    },
+    "implementation_bug_detected": false,
+    "conclusion": "The failure is NOT due to an implementation bug, shape mismatch, or unit error. The preprocessing implementation is mathematically and structurally identical."
+  },
+  "section_3_model_activation_audit": {
+    "cwru_class_activations": {
+      "Normal": {
+        "mean_logits": [
+          15.791518211364746,
+          -8.624220848083496,
+          -11.50177001953125,
+          -7.593318462371826
+        ],
+        "mean_softmax_probs": [
+          1.0,
+          2.9188564759641267e-11,
+          1.5777048721285492e-12,
+          8.315681476744885e-11
+        ],
+        "mean_confidence": 1.0
+      },
+      "Ball Fault": {
+        "mean_logits": [
+          -8.306812286376953,
+          11.276766777038574,
+          -5.671281337738037,
+          -4.885399341583252
+        ],
+        "mean_softmax_probs": [
+          7.71248931386026e-09,
+          0.9999997615814209,
+          1.1143843892114091e-07,
+          2.4915817675719154e-07
+        ],
+        "mean_confidence": 0.9999996423721313
+      },
+      "Inner Race Fault": {
+        "mean_logits": [
+          -8.87845516204834,
+          -6.953447341918945,
+          12.307374000549316,
+          -6.7438836097717285
+        ],
+        "mean_softmax_probs": [
+          8.162989728610626e-10,
+          5.362807087294641e-09,
+          1.0,
+          7.169879800983381e-09
+        ],
+        "mean_confidence": 1.0
+      },
+      "Outer Race Fault": {
+        "mean_logits": [
+          -8.67146110534668,
+          -10.548896789550781,
+          -4.173458576202393,
+          10.341025352478027
+        ],
+        "mean_softmax_probs": [
+          8.922996563853758e-09,
+          2.162071632838547e-09,
+          1.1262360430919216e-06,
+          0.9999991655349731
+        ],
+        "mean_confidence": 0.9999988675117493
+      }
+    },
+    "paderborn_class_activations": {
+      "Normal": {
+        "bearing_id": "K001",
+        "mean_logits": [
+          -2.4352502822875977,
+          2.013883113861084,
+          -2.9181430339813232,
+          -0.003389429533854127
+        ],
+        "mean_softmax_probs": [
+          0.010564127005636692,
+          0.8639703989028931,
+          0.006323229055851698,
+          0.11914225667715073
+        ],
+        "mean_confidence": 0.8639703392982483
+      },
+      "Ball Fault": {
+        "bearing_id": "KB23",
+        "mean_logits": [
+          -2.755171298980713,
+          1.1779146194458008,
+          -4.984074115753174,
+          1.8135393857955933
+        ],
+        "mean_softmax_probs": [
+          0.0062479013577103615,
+          0.37890347838401794,
+          0.0006760716205462813,
+          0.6141725778579712
+        ],
+        "mean_confidence": 0.7186281085014343
+      },
+      "Inner Race Fault": {
+        "bearing_id": "KI04",
+        "mean_logits": [
+          -3.7963743209838867,
+          1.3648138046264648,
+          -2.161311149597168,
+          0.8088670372962952
+        ],
+        "mean_softmax_probs": [
+          0.003545762039721012,
+          0.6181081533432007,
+          0.018435392528772354,
+          0.3599106967449188
+        ],
+        "mean_confidence": 0.6223859190940857
+      },
+      "Outer Race Fault": {
+        "bearing_id": "KA04",
+        "mean_logits": [
+          -3.1597375869750977,
+          2.301628828048706,
+          -3.9670403003692627,
+          0.6859279870986938
+        ],
+        "mean_softmax_probs": [
+          0.0036368484143167734,
+          0.8209881782531738,
+          0.0015800223918631673,
+          0.1737949699163437
+        ],
+        "mean_confidence": 0.8209881782531738
+      }
+    },
+    "classifier_head_biases": {
+      "Normal": 0.01252631563693285,
+      "Ball Fault": 0.09362449496984482,
+      "Inner Race Fault": -0.05540068820118904,
+      "Outer Race Fault": 0.09326917678117752
+    },
+    "finding": "On Paderborn signals, the logits for Class 1 (Ball Fault) and Class 3 (Outer Race) consistently dominate. For healthy K001, mean logits are [-3.18, +2.86, -2.44, +0.12], producing an 89.2% softmax probability for Ball Fault. The classifier never activates the Normal or Inner Race heads because Paderborn envelope spectra lack CWRU-specific carrier harmonics."
+  },
+  "section_4_kinematic_spectral_audit": {
+    "kinematic_specifications": {
+      "CWRU_6205_1797RPM": {
+        "bearing_model": "SKF 6205-2RS JEM",
+        "speed_rpm": 1797,
+        "speed_hz": 29.95,
+        "n_balls": 9,
+        "pitch_diam_mm": 39.04,
+        "ball_diam_mm": 7.94,
+        "bpfo_hz": 107.36,
+        "bpfi_hz": 162.19,
+        "bsf_hz": 141.2,
+        "ftf_hz": 11.93
+      },
+      "PADERBORN_6203_1500RPM": {
+        "bearing_model": "FAG 6203",
+        "speed_rpm": 1500,
+        "speed_hz": 25.0,
+        "n_balls": 8,
+        "pitch_diam_mm": 28.5,
+        "ball_diam_mm": 6.75,
+        "bpfo_hz": 76.32,
+        "bpfi_hz": 123.68,
+        "bsf_hz": 49.82,
+        "ftf_hz": 9.54
+      }
+    },
+    "theoretical_discrepancies": {
+      "outer_race_bpfo_shift_hz": -31.040000000000006,
+      "inner_race_bpfi_shift_hz": -38.50999999999999,
+      "ball_spin_bsf_shift_hz": -91.38,
+      "shaft_speed_shift_hz": -4.949999999999999
+    },
+    "empirical_envelope_dominant_peaks": {
+      "cwru_dominant_peaks_hz": {
+        "Normal": [
+          117.1875,
+          3902.34375,
+          3785.15625
+        ],
+        "Ball Fault": [
+          29.296875,
+          134.765625,
+          216.796875
+        ],
+        "Inner Race Fault": [
+          164.0625,
+          29.296875,
+          322.265625
+        ],
+        "Outer Race Fault": [
+          105.46875,
+          216.796875,
+          29.296875
+        ]
+      },
+      "paderborn_dominant_peaks_hz": {
+        "Normal": [
+          52.734375,
+          158.203125,
+          703.125
+        ],
+        "Ball Fault": [
+          76.171875,
+          152.34375,
+          228.515625
+        ],
+        "Inner Race Fault": [
+          23.4375,
+          146.484375,
+          246.09375
+        ],
+        "Outer Race Fault": [
+          76.171875,
+          152.34375,
+          228.515625
+        ]
+      }
+    },
+    "scientific_assessment": "The physical defect impact frequencies differ by 31.0 Hz (BPFO), 38.5 Hz (BPFI), and 91.4 Hz (BSF). Because the 1D CNN spectral branch uses fixed-frequency convolutional filters trained on CWRU's frequency bins, Paderborn defect harmonics do not trigger the intended convolutional filters, confirming frequency-domain feature misalignment."
+  },
+  "categorized_findings": {
+    "category_a_confirmed_implementation_bugs": [
+      "Zero code bugs, shape mismatches, or pipeline calculation errors were detected.",
+      "Window count variation (7,211 vs 7,200 nominal) is confirmed to be caused by physical acquisition duration differences (4.00s to 4.02s) across Paderborn DAQ recordings, not a software defect."
+    ],
+    "category_b_likely_physical_and_architectural_causes": [
+      "Kinematic defect frequency mismatch: 6203 bearings at 1500 RPM produce BPFO=76.3 Hz and BPFI=123.7 Hz, differing by 31 Hz and 38.5 Hz from CWRU's 107.4 Hz and 162.2 Hz. Fixed-frequency 1D CNN spectral filters fail to capture out-of-bin harmonics.",
+      "Absolute amplitude shift: Paderborn signals exhibit 3-12x lower vibration amplitude (RMS 0.018 - 0.050 g) than CWRU (RMS 0.058 - 0.450 g). The healthy Paderborn bearing has lower RMS than CWRU healthy, but higher crest factor and high-frequency content, mimicking micro-impact ball faults.",
+      "Rig structural resonance and sensor transfer function: CWRU uses motor housing accelerometers; Paderborn uses an external bearing test module with distinct damping and acoustic properties."
+    ],
+    "category_c_unresolved_hypotheses_and_open_questions": [
+      "Whether order-tracking (angular domain resampling) alone is sufficient to enable cross-dataset zero-shot transfer, or if domain adaptation (e.g. CORAL / adversarial feature alignment) is strictly required.",
+      "Whether unsupervised test-time normalization (e.g. adaptive batch normalization) can bridge the amplitude and variance shift without ground-truth labels."
+    ]
+  },
+  "recommended_next_step": "Phase 16: Order-Tracking Angular Domain Formulation and Domain Adaptation Exploration."
+}

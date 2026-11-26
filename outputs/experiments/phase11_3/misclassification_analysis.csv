@@ -1,0 +1,235 @@
+recording_id,window_index,start_sample,end_sample,true_class,predicted_class,is_correct,prob_normal,prob_ball,prob_inner_race,prob_outer_race,winning_margin
+172,0,0,2048,Inner Race Fault,Inner Race Fault,True,0.0001,0.2878,0.712,0.0001,0.4242
+172,1,512,2560,Inner Race Fault,Inner Race Fault,True,0.0001,0.2387,0.761,0.0001,0.5223
+172,2,1024,3072,Inner Race Fault,Ball Fault,False,0.0002,0.577,0.4227,0.0001,0.1543
+172,3,1536,3584,Inner Race Fault,Inner Race Fault,True,0.0002,0.4255,0.5742,0.0001,0.1487
+172,4,2048,4096,Inner Race Fault,Inner Race Fault,True,0.0001,0.1889,0.811,0.0001,0.6221
+172,5,2560,4608,Inner Race Fault,Inner Race Fault,True,0.0002,0.2578,0.742,0.0001,0.4842
+172,6,3072,5120,Inner Race Fault,Inner Race Fault,True,0.0001,0.232,0.7678,0.0001,0.5359
+172,7,3584,5632,Inner Race Fault,Inner Race Fault,True,0.0002,0.2599,0.7398,0.0001,0.4799
+172,8,4096,6144,Inner Race Fault,Inner Race Fault,True,0.0001,0.2188,0.781,0.0001,0.5622
+172,9,4608,6656,Inner Race Fault,Inner Race Fault,True,0.0001,0.1692,0.8307,0.0001,0.6615
+172,10,5120,7168,Inner Race Fault,Inner Race Fault,True,0.0002,0.2126,0.7872,0.0001,0.5746
+172,11,5632,7680,Inner Race Fault,Inner Race Fault,True,0.0001,0.0582,0.9417,0.0001,0.8835
+172,12,6144,8192,Inner Race Fault,Ball Fault,False,0.0003,0.5138,0.4858,0.0001,0.028
+172,13,6656,8704,Inner Race Fault,Inner Race Fault,True,0.0002,0.4494,0.5503,0.0001,0.1009
+172,14,7168,9216,Inner Race Fault,Inner Race Fault,True,0.0002,0.4882,0.5115,0.0001,0.0233
+172,15,7680,9728,Inner Race Fault,Ball Fault,False,0.0001,0.5829,0.4169,0.0001,0.166
+172,16,8192,10240,Inner Race Fault,Inner Race Fault,True,0.0002,0.3504,0.6494,0.0001,0.299
+172,17,8704,10752,Inner Race Fault,Inner Race Fault,True,0.0001,0.1346,0.8652,0.0001,0.7306
+172,18,9216,11264,Inner Race Fault,Inner Race Fault,True,0.0001,0.1665,0.8334,0.0001,0.6668
+172,19,9728,11776,Inner Race Fault,Inner Race Fault,True,0.0001,0.289,0.7108,0.0001,0.4218
+172,20,10240,12288,Inner Race Fault,Ball Fault,False,0.0001,0.5929,0.4069,0.0001,0.1861
+172,21,10752,12800,Inner Race Fault,Ball Fault,False,0.0001,0.643,0.3568,0.0001,0.2862
+172,22,11264,13312,Inner Race Fault,Inner Race Fault,True,0.0001,0.4061,0.5937,0.0001,0.1876
+172,23,11776,13824,Inner Race Fault,Inner Race Fault,True,0.0001,0.1549,0.8449,0.0001,0.69
+172,24,12288,14336,Inner Race Fault,Inner Race Fault,True,0.0002,0.347,0.6528,0.0001,0.3058
+172,25,12800,14848,Inner Race Fault,Ball Fault,False,0.0002,0.6566,0.3431,0.0001,0.3136
+172,26,13312,15360,Inner Race Fault,Inner Race Fault,True,0.0002,0.3274,0.6723,0.0001,0.3449
+172,27,13824,15872,Inner Race Fault,Ball Fault,False,0.0002,0.5968,0.4029,0.0001,0.1938
+172,28,14336,16384,Inner Race Fault,Ball Fault,False,0.0001,0.5258,0.474,0.0,0.0519
+172,29,14848,16896,Inner Race Fault,Inner Race Fault,True,0.0001,0.2477,0.7521,0.0,0.5044
+172,30,15360,17408,Inner Race Fault,Ball Fault,False,0.0003,0.6448,0.3549,0.0001,0.2898
+172,31,15872,17920,Inner Race Fault,Inner Race Fault,True,0.0001,0.1517,0.8481,0.0,0.6964
+172,32,16384,18432,Inner Race Fault,Inner Race Fault,True,0.0001,0.165,0.8348,0.0001,0.6698
+172,33,16896,18944,Inner Race Fault,Inner Race Fault,True,0.0001,0.1235,0.8764,0.0,0.7529
+172,34,17408,19456,Inner Race Fault,Inner Race Fault,True,0.0001,0.2168,0.7831,0.0,0.5663
+172,35,17920,19968,Inner Race Fault,Inner Race Fault,True,0.0001,0.1021,0.8978,0.0,0.7958
+172,36,18432,20480,Inner Race Fault,Inner Race Fault,True,0.0,0.0694,0.9306,0.0,0.8612
+172,37,18944,20992,Inner Race Fault,Inner Race Fault,True,0.0001,0.1916,0.8082,0.0001,0.6167
+172,38,19456,21504,Inner Race Fault,Inner Race Fault,True,0.0001,0.3094,0.6904,0.0001,0.381
+172,39,19968,22016,Inner Race Fault,Inner Race Fault,True,0.0001,0.4238,0.5761,0.0001,0.1523
+172,40,20480,22528,Inner Race Fault,Ball Fault,False,0.0002,0.7551,0.2446,0.0001,0.5105
+172,41,20992,23040,Inner Race Fault,Ball Fault,False,0.0001,0.6277,0.3721,0.0001,0.2555
+172,42,21504,23552,Inner Race Fault,Ball Fault,False,0.0001,0.7037,0.2961,0.0001,0.4076
+172,43,22016,24064,Inner Race Fault,Ball Fault,False,0.0001,0.744,0.2558,0.0,0.4882
+172,44,22528,24576,Inner Race Fault,Inner Race Fault,True,0.0001,0.4792,0.5206,0.0001,0.0415
+172,45,23040,25088,Inner Race Fault,Ball Fault,False,0.0001,0.6191,0.3807,0.0001,0.2385
+172,46,23552,25600,Inner Race Fault,Ball Fault,False,0.0001,0.6302,0.3696,0.0001,0.2607
+172,47,24064,26112,Inner Race Fault,Inner Race Fault,True,0.0001,0.4386,0.5612,0.0001,0.1227
+172,48,24576,26624,Inner Race Fault,Ball Fault,False,0.0001,0.5165,0.4833,0.0001,0.0332
+172,49,25088,27136,Inner Race Fault,Ball Fault,False,0.0001,0.5733,0.4265,0.0001,0.1467
+172,50,25600,27648,Inner Race Fault,Ball Fault,False,0.0001,0.5,0.4998,0.0001,0.0002
+172,51,26112,28160,Inner Race Fault,Inner Race Fault,True,0.0001,0.2095,0.7904,0.0001,0.5809
+172,52,26624,28672,Inner Race Fault,Inner Race Fault,True,0.0001,0.2196,0.7803,0.0001,0.5607
+172,53,27136,29184,Inner Race Fault,Inner Race Fault,True,0.0001,0.148,0.8518,0.0001,0.7038
+172,54,27648,29696,Inner Race Fault,Inner Race Fault,True,0.0,0.0462,0.9537,0.0001,0.9074
+172,55,28160,30208,Inner Race Fault,Ball Fault,False,0.0002,0.55,0.4497,0.0001,0.1004
+172,56,28672,30720,Inner Race Fault,Ball Fault,False,0.0001,0.7537,0.2462,0.0001,0.5075
+172,57,29184,31232,Inner Race Fault,Inner Race Fault,True,0.0001,0.4203,0.5796,0.0001,0.1593
+172,58,29696,31744,Inner Race Fault,Ball Fault,False,0.0001,0.7658,0.2341,0.0,0.5317
+172,59,30208,32256,Inner Race Fault,Ball Fault,False,0.0001,0.8664,0.1334,0.0,0.733
+172,60,30720,32768,Inner Race Fault,Ball Fault,False,0.0001,0.7789,0.2209,0.0001,0.558
+172,61,31232,33280,Inner Race Fault,Ball Fault,False,0.0001,0.6084,0.3915,0.0,0.217
+172,62,31744,33792,Inner Race Fault,Inner Race Fault,True,0.0001,0.3038,0.6961,0.0001,0.3923
+172,63,32256,34304,Inner Race Fault,Inner Race Fault,True,0.0001,0.2904,0.7094,0.0001,0.4189
+172,64,32768,34816,Inner Race Fault,Inner Race Fault,True,0.0001,0.2834,0.7164,0.0001,0.433
+172,65,33280,35328,Inner Race Fault,Inner Race Fault,True,0.0001,0.2852,0.7146,0.0001,0.4293
+172,66,33792,35840,Inner Race Fault,Inner Race Fault,True,0.0001,0.2332,0.7666,0.0001,0.5334
+172,67,34304,36352,Inner Race Fault,Inner Race Fault,True,0.0001,0.3193,0.6805,0.0001,0.3612
+172,68,34816,36864,Inner Race Fault,Inner Race Fault,True,0.0001,0.2622,0.7376,0.0001,0.4753
+172,69,35328,37376,Inner Race Fault,Inner Race Fault,True,0.0001,0.2052,0.7946,0.0001,0.5895
+172,70,35840,37888,Inner Race Fault,Inner Race Fault,True,0.0001,0.181,0.8188,0.0001,0.6378
+172,71,36352,38400,Inner Race Fault,Inner Race Fault,True,0.0001,0.1215,0.8784,0.0001,0.7569
+172,72,36864,38912,Inner Race Fault,Inner Race Fault,True,0.0001,0.0804,0.9195,0.0,0.8392
+172,73,37376,39424,Inner Race Fault,Inner Race Fault,True,0.0002,0.4011,0.5986,0.0001,0.1975
+172,74,37888,39936,Inner Race Fault,Inner Race Fault,True,0.0001,0.3957,0.6041,0.0001,0.2084
+172,75,38400,40448,Inner Race Fault,Ball Fault,False,0.0001,0.6227,0.3771,0.0001,0.2456
+172,76,38912,40960,Inner Race Fault,Ball Fault,False,0.0002,0.6115,0.3883,0.0001,0.2232
+172,77,39424,41472,Inner Race Fault,Ball Fault,False,0.0001,0.8807,0.1192,0.0,0.7615
+172,78,39936,41984,Inner Race Fault,Ball Fault,False,0.0002,0.8497,0.1501,0.0,0.6997
+172,79,40448,42496,Inner Race Fault,Inner Race Fault,True,0.0001,0.4099,0.5899,0.0001,0.18
+172,80,40960,43008,Inner Race Fault,Ball Fault,False,0.0002,0.5673,0.4324,0.0001,0.1349
+172,81,41472,43520,Inner Race Fault,Inner Race Fault,True,0.0002,0.4045,0.5952,0.0001,0.1907
+172,82,41984,44032,Inner Race Fault,Inner Race Fault,True,0.0002,0.4425,0.5571,0.0001,0.1146
+172,83,42496,44544,Inner Race Fault,Ball Fault,False,0.0004,0.5385,0.461,0.0001,0.0775
+172,84,43008,45056,Inner Race Fault,Ball Fault,False,0.0003,0.6804,0.3192,0.0001,0.3612
+172,85,43520,45568,Inner Race Fault,Ball Fault,False,0.0002,0.6361,0.3636,0.0001,0.2725
+172,86,44032,46080,Inner Race Fault,Ball Fault,False,0.0002,0.6725,0.3272,0.0001,0.3453
+172,87,44544,46592,Inner Race Fault,Ball Fault,False,0.0002,0.8455,0.1542,0.0001,0.6912
+172,88,45056,47104,Inner Race Fault,Inner Race Fault,True,0.0001,0.4009,0.5989,0.0001,0.198
+172,89,45568,47616,Inner Race Fault,Inner Race Fault,True,0.0001,0.1265,0.8733,0.0001,0.7468
+172,90,46080,48128,Inner Race Fault,Inner Race Fault,True,0.0001,0.1187,0.8812,0.0001,0.7625
+172,91,46592,48640,Inner Race Fault,Inner Race Fault,True,0.0001,0.1234,0.8764,0.0,0.753
+172,92,47104,49152,Inner Race Fault,Inner Race Fault,True,0.0001,0.1323,0.8676,0.0,0.7352
+172,93,47616,49664,Inner Race Fault,Inner Race Fault,True,0.0002,0.4767,0.5231,0.0001,0.0464
+172,94,48128,50176,Inner Race Fault,Inner Race Fault,True,0.0001,0.1606,0.8392,0.0001,0.6786
+172,95,48640,50688,Inner Race Fault,Inner Race Fault,True,0.0001,0.2386,0.7612,0.0001,0.5225
+172,96,49152,51200,Inner Race Fault,Inner Race Fault,True,0.0002,0.3469,0.6529,0.0001,0.306
+172,97,49664,51712,Inner Race Fault,Inner Race Fault,True,0.0001,0.2193,0.7806,0.0001,0.5613
+172,98,50176,52224,Inner Race Fault,Ball Fault,False,0.0002,0.5313,0.4685,0.0001,0.0628
+172,99,50688,52736,Inner Race Fault,Inner Race Fault,True,0.0001,0.353,0.6468,0.0001,0.2939
+172,100,51200,53248,Inner Race Fault,Inner Race Fault,True,0.0001,0.1505,0.8494,0.0001,0.6989
+172,101,51712,53760,Inner Race Fault,Inner Race Fault,True,0.0001,0.0847,0.9151,0.0001,0.8304
+172,102,52224,54272,Inner Race Fault,Inner Race Fault,True,0.0,0.0544,0.9455,0.0,0.891
+172,103,52736,54784,Inner Race Fault,Inner Race Fault,True,0.0,0.062,0.9379,0.0,0.8759
+172,104,53248,55296,Inner Race Fault,Inner Race Fault,True,0.0,0.0854,0.9145,0.0,0.8292
+172,105,53760,55808,Inner Race Fault,Inner Race Fault,True,0.0001,0.1005,0.8993,0.0001,0.7988
+172,106,54272,56320,Inner Race Fault,Inner Race Fault,True,0.0001,0.1748,0.825,0.0001,0.6502
+172,107,54784,56832,Inner Race Fault,Inner Race Fault,True,0.0001,0.0769,0.923,0.0001,0.8461
+172,108,55296,57344,Inner Race Fault,Inner Race Fault,True,0.0002,0.1729,0.8268,0.0001,0.6538
+172,109,55808,57856,Inner Race Fault,Inner Race Fault,True,0.0002,0.2171,0.7827,0.0001,0.5656
+172,110,56320,58368,Inner Race Fault,Inner Race Fault,True,0.0001,0.1251,0.8747,0.0001,0.7497
+172,111,56832,58880,Inner Race Fault,Inner Race Fault,True,0.0002,0.2773,0.7224,0.0001,0.4451
+172,112,57344,59392,Inner Race Fault,Inner Race Fault,True,0.0002,0.2294,0.7702,0.0001,0.5408
+172,113,57856,59904,Inner Race Fault,Inner Race Fault,True,0.0003,0.2831,0.7166,0.0001,0.4335
+172,114,58368,60416,Inner Race Fault,Inner Race Fault,True,0.0001,0.2482,0.7516,0.0001,0.5035
+172,115,58880,60928,Inner Race Fault,Inner Race Fault,True,0.0001,0.185,0.8148,0.0001,0.6298
+172,116,59392,61440,Inner Race Fault,Ball Fault,False,0.0003,0.5357,0.4639,0.0001,0.0717
+172,117,59904,61952,Inner Race Fault,Inner Race Fault,True,0.0003,0.4255,0.5741,0.0001,0.1486
+172,118,60416,62464,Inner Race Fault,Inner Race Fault,True,0.0002,0.1817,0.818,0.0001,0.6363
+172,119,60928,62976,Inner Race Fault,Inner Race Fault,True,0.0001,0.1034,0.8964,0.0001,0.793
+172,120,61440,63488,Inner Race Fault,Inner Race Fault,True,0.0001,0.339,0.6607,0.0001,0.3217
+172,121,61952,64000,Inner Race Fault,Inner Race Fault,True,0.0001,0.431,0.5688,0.0001,0.1378
+172,122,62464,64512,Inner Race Fault,Inner Race Fault,True,0.0002,0.3122,0.6876,0.0001,0.3754
+172,123,62976,65024,Inner Race Fault,Ball Fault,False,0.0002,0.5099,0.4898,0.0001,0.0201
+172,124,63488,65536,Inner Race Fault,Inner Race Fault,True,0.0002,0.2965,0.7032,0.0001,0.4066
+172,125,64000,66048,Inner Race Fault,Inner Race Fault,True,0.0001,0.1211,0.8787,0.0001,0.7576
+172,126,64512,66560,Inner Race Fault,Inner Race Fault,True,0.0002,0.3426,0.6571,0.0001,0.3145
+172,127,65024,67072,Inner Race Fault,Inner Race Fault,True,0.0001,0.3575,0.6423,0.0001,0.2848
+172,128,65536,67584,Inner Race Fault,Ball Fault,False,0.0002,0.6563,0.3434,0.0001,0.3129
+172,129,66048,68096,Inner Race Fault,Inner Race Fault,True,0.0001,0.3893,0.6105,0.0001,0.2211
+172,130,66560,68608,Inner Race Fault,Inner Race Fault,True,0.0001,0.3605,0.6392,0.0001,0.2787
+172,131,67072,69120,Inner Race Fault,Inner Race Fault,True,0.0001,0.1578,0.842,0.0001,0.6841
+172,132,67584,69632,Inner Race Fault,Inner Race Fault,True,0.0001,0.0541,0.9458,0.0001,0.8917
+172,133,68096,70144,Inner Race Fault,Inner Race Fault,True,0.0001,0.1235,0.8764,0.0001,0.7529
+172,134,68608,70656,Inner Race Fault,Inner Race Fault,True,0.0002,0.211,0.7888,0.0001,0.5778
+172,135,69120,71168,Inner Race Fault,Inner Race Fault,True,0.0001,0.1178,0.8821,0.0001,0.7643
+172,136,69632,71680,Inner Race Fault,Inner Race Fault,True,0.0001,0.2141,0.7857,0.0001,0.5716
+172,137,70144,72192,Inner Race Fault,Inner Race Fault,True,0.0001,0.2202,0.7797,0.0001,0.5595
+172,138,70656,72704,Inner Race Fault,Inner Race Fault,True,0.0001,0.25,0.7498,0.0001,0.4997
+172,139,71168,73216,Inner Race Fault,Ball Fault,False,0.0001,0.607,0.3928,0.0001,0.2142
+172,140,71680,73728,Inner Race Fault,Inner Race Fault,True,0.0001,0.2556,0.7442,0.0001,0.4886
+172,141,72192,74240,Inner Race Fault,Inner Race Fault,True,0.0001,0.1595,0.8404,0.0001,0.681
+172,142,72704,74752,Inner Race Fault,Inner Race Fault,True,0.0,0.0992,0.9007,0.0,0.8015
+172,143,73216,75264,Inner Race Fault,Inner Race Fault,True,0.0,0.0602,0.9397,0.0,0.8795
+172,144,73728,75776,Inner Race Fault,Inner Race Fault,True,0.0001,0.1629,0.837,0.0001,0.6741
+172,145,74240,76288,Inner Race Fault,Inner Race Fault,True,0.0001,0.2594,0.7404,0.0001,0.4809
+172,146,74752,76800,Inner Race Fault,Inner Race Fault,True,0.0001,0.4058,0.594,0.0001,0.1882
+172,147,75264,77312,Inner Race Fault,Inner Race Fault,True,0.0001,0.2927,0.7071,0.0001,0.4144
+172,148,75776,77824,Inner Race Fault,Ball Fault,False,0.0002,0.5459,0.4539,0.0001,0.0921
+172,149,76288,78336,Inner Race Fault,Inner Race Fault,True,0.0001,0.3312,0.6687,0.0001,0.3375
+172,150,76800,78848,Inner Race Fault,Inner Race Fault,True,0.0001,0.4474,0.5524,0.0001,0.1051
+172,151,77312,79360,Inner Race Fault,Ball Fault,False,0.0002,0.6538,0.346,0.0001,0.3078
+172,152,77824,79872,Inner Race Fault,Ball Fault,False,0.0002,0.5444,0.4554,0.0001,0.089
+172,153,78336,80384,Inner Race Fault,Inner Race Fault,True,0.0001,0.3158,0.684,0.0001,0.3682
+172,154,78848,80896,Inner Race Fault,Inner Race Fault,True,0.0001,0.3787,0.6211,0.0001,0.2424
+172,155,79360,81408,Inner Race Fault,Inner Race Fault,True,0.0001,0.2945,0.7054,0.0001,0.4109
+172,156,79872,81920,Inner Race Fault,Inner Race Fault,True,0.0001,0.2407,0.7592,0.0001,0.5185
+172,157,80384,82432,Inner Race Fault,Inner Race Fault,True,0.0001,0.1523,0.8475,0.0001,0.6952
+172,158,80896,82944,Inner Race Fault,Inner Race Fault,True,0.0001,0.0981,0.9017,0.0001,0.8036
+172,159,81408,83456,Inner Race Fault,Inner Race Fault,True,0.0001,0.1376,0.8622,0.0001,0.7245
+172,160,81920,83968,Inner Race Fault,Inner Race Fault,True,0.0001,0.1329,0.8669,0.0001,0.734
+172,161,82432,84480,Inner Race Fault,Inner Race Fault,True,0.0001,0.4962,0.5036,0.0001,0.0074
+172,162,82944,84992,Inner Race Fault,Inner Race Fault,True,0.0001,0.1748,0.825,0.0001,0.6502
+172,163,83456,85504,Inner Race Fault,Inner Race Fault,True,0.0001,0.2671,0.7328,0.0001,0.4657
+172,164,83968,86016,Inner Race Fault,Inner Race Fault,True,0.0001,0.1991,0.8007,0.0001,0.6016
+172,165,84480,86528,Inner Race Fault,Inner Race Fault,True,0.0001,0.13,0.8698,0.0001,0.7398
+172,166,84992,87040,Inner Race Fault,Inner Race Fault,True,0.0001,0.2205,0.7793,0.0001,0.5588
+172,167,85504,87552,Inner Race Fault,Inner Race Fault,True,0.0001,0.1485,0.8514,0.0001,0.7028
+172,168,86016,88064,Inner Race Fault,Inner Race Fault,True,0.0001,0.1178,0.882,0.0001,0.7642
+172,169,86528,88576,Inner Race Fault,Inner Race Fault,True,0.0001,0.2901,0.7096,0.0001,0.4195
+172,170,87040,89088,Inner Race Fault,Inner Race Fault,True,0.0002,0.2393,0.7604,0.0001,0.521
+172,171,87552,89600,Inner Race Fault,Inner Race Fault,True,0.0001,0.1307,0.8691,0.0001,0.7383
+172,172,88064,90112,Inner Race Fault,Inner Race Fault,True,0.0001,0.0924,0.9074,0.0001,0.815
+172,173,88576,90624,Inner Race Fault,Inner Race Fault,True,0.0001,0.0665,0.9333,0.0001,0.8668
+172,174,89088,91136,Inner Race Fault,Inner Race Fault,True,0.0001,0.2527,0.7471,0.0001,0.4944
+172,175,89600,91648,Inner Race Fault,Inner Race Fault,True,0.0001,0.1624,0.8373,0.0001,0.6749
+172,176,90112,92160,Inner Race Fault,Inner Race Fault,True,0.0002,0.3329,0.6667,0.0001,0.3338
+172,177,90624,92672,Inner Race Fault,Ball Fault,False,0.0002,0.6071,0.3925,0.0001,0.2146
+172,178,91136,93184,Inner Race Fault,Inner Race Fault,True,0.0002,0.4684,0.5313,0.0001,0.0628
+172,179,91648,93696,Inner Race Fault,Ball Fault,False,0.0001,0.6867,0.3131,0.0001,0.3736
+172,180,92160,94208,Inner Race Fault,Ball Fault,False,0.0001,0.6237,0.3761,0.0001,0.2476
+172,181,92672,94720,Inner Race Fault,Ball Fault,False,0.0002,0.794,0.2058,0.0001,0.5883
+172,182,93184,95232,Inner Race Fault,Ball Fault,False,0.0001,0.877,0.1228,0.0,0.7542
+172,183,93696,95744,Inner Race Fault,Ball Fault,False,0.0002,0.7129,0.2868,0.0001,0.4262
+172,184,94208,96256,Inner Race Fault,Ball Fault,False,0.0002,0.7217,0.278,0.0001,0.4437
+172,185,94720,96768,Inner Race Fault,Ball Fault,False,0.0002,0.6513,0.3485,0.0001,0.3028
+172,186,95232,97280,Inner Race Fault,Inner Race Fault,True,0.0002,0.2516,0.7482,0.0001,0.4965
+172,187,95744,97792,Inner Race Fault,Inner Race Fault,True,0.0003,0.4152,0.5845,0.0001,0.1693
+172,188,96256,98304,Inner Race Fault,Ball Fault,False,0.0003,0.5403,0.4593,0.0001,0.081
+172,189,96768,98816,Inner Race Fault,Ball Fault,False,0.0002,0.5055,0.4941,0.0001,0.0114
+172,190,97280,99328,Inner Race Fault,Inner Race Fault,True,0.0002,0.427,0.5726,0.0001,0.1456
+172,191,97792,99840,Inner Race Fault,Ball Fault,False,0.0002,0.5609,0.4388,0.0001,0.1221
+172,192,98304,100352,Inner Race Fault,Inner Race Fault,True,0.0002,0.4639,0.5359,0.0001,0.0721
+172,193,98816,100864,Inner Race Fault,Inner Race Fault,True,0.0001,0.2847,0.7151,0.0001,0.4304
+172,194,99328,101376,Inner Race Fault,Inner Race Fault,True,0.0001,0.434,0.5658,0.0001,0.1318
+172,195,99840,101888,Inner Race Fault,Ball Fault,False,0.0002,0.6179,0.3818,0.0001,0.236
+172,196,100352,102400,Inner Race Fault,Ball Fault,False,0.0002,0.6917,0.308,0.0001,0.3838
+172,197,100864,102912,Inner Race Fault,Ball Fault,False,0.0001,0.7143,0.2855,0.0001,0.4289
+172,198,101376,103424,Inner Race Fault,Inner Race Fault,True,0.0001,0.3075,0.6923,0.0001,0.3848
+172,199,101888,103936,Inner Race Fault,Inner Race Fault,True,0.0001,0.2199,0.7799,0.0001,0.56
+172,200,102400,104448,Inner Race Fault,Inner Race Fault,True,0.0001,0.2344,0.7655,0.0,0.5311
+172,201,102912,104960,Inner Race Fault,Inner Race Fault,True,0.0001,0.1329,0.867,0.0,0.7342
+172,202,103424,105472,Inner Race Fault,Inner Race Fault,True,0.0001,0.2508,0.749,0.0001,0.4983
+172,203,103936,105984,Inner Race Fault,Inner Race Fault,True,0.0001,0.2165,0.7833,0.0001,0.5668
+172,204,104448,106496,Inner Race Fault,Inner Race Fault,True,0.0001,0.2733,0.7266,0.0001,0.4533
+172,205,104960,107008,Inner Race Fault,Ball Fault,False,0.0001,0.5247,0.4752,0.0001,0.0495
+172,206,105472,107520,Inner Race Fault,Inner Race Fault,True,0.0001,0.1373,0.8626,0.0001,0.7254
+172,207,105984,108032,Inner Race Fault,Inner Race Fault,True,0.0001,0.0957,0.9042,0.0001,0.8085
+172,208,106496,108544,Inner Race Fault,Inner Race Fault,True,0.0001,0.0809,0.9189,0.0001,0.838
+172,209,107008,109056,Inner Race Fault,Inner Race Fault,True,0.0001,0.0968,0.903,0.0001,0.8062
+172,210,107520,109568,Inner Race Fault,Inner Race Fault,True,0.0001,0.0615,0.9384,0.0001,0.8769
+172,211,108032,110080,Inner Race Fault,Inner Race Fault,True,0.0001,0.0563,0.9435,0.0001,0.8872
+172,212,108544,110592,Inner Race Fault,Inner Race Fault,True,0.0001,0.0909,0.909,0.0001,0.8181
+172,213,109056,111104,Inner Race Fault,Inner Race Fault,True,0.0001,0.2025,0.7974,0.0001,0.5949
+172,214,109568,111616,Inner Race Fault,Inner Race Fault,True,0.0001,0.2727,0.7271,0.0001,0.4544
+172,215,110080,112128,Inner Race Fault,Inner Race Fault,True,0.0001,0.2377,0.7621,0.0001,0.5245
+172,216,110592,112640,Inner Race Fault,Inner Race Fault,True,0.0001,0.2655,0.7343,0.0001,0.4688
+172,217,111104,113152,Inner Race Fault,Inner Race Fault,True,0.0001,0.082,0.9179,0.0001,0.8359
+172,218,111616,113664,Inner Race Fault,Inner Race Fault,True,0.0001,0.2423,0.7576,0.0001,0.5153
+172,219,112128,114176,Inner Race Fault,Inner Race Fault,True,0.0001,0.1756,0.8242,0.0001,0.6486
+172,220,112640,114688,Inner Race Fault,Inner Race Fault,True,0.0001,0.1765,0.8234,0.0001,0.6469
+172,221,113152,115200,Inner Race Fault,Inner Race Fault,True,0.0001,0.0653,0.9346,0.0,0.8692
+172,222,113664,115712,Inner Race Fault,Inner Race Fault,True,0.0,0.0287,0.9712,0.0,0.9425
+172,223,114176,116224,Inner Race Fault,Inner Race Fault,True,0.0,0.0207,0.9792,0.0,0.9584
+172,224,114688,116736,Inner Race Fault,Inner Race Fault,True,0.0001,0.067,0.9329,0.0001,0.8658
+172,225,115200,117248,Inner Race Fault,Inner Race Fault,True,0.0001,0.1532,0.8466,0.0001,0.6934
+172,226,115712,117760,Inner Race Fault,Inner Race Fault,True,0.0001,0.2191,0.7807,0.0001,0.5616
+172,227,116224,118272,Inner Race Fault,Ball Fault,False,0.0001,0.7475,0.2523,0.0001,0.4952
+172,228,116736,118784,Inner Race Fault,Ball Fault,False,0.0001,0.8011,0.1987,0.0001,0.6023
+172,229,117248,119296,Inner Race Fault,Ball Fault,False,0.0002,0.6132,0.3865,0.0001,0.2267
+172,230,117760,119808,Inner Race Fault,Ball Fault,False,0.0003,0.676,0.3236,0.0001,0.3524
+172,231,118272,120320,Inner Race Fault,Ball Fault,False,0.0002,0.6681,0.3316,0.0001,0.3365
+172,232,118784,120832,Inner Race Fault,Inner Race Fault,True,0.0001,0.2272,0.7726,0.0001,0.5454
+172,233,119296,121344,Inner Race Fault,Inner Race Fault,True,0.0001,0.1403,0.8595,0.0001,0.7192

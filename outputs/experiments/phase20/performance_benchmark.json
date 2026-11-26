@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "title": "Phase 20 Lightweight Performance Benchmark",
+    "timestamp": "2026-11-26T06:53:19Z",
+    "sample_count_per_mode": 100,
+    "streaming_windows_evaluated": 250
+  },
+  "system_resources": {
+    "cpu_logical_cores": 12,
+    "cpu_percent_observed": 85.4,
+    "process_rss_memory_before_mb": 431.2,
+    "process_rss_memory_after_mb": 672.3,
+    "process_memory_growth_mb": 241.03
+  },
+  "latency_profile_ms": {
+    "baseline": {
+      "mean_ms": 28.727,
+      "median_p50_ms": 28.008,
+      "p95_ms": 38.835,
+      "p99_ms": 55.37,
+      "min_ms": 19.651,
+      "max_ms": 69.027
+    },
+    "adaptive": {
+      "mean_ms": 27.067,
+      "median_p50_ms": 27.1,
+      "p95_ms": 31.641,
+      "p99_ms": 56.218,
+      "min_ms": 18.693,
+      "max_ms": 62.443
+    },
+    "adaptive_overhead_mean_ms": -1.66
+  },
+  "throughput_and_stability": {
+    "direct_engine_throughput_windows_per_sec": 243.5,
+    "max_tolerated_input_rate_windows_per_sec": 23.4,
+    "headroom_factor": 10.4,
+    "api_stability": "100% (200/200 requests returned 200 OK with zero unhandled exceptions)",
+    "websocket_stability": "100% (zero frame drops observed during session replay)"
+  }
+}

@@ -1,0 +1,5 @@
+,Normal,Ball Fault,Inner Race Fault,Outer Race Fault
+Normal,700,0,0,0
+Ball Fault,0,2111,0,0
+Inner Race Fault,0,62,2050,0
+Outer Race Fault,0,0,0,2115

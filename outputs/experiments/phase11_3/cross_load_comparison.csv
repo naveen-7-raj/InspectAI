@@ -1,0 +1,4 @@
+fold_id,held_out_load_hp,windows,accuracy,balanced_accuracy,macro_precision,macro_recall,macro_f1
+1,1,2345,1.0,1.0,1.0,1.0,1.0
+2,2,2343,1.0,1.0,1.0,1.0,1.0
+3,3,2350,0.9736,0.978,0.9798,0.978,0.978

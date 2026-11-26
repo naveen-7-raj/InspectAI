@@ -1,0 +1,33 @@
+{
+  "random_seed": 42,
+  "model": "VibrationCNN1D",
+  "parameters": 73156,
+  "fc_units": 64,
+  "conv_filters": [
+    32,
+    64,
+    128
+  ],
+  "kernel_sizes": [
+    15,
+    7,
+    3
+  ],
+  "pool_sizes": [
+    4,
+    4,
+    2
+  ],
+  "dropout": 0.3,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0005,
+  "weight_decay": 0.0001,
+  "batch_size": 32,
+  "max_epochs": 30,
+  "early_stopping_patience": 7,
+  "sampling_rate_hz": 12000,
+  "window_size": 2048,
+  "step_size": 512,
+  "loss": "Class-Weighted CrossEntropyLoss",
+  "normalization": "Global Scalar Mean/Std fitted exclusively on training sets"
+}

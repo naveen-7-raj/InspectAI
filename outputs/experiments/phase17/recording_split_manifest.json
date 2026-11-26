@@ -1,0 +1,2348 @@
+{
+  "metadata": {
+    "title": "InspectAI Phase 17: Recording-Disjoint Split Manifest",
+    "timestamp_utc": "2026-11-26T05:19:55Z",
+    "split_rule": "Recordings 1-10 -> Unlabeled Adaptation; Recordings 11-20 -> Evaluation",
+    "adaptation_recording_count_per_condition": 40,
+    "evaluation_recording_count_per_condition": 40,
+    "total_recordings": 320
+  },
+  "conditions": {
+    "N15_M07_F10": {
+      "adaptation_recordings": [
+        {
+          "recording_id": "N15_M07_F10_K001_1",
+          "filename": "N15_M07_F10_K001_1.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_10",
+          "filename": "N15_M07_F10_K001_10.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_2",
+          "filename": "N15_M07_F10_K001_2.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_3",
+          "filename": "N15_M07_F10_K001_3.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_4",
+          "filename": "N15_M07_F10_K001_4.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_5",
+          "filename": "N15_M07_F10_K001_5.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_6",
+          "filename": "N15_M07_F10_K001_6.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_7",
+          "filename": "N15_M07_F10_K001_7.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_8",
+          "filename": "N15_M07_F10_K001_8.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_9",
+          "filename": "N15_M07_F10_K001_9.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_1",
+          "filename": "N15_M07_F10_KB23_1.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_10",
+          "filename": "N15_M07_F10_KB23_10.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_2",
+          "filename": "N15_M07_F10_KB23_2.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_3",
+          "filename": "N15_M07_F10_KB23_3.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_4",
+          "filename": "N15_M07_F10_KB23_4.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_5",
+          "filename": "N15_M07_F10_KB23_5.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_6",
+          "filename": "N15_M07_F10_KB23_6.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_7",
+          "filename": "N15_M07_F10_KB23_7.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_8",
+          "filename": "N15_M07_F10_KB23_8.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_9",
+          "filename": "N15_M07_F10_KB23_9.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_1",
+          "filename": "N15_M07_F10_KI04_1.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_10",
+          "filename": "N15_M07_F10_KI04_10.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_2",
+          "filename": "N15_M07_F10_KI04_2.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_3",
+          "filename": "N15_M07_F10_KI04_3.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_4",
+          "filename": "N15_M07_F10_KI04_4.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_5",
+          "filename": "N15_M07_F10_KI04_5.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_6",
+          "filename": "N15_M07_F10_KI04_6.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_7",
+          "filename": "N15_M07_F10_KI04_7.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_8",
+          "filename": "N15_M07_F10_KI04_8.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_9",
+          "filename": "N15_M07_F10_KI04_9.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_1",
+          "filename": "N15_M07_F10_KA04_1.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_10",
+          "filename": "N15_M07_F10_KA04_10.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_2",
+          "filename": "N15_M07_F10_KA04_2.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_3",
+          "filename": "N15_M07_F10_KA04_3.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_4",
+          "filename": "N15_M07_F10_KA04_4.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_5",
+          "filename": "N15_M07_F10_KA04_5.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_6",
+          "filename": "N15_M07_F10_KA04_6.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_7",
+          "filename": "N15_M07_F10_KA04_7.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_8",
+          "filename": "N15_M07_F10_KA04_8.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_9",
+          "filename": "N15_M07_F10_KA04_9.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 9
+        }
+      ],
+      "evaluation_recordings": [
+        {
+          "recording_id": "N15_M07_F10_K001_11",
+          "filename": "N15_M07_F10_K001_11.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_12",
+          "filename": "N15_M07_F10_K001_12.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_13",
+          "filename": "N15_M07_F10_K001_13.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_14",
+          "filename": "N15_M07_F10_K001_14.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_15",
+          "filename": "N15_M07_F10_K001_15.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_16",
+          "filename": "N15_M07_F10_K001_16.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_17",
+          "filename": "N15_M07_F10_K001_17.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_18",
+          "filename": "N15_M07_F10_K001_18.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_19",
+          "filename": "N15_M07_F10_K001_19.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M07_F10_K001_20",
+          "filename": "N15_M07_F10_K001_20.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_11",
+          "filename": "N15_M07_F10_KB23_11.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_12",
+          "filename": "N15_M07_F10_KB23_12.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_13",
+          "filename": "N15_M07_F10_KB23_13.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_14",
+          "filename": "N15_M07_F10_KB23_14.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_15",
+          "filename": "N15_M07_F10_KB23_15.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_16",
+          "filename": "N15_M07_F10_KB23_16.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_17",
+          "filename": "N15_M07_F10_KB23_17.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_18",
+          "filename": "N15_M07_F10_KB23_18.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_19",
+          "filename": "N15_M07_F10_KB23_19.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M07_F10_KB23_20",
+          "filename": "N15_M07_F10_KB23_20.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_11",
+          "filename": "N15_M07_F10_KI04_11.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_12",
+          "filename": "N15_M07_F10_KI04_12.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_13",
+          "filename": "N15_M07_F10_KI04_13.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_14",
+          "filename": "N15_M07_F10_KI04_14.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_15",
+          "filename": "N15_M07_F10_KI04_15.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_16",
+          "filename": "N15_M07_F10_KI04_16.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_17",
+          "filename": "N15_M07_F10_KI04_17.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_18",
+          "filename": "N15_M07_F10_KI04_18.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_19",
+          "filename": "N15_M07_F10_KI04_19.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M07_F10_KI04_20",
+          "filename": "N15_M07_F10_KI04_20.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_11",
+          "filename": "N15_M07_F10_KA04_11.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_12",
+          "filename": "N15_M07_F10_KA04_12.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_13",
+          "filename": "N15_M07_F10_KA04_13.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_14",
+          "filename": "N15_M07_F10_KA04_14.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_15",
+          "filename": "N15_M07_F10_KA04_15.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_16",
+          "filename": "N15_M07_F10_KA04_16.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_17",
+          "filename": "N15_M07_F10_KA04_17.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_18",
+          "filename": "N15_M07_F10_KA04_18.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_19",
+          "filename": "N15_M07_F10_KA04_19.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M07_F10_KA04_20",
+          "filename": "N15_M07_F10_KA04_20.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 20
+        }
+      ],
+      "recordings_per_bearing": {
+        "K001": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KB23": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KI04": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KA04": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        }
+      }
+    },
+    "N09_M07_F10": {
+      "adaptation_recordings": [
+        {
+          "recording_id": "N09_M07_F10_K001_1",
+          "filename": "N09_M07_F10_K001_1.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_10",
+          "filename": "N09_M07_F10_K001_10.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_2",
+          "filename": "N09_M07_F10_K001_2.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_3",
+          "filename": "N09_M07_F10_K001_3.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_4",
+          "filename": "N09_M07_F10_K001_4.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_5",
+          "filename": "N09_M07_F10_K001_5.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_6",
+          "filename": "N09_M07_F10_K001_6.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_7",
+          "filename": "N09_M07_F10_K001_7.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_8",
+          "filename": "N09_M07_F10_K001_8.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_9",
+          "filename": "N09_M07_F10_K001_9.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_1",
+          "filename": "N09_M07_F10_KB23_1.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_10",
+          "filename": "N09_M07_F10_KB23_10.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_2",
+          "filename": "N09_M07_F10_KB23_2.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_3",
+          "filename": "N09_M07_F10_KB23_3.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_4",
+          "filename": "N09_M07_F10_KB23_4.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_5",
+          "filename": "N09_M07_F10_KB23_5.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_6",
+          "filename": "N09_M07_F10_KB23_6.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_7",
+          "filename": "N09_M07_F10_KB23_7.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_8",
+          "filename": "N09_M07_F10_KB23_8.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_9",
+          "filename": "N09_M07_F10_KB23_9.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_1",
+          "filename": "N09_M07_F10_KI04_1.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_10",
+          "filename": "N09_M07_F10_KI04_10.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_2",
+          "filename": "N09_M07_F10_KI04_2.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_3",
+          "filename": "N09_M07_F10_KI04_3.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_4",
+          "filename": "N09_M07_F10_KI04_4.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_5",
+          "filename": "N09_M07_F10_KI04_5.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_6",
+          "filename": "N09_M07_F10_KI04_6.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_7",
+          "filename": "N09_M07_F10_KI04_7.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_8",
+          "filename": "N09_M07_F10_KI04_8.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_9",
+          "filename": "N09_M07_F10_KI04_9.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_1",
+          "filename": "N09_M07_F10_KA04_1.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_10",
+          "filename": "N09_M07_F10_KA04_10.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_2",
+          "filename": "N09_M07_F10_KA04_2.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_3",
+          "filename": "N09_M07_F10_KA04_3.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_4",
+          "filename": "N09_M07_F10_KA04_4.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_5",
+          "filename": "N09_M07_F10_KA04_5.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_6",
+          "filename": "N09_M07_F10_KA04_6.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_7",
+          "filename": "N09_M07_F10_KA04_7.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_8",
+          "filename": "N09_M07_F10_KA04_8.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_9",
+          "filename": "N09_M07_F10_KA04_9.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 9
+        }
+      ],
+      "evaluation_recordings": [
+        {
+          "recording_id": "N09_M07_F10_K001_11",
+          "filename": "N09_M07_F10_K001_11.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_12",
+          "filename": "N09_M07_F10_K001_12.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_13",
+          "filename": "N09_M07_F10_K001_13.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_14",
+          "filename": "N09_M07_F10_K001_14.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_15",
+          "filename": "N09_M07_F10_K001_15.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_16",
+          "filename": "N09_M07_F10_K001_16.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_17",
+          "filename": "N09_M07_F10_K001_17.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_18",
+          "filename": "N09_M07_F10_K001_18.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_19",
+          "filename": "N09_M07_F10_K001_19.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N09_M07_F10_K001_20",
+          "filename": "N09_M07_F10_K001_20.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_11",
+          "filename": "N09_M07_F10_KB23_11.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_12",
+          "filename": "N09_M07_F10_KB23_12.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_13",
+          "filename": "N09_M07_F10_KB23_13.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_14",
+          "filename": "N09_M07_F10_KB23_14.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_15",
+          "filename": "N09_M07_F10_KB23_15.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_16",
+          "filename": "N09_M07_F10_KB23_16.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_17",
+          "filename": "N09_M07_F10_KB23_17.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_18",
+          "filename": "N09_M07_F10_KB23_18.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_19",
+          "filename": "N09_M07_F10_KB23_19.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N09_M07_F10_KB23_20",
+          "filename": "N09_M07_F10_KB23_20.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_11",
+          "filename": "N09_M07_F10_KI04_11.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_12",
+          "filename": "N09_M07_F10_KI04_12.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_13",
+          "filename": "N09_M07_F10_KI04_13.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_14",
+          "filename": "N09_M07_F10_KI04_14.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_15",
+          "filename": "N09_M07_F10_KI04_15.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_16",
+          "filename": "N09_M07_F10_KI04_16.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_17",
+          "filename": "N09_M07_F10_KI04_17.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_18",
+          "filename": "N09_M07_F10_KI04_18.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_19",
+          "filename": "N09_M07_F10_KI04_19.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N09_M07_F10_KI04_20",
+          "filename": "N09_M07_F10_KI04_20.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_11",
+          "filename": "N09_M07_F10_KA04_11.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_12",
+          "filename": "N09_M07_F10_KA04_12.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_13",
+          "filename": "N09_M07_F10_KA04_13.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_14",
+          "filename": "N09_M07_F10_KA04_14.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_15",
+          "filename": "N09_M07_F10_KA04_15.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_16",
+          "filename": "N09_M07_F10_KA04_16.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_17",
+          "filename": "N09_M07_F10_KA04_17.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_18",
+          "filename": "N09_M07_F10_KA04_18.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_19",
+          "filename": "N09_M07_F10_KA04_19.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N09_M07_F10_KA04_20",
+          "filename": "N09_M07_F10_KA04_20.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 20
+        }
+      ],
+      "recordings_per_bearing": {
+        "K001": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KB23": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KI04": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KA04": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        }
+      }
+    },
+    "N15_M01_F10": {
+      "adaptation_recordings": [
+        {
+          "recording_id": "N15_M01_F10_K001_1",
+          "filename": "N15_M01_F10_K001_1.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_10",
+          "filename": "N15_M01_F10_K001_10.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_2",
+          "filename": "N15_M01_F10_K001_2.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_3",
+          "filename": "N15_M01_F10_K001_3.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_4",
+          "filename": "N15_M01_F10_K001_4.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_5",
+          "filename": "N15_M01_F10_K001_5.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_6",
+          "filename": "N15_M01_F10_K001_6.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_7",
+          "filename": "N15_M01_F10_K001_7.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_8",
+          "filename": "N15_M01_F10_K001_8.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_9",
+          "filename": "N15_M01_F10_K001_9.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_1",
+          "filename": "N15_M01_F10_KB23_1.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_10",
+          "filename": "N15_M01_F10_KB23_10.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_2",
+          "filename": "N15_M01_F10_KB23_2.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_3",
+          "filename": "N15_M01_F10_KB23_3.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_4",
+          "filename": "N15_M01_F10_KB23_4.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_5",
+          "filename": "N15_M01_F10_KB23_5.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_6",
+          "filename": "N15_M01_F10_KB23_6.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_7",
+          "filename": "N15_M01_F10_KB23_7.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_8",
+          "filename": "N15_M01_F10_KB23_8.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_9",
+          "filename": "N15_M01_F10_KB23_9.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_1",
+          "filename": "N15_M01_F10_KI04_1.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_10",
+          "filename": "N15_M01_F10_KI04_10.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_2",
+          "filename": "N15_M01_F10_KI04_2.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_3",
+          "filename": "N15_M01_F10_KI04_3.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_4",
+          "filename": "N15_M01_F10_KI04_4.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_5",
+          "filename": "N15_M01_F10_KI04_5.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_6",
+          "filename": "N15_M01_F10_KI04_6.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_7",
+          "filename": "N15_M01_F10_KI04_7.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_8",
+          "filename": "N15_M01_F10_KI04_8.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_9",
+          "filename": "N15_M01_F10_KI04_9.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_1",
+          "filename": "N15_M01_F10_KA04_1.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_10",
+          "filename": "N15_M01_F10_KA04_10.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_2",
+          "filename": "N15_M01_F10_KA04_2.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_3",
+          "filename": "N15_M01_F10_KA04_3.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_4",
+          "filename": "N15_M01_F10_KA04_4.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_5",
+          "filename": "N15_M01_F10_KA04_5.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_6",
+          "filename": "N15_M01_F10_KA04_6.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_7",
+          "filename": "N15_M01_F10_KA04_7.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_8",
+          "filename": "N15_M01_F10_KA04_8.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_9",
+          "filename": "N15_M01_F10_KA04_9.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 9
+        }
+      ],
+      "evaluation_recordings": [
+        {
+          "recording_id": "N15_M01_F10_K001_11",
+          "filename": "N15_M01_F10_K001_11.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_12",
+          "filename": "N15_M01_F10_K001_12.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_13",
+          "filename": "N15_M01_F10_K001_13.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_14",
+          "filename": "N15_M01_F10_K001_14.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_15",
+          "filename": "N15_M01_F10_K001_15.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_16",
+          "filename": "N15_M01_F10_K001_16.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_17",
+          "filename": "N15_M01_F10_K001_17.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_18",
+          "filename": "N15_M01_F10_K001_18.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_19",
+          "filename": "N15_M01_F10_K001_19.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M01_F10_K001_20",
+          "filename": "N15_M01_F10_K001_20.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_11",
+          "filename": "N15_M01_F10_KB23_11.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_12",
+          "filename": "N15_M01_F10_KB23_12.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_13",
+          "filename": "N15_M01_F10_KB23_13.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_14",
+          "filename": "N15_M01_F10_KB23_14.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_15",
+          "filename": "N15_M01_F10_KB23_15.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_16",
+          "filename": "N15_M01_F10_KB23_16.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_17",
+          "filename": "N15_M01_F10_KB23_17.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_18",
+          "filename": "N15_M01_F10_KB23_18.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_19",
+          "filename": "N15_M01_F10_KB23_19.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M01_F10_KB23_20",
+          "filename": "N15_M01_F10_KB23_20.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_11",
+          "filename": "N15_M01_F10_KI04_11.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_12",
+          "filename": "N15_M01_F10_KI04_12.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_13",
+          "filename": "N15_M01_F10_KI04_13.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_14",
+          "filename": "N15_M01_F10_KI04_14.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_15",
+          "filename": "N15_M01_F10_KI04_15.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_16",
+          "filename": "N15_M01_F10_KI04_16.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_17",
+          "filename": "N15_M01_F10_KI04_17.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_18",
+          "filename": "N15_M01_F10_KI04_18.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_19",
+          "filename": "N15_M01_F10_KI04_19.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M01_F10_KI04_20",
+          "filename": "N15_M01_F10_KI04_20.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_11",
+          "filename": "N15_M01_F10_KA04_11.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_12",
+          "filename": "N15_M01_F10_KA04_12.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_13",
+          "filename": "N15_M01_F10_KA04_13.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_14",
+          "filename": "N15_M01_F10_KA04_14.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_15",
+          "filename": "N15_M01_F10_KA04_15.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_16",
+          "filename": "N15_M01_F10_KA04_16.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_17",
+          "filename": "N15_M01_F10_KA04_17.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_18",
+          "filename": "N15_M01_F10_KA04_18.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_19",
+          "filename": "N15_M01_F10_KA04_19.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M01_F10_KA04_20",
+          "filename": "N15_M01_F10_KA04_20.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 20
+        }
+      ],
+      "recordings_per_bearing": {
+        "K001": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KB23": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KI04": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KA04": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        }
+      }
+    },
+    "N15_M07_F04": {
+      "adaptation_recordings": [
+        {
+          "recording_id": "N15_M07_F04_K001_1",
+          "filename": "N15_M07_F04_K001_1.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_10",
+          "filename": "N15_M07_F04_K001_10.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_2",
+          "filename": "N15_M07_F04_K001_2.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_3",
+          "filename": "N15_M07_F04_K001_3.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_4",
+          "filename": "N15_M07_F04_K001_4.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_5",
+          "filename": "N15_M07_F04_K001_5.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_6",
+          "filename": "N15_M07_F04_K001_6.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_7",
+          "filename": "N15_M07_F04_K001_7.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_8",
+          "filename": "N15_M07_F04_K001_8.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_9",
+          "filename": "N15_M07_F04_K001_9.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_1",
+          "filename": "N15_M07_F04_KB23_1.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_10",
+          "filename": "N15_M07_F04_KB23_10.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_2",
+          "filename": "N15_M07_F04_KB23_2.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_3",
+          "filename": "N15_M07_F04_KB23_3.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_4",
+          "filename": "N15_M07_F04_KB23_4.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_5",
+          "filename": "N15_M07_F04_KB23_5.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_6",
+          "filename": "N15_M07_F04_KB23_6.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_7",
+          "filename": "N15_M07_F04_KB23_7.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_8",
+          "filename": "N15_M07_F04_KB23_8.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_9",
+          "filename": "N15_M07_F04_KB23_9.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_1",
+          "filename": "N15_M07_F04_KI04_1.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_10",
+          "filename": "N15_M07_F04_KI04_10.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_2",
+          "filename": "N15_M07_F04_KI04_2.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_3",
+          "filename": "N15_M07_F04_KI04_3.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_4",
+          "filename": "N15_M07_F04_KI04_4.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_5",
+          "filename": "N15_M07_F04_KI04_5.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_6",
+          "filename": "N15_M07_F04_KI04_6.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_7",
+          "filename": "N15_M07_F04_KI04_7.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_8",
+          "filename": "N15_M07_F04_KI04_8.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_9",
+          "filename": "N15_M07_F04_KI04_9.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 9
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_1",
+          "filename": "N15_M07_F04_KA04_1.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 1
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_10",
+          "filename": "N15_M07_F04_KA04_10.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 10
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_2",
+          "filename": "N15_M07_F04_KA04_2.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 2
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_3",
+          "filename": "N15_M07_F04_KA04_3.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 3
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_4",
+          "filename": "N15_M07_F04_KA04_4.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 4
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_5",
+          "filename": "N15_M07_F04_KA04_5.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 5
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_6",
+          "filename": "N15_M07_F04_KA04_6.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 6
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_7",
+          "filename": "N15_M07_F04_KA04_7.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 7
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_8",
+          "filename": "N15_M07_F04_KA04_8.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 8
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_9",
+          "filename": "N15_M07_F04_KA04_9.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 9
+        }
+      ],
+      "evaluation_recordings": [
+        {
+          "recording_id": "N15_M07_F04_K001_11",
+          "filename": "N15_M07_F04_K001_11.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_12",
+          "filename": "N15_M07_F04_K001_12.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_13",
+          "filename": "N15_M07_F04_K001_13.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_14",
+          "filename": "N15_M07_F04_K001_14.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_15",
+          "filename": "N15_M07_F04_K001_15.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_16",
+          "filename": "N15_M07_F04_K001_16.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_17",
+          "filename": "N15_M07_F04_K001_17.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_18",
+          "filename": "N15_M07_F04_K001_18.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_19",
+          "filename": "N15_M07_F04_K001_19.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M07_F04_K001_20",
+          "filename": "N15_M07_F04_K001_20.mat",
+          "bearing_id": "K001",
+          "fault_class": "Normal",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_11",
+          "filename": "N15_M07_F04_KB23_11.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_12",
+          "filename": "N15_M07_F04_KB23_12.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_13",
+          "filename": "N15_M07_F04_KB23_13.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_14",
+          "filename": "N15_M07_F04_KB23_14.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_15",
+          "filename": "N15_M07_F04_KB23_15.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_16",
+          "filename": "N15_M07_F04_KB23_16.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_17",
+          "filename": "N15_M07_F04_KB23_17.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_18",
+          "filename": "N15_M07_F04_KB23_18.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_19",
+          "filename": "N15_M07_F04_KB23_19.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M07_F04_KB23_20",
+          "filename": "N15_M07_F04_KB23_20.mat",
+          "bearing_id": "KB23",
+          "fault_class": "Ball Fault",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_11",
+          "filename": "N15_M07_F04_KI04_11.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_12",
+          "filename": "N15_M07_F04_KI04_12.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_13",
+          "filename": "N15_M07_F04_KI04_13.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_14",
+          "filename": "N15_M07_F04_KI04_14.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_15",
+          "filename": "N15_M07_F04_KI04_15.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_16",
+          "filename": "N15_M07_F04_KI04_16.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_17",
+          "filename": "N15_M07_F04_KI04_17.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_18",
+          "filename": "N15_M07_F04_KI04_18.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_19",
+          "filename": "N15_M07_F04_KI04_19.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M07_F04_KI04_20",
+          "filename": "N15_M07_F04_KI04_20.mat",
+          "bearing_id": "KI04",
+          "fault_class": "Inner Race Fault",
+          "recording_number": 20
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_11",
+          "filename": "N15_M07_F04_KA04_11.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 11
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_12",
+          "filename": "N15_M07_F04_KA04_12.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 12
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_13",
+          "filename": "N15_M07_F04_KA04_13.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 13
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_14",
+          "filename": "N15_M07_F04_KA04_14.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 14
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_15",
+          "filename": "N15_M07_F04_KA04_15.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 15
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_16",
+          "filename": "N15_M07_F04_KA04_16.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 16
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_17",
+          "filename": "N15_M07_F04_KA04_17.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 17
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_18",
+          "filename": "N15_M07_F04_KA04_18.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 18
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_19",
+          "filename": "N15_M07_F04_KA04_19.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 19
+        },
+        {
+          "recording_id": "N15_M07_F04_KA04_20",
+          "filename": "N15_M07_F04_KA04_20.mat",
+          "bearing_id": "KA04",
+          "fault_class": "Outer Race Fault",
+          "recording_number": 20
+        }
+      ],
+      "recordings_per_bearing": {
+        "K001": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KB23": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KI04": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        },
+        "KA04": {
+          "adaptation_count": 10,
+          "evaluation_count": 10
+        }
+      }
+    }
+  }
+}

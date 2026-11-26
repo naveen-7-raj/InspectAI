@@ -1,0 +1,121 @@
+experiment,fold,recording_id,fault_class,defect_size_inches,load_hp,accuracy,error_windows
+baseline,1,106,Inner Race Fault,0.007,1,1.0,0
+baseline,1,119,Ball Fault,0.007,1,1.0,0
+baseline,1,131,Outer Race Fault,0.007,1,1.0,0
+baseline,1,170,Inner Race Fault,0.014,1,1.0,0
+baseline,1,186,Ball Fault,0.014,1,1.0,0
+baseline,1,198,Outer Race Fault,0.014,1,1.0,0
+baseline,1,210,Inner Race Fault,0.021,1,1.0,0
+baseline,1,223,Ball Fault,0.021,1,1.0,0
+baseline,1,235,Outer Race Fault,0.021,1,1.0,0
+baseline,1,98,Normal,0.0,1,1.0,0
+baseline,2,107,Inner Race Fault,0.007,2,1.0,0
+baseline,2,120,Ball Fault,0.007,2,1.0,0
+baseline,2,132,Outer Race Fault,0.007,2,1.0,0
+baseline,2,171,Inner Race Fault,0.014,2,1.0,0
+baseline,2,187,Ball Fault,0.014,2,1.0,0
+baseline,2,199,Outer Race Fault,0.014,2,1.0,0
+baseline,2,211,Inner Race Fault,0.021,2,1.0,0
+baseline,2,224,Ball Fault,0.021,2,1.0,0
+baseline,2,236,Outer Race Fault,0.021,2,1.0,0
+baseline,2,99,Normal,0.0,2,1.0,0
+baseline,3,100,Normal,0.0,3,1.0,0
+baseline,3,108,Inner Race Fault,0.007,3,1.0,0
+baseline,3,121,Ball Fault,0.007,3,1.0,0
+baseline,3,133,Outer Race Fault,0.007,3,1.0,0
+baseline,3,172,Inner Race Fault,0.014,3,0.6709,77
+baseline,3,188,Ball Fault,0.014,3,1.0,0
+baseline,3,200,Outer Race Fault,0.014,3,1.0,0
+baseline,3,212,Inner Race Fault,0.021,3,1.0,0
+baseline,3,225,Ball Fault,0.021,3,1.0,0
+baseline,3,237,Outer Race Fault,0.021,3,1.0,0
+experiment_a,1,106,Inner Race Fault,0.007,1,1.0,0
+experiment_a,1,119,Ball Fault,0.007,1,1.0,0
+experiment_a,1,131,Outer Race Fault,0.007,1,1.0,0
+experiment_a,1,170,Inner Race Fault,0.014,1,1.0,0
+experiment_a,1,186,Ball Fault,0.014,1,1.0,0
+experiment_a,1,198,Outer Race Fault,0.014,1,1.0,0
+experiment_a,1,210,Inner Race Fault,0.021,1,1.0,0
+experiment_a,1,223,Ball Fault,0.021,1,0.9829,4
+experiment_a,1,235,Outer Race Fault,0.021,1,1.0,0
+experiment_a,1,98,Normal,0.0,1,1.0,0
+experiment_a,2,107,Inner Race Fault,0.007,2,1.0,0
+experiment_a,2,120,Ball Fault,0.007,2,1.0,0
+experiment_a,2,132,Outer Race Fault,0.007,2,1.0,0
+experiment_a,2,171,Inner Race Fault,0.014,2,1.0,0
+experiment_a,2,187,Ball Fault,0.014,2,1.0,0
+experiment_a,2,199,Outer Race Fault,0.014,2,1.0,0
+experiment_a,2,211,Inner Race Fault,0.021,2,1.0,0
+experiment_a,2,224,Ball Fault,0.021,2,1.0,0
+experiment_a,2,236,Outer Race Fault,0.021,2,1.0,0
+experiment_a,2,99,Normal,0.0,2,1.0,0
+experiment_a,3,100,Normal,0.0,3,1.0,0
+experiment_a,3,108,Inner Race Fault,0.007,3,1.0,0
+experiment_a,3,121,Ball Fault,0.007,3,1.0,0
+experiment_a,3,133,Outer Race Fault,0.007,3,1.0,0
+experiment_a,3,172,Inner Race Fault,0.014,3,0.3034,163
+experiment_a,3,188,Ball Fault,0.014,3,1.0,0
+experiment_a,3,200,Outer Race Fault,0.014,3,1.0,0
+experiment_a,3,212,Inner Race Fault,0.021,3,1.0,0
+experiment_a,3,225,Ball Fault,0.021,3,1.0,0
+experiment_a,3,237,Outer Race Fault,0.021,3,1.0,0
+experiment_b,1,106,Inner Race Fault,0.007,1,1.0,0
+experiment_b,1,119,Ball Fault,0.007,1,1.0,0
+experiment_b,1,131,Outer Race Fault,0.007,1,1.0,0
+experiment_b,1,170,Inner Race Fault,0.014,1,1.0,0
+experiment_b,1,186,Ball Fault,0.014,1,1.0,0
+experiment_b,1,198,Outer Race Fault,0.014,1,1.0,0
+experiment_b,1,210,Inner Race Fault,0.021,1,1.0,0
+experiment_b,1,223,Ball Fault,0.021,1,1.0,0
+experiment_b,1,235,Outer Race Fault,0.021,1,1.0,0
+experiment_b,1,98,Normal,0.0,1,1.0,0
+experiment_b,2,107,Inner Race Fault,0.007,2,1.0,0
+experiment_b,2,120,Ball Fault,0.007,2,1.0,0
+experiment_b,2,132,Outer Race Fault,0.007,2,1.0,0
+experiment_b,2,171,Inner Race Fault,0.014,2,1.0,0
+experiment_b,2,187,Ball Fault,0.014,2,1.0,0
+experiment_b,2,199,Outer Race Fault,0.014,2,1.0,0
+experiment_b,2,211,Inner Race Fault,0.021,2,1.0,0
+experiment_b,2,224,Ball Fault,0.021,2,1.0,0
+experiment_b,2,236,Outer Race Fault,0.021,2,0.9319,16
+experiment_b,2,99,Normal,0.0,2,1.0,0
+experiment_b,3,100,Normal,0.0,3,1.0,0
+experiment_b,3,108,Inner Race Fault,0.007,3,1.0,0
+experiment_b,3,121,Ball Fault,0.007,3,1.0,0
+experiment_b,3,133,Outer Race Fault,0.007,3,1.0,0
+experiment_b,3,172,Inner Race Fault,0.014,3,1.0,0
+experiment_b,3,188,Ball Fault,0.014,3,1.0,0
+experiment_b,3,200,Outer Race Fault,0.014,3,1.0,0
+experiment_b,3,212,Inner Race Fault,0.021,3,1.0,0
+experiment_b,3,225,Ball Fault,0.021,3,1.0,0
+experiment_b,3,237,Outer Race Fault,0.021,3,1.0,0
+experiment_c,1,106,Inner Race Fault,0.007,1,1.0,0
+experiment_c,1,119,Ball Fault,0.007,1,1.0,0
+experiment_c,1,131,Outer Race Fault,0.007,1,1.0,0
+experiment_c,1,170,Inner Race Fault,0.014,1,1.0,0
+experiment_c,1,186,Ball Fault,0.014,1,1.0,0
+experiment_c,1,198,Outer Race Fault,0.014,1,1.0,0
+experiment_c,1,210,Inner Race Fault,0.021,1,1.0,0
+experiment_c,1,223,Ball Fault,0.021,1,1.0,0
+experiment_c,1,235,Outer Race Fault,0.021,1,1.0,0
+experiment_c,1,98,Normal,0.0,1,1.0,0
+experiment_c,2,107,Inner Race Fault,0.007,2,1.0,0
+experiment_c,2,120,Ball Fault,0.007,2,1.0,0
+experiment_c,2,132,Outer Race Fault,0.007,2,1.0,0
+experiment_c,2,171,Inner Race Fault,0.014,2,1.0,0
+experiment_c,2,187,Ball Fault,0.014,2,1.0,0
+experiment_c,2,199,Outer Race Fault,0.014,2,1.0,0
+experiment_c,2,211,Inner Race Fault,0.021,2,1.0,0
+experiment_c,2,224,Ball Fault,0.021,2,1.0,0
+experiment_c,2,236,Outer Race Fault,0.021,2,1.0,0
+experiment_c,2,99,Normal,0.0,2,1.0,0
+experiment_c,3,100,Normal,0.0,3,1.0,0
+experiment_c,3,108,Inner Race Fault,0.007,3,1.0,0
+experiment_c,3,121,Ball Fault,0.007,3,1.0,0
+experiment_c,3,133,Outer Race Fault,0.007,3,1.0,0
+experiment_c,3,172,Inner Race Fault,0.014,3,0.6709,77
+experiment_c,3,188,Ball Fault,0.014,3,1.0,0
+experiment_c,3,200,Outer Race Fault,0.014,3,1.0,0
+experiment_c,3,212,Inner Race Fault,0.021,3,1.0,0
+experiment_c,3,225,Ball Fault,0.021,3,1.0,0
+experiment_c,3,237,Outer Race Fault,0.021,3,1.0,0

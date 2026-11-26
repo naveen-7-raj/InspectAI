@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "title": "Phase 20 Application Smoke & End-to-End Validation",
+    "timestamp": "2026-11-26T06:53:08Z"
+  },
+  "smoke_tests": {
+    "root_health_status": 200,
+    "api_health_status": 200,
+    "api_health_data": {
+      "status": "healthy",
+      "model_loaded": true,
+      "model_name": "VibrationCNN1D",
+      "supported_classes": [
+        "Normal",
+        "Ball Fault",
+        "Inner Race Fault",
+        "Outer Race Fault"
+      ],
+      "device": "cpu",
+      "gradcam_available": true,
+      "normalizer_fitted": true,
+      "api_version": "0.1.0"
+    },
+    "metrics_status": 200,
+    "metrics_format_valid": true
+  },
+  "dashboard_tests": {
+    "build_websocket_url": "ws://localhost:8000/api/v1/stream/97?replay_speed=50.0&include_gradcam=false&include_waveform=true&inference_mode=adaptive&calibrate_first=true",
+    "parse_stream_message_valid": true,
+    "history_update_length": 1,
+    "options_configured": 13,
+    "color_map_classes": [
+      "Normal",
+      "Ball Fault",
+      "Inner Race Fault",
+      "Outer Race Fault"
+    ]
+  },
+  "end_to_end_tests": {
+    "baseline_cwru_prediction": {
+      "status_code": 200,
+      "predicted_class": "Normal",
+      "confidence": null,
+      "inference_mode": "baseline",
+      "is_adapted": false
+    },
+    "adaptive_uncalibrated_fallback": {
+      "status_code": 200,
+      "inference_mode": "adaptive_fallback",
+      "is_adapted": false,
+      "fallback_triggered": true
+    },
+    "real_paderborn_adaptive_prediction": {
+      "bearing_id": "K001",
+      "source_file": "data\\external\\extracted\\K001\\K001\\N09_M07_F10_K001_1.mat",
+      "calibration_samples": 50,
+      "adapter_fitted": true,
+      "condition_number": 35481.45,
+      "predicted_class": "Normal",
+      "is_adapted": true,
+      "confidence": null
+    },
+    "fault_suspect_suppression_guardrail": {
+      "action": "SUPPRESSED_FAULT_SUSPECT",
+      "state": "FAULT_SUSPECT",
+      "recent_kurtosis": 67.4,
+      "is_fault_suspect": true,
+      "recalibrations_during_fault": 0,
+      "suppression_verified": true
+    },
+    "drift_and_rollback_validation": {
+      "shadow_promoted": true,
+      "rollback_executed": true,
+      "rollback_count": 1,
+      "state_after_rollback": "STABLE",
+      "verified": true
+    },
+    "websocket_streaming_verification": {
+      "endpoint": "/api/v1/stream/97?replay_speed=50.0&inference_mode=adaptive&calibrate_first=true",
+      "streaming_active": true,
+      "first_frame_event": "prediction",
+      "first_frame_model": "SpectralFusionCNN"
+    }
+  },
+  "all_checks_passed": true
+}

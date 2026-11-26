@@ -1,0 +1,18 @@
+{
+  "audit_status": "VALIDATED",
+  "primary_dataset": "Paderborn University Bearing Dataset (KAt-DataCenter)",
+  "license": "CC BY-NC 4.0",
+  "bearing_count": 4,
+  "supported_classes": [
+    "Ball Fault",
+    "Inner Race Fault",
+    "Normal",
+    "Outer Race Fault"
+  ],
+  "sampling_rate_hz": 64000,
+  "target_sampling_rate_hz": 12000,
+  "resampling_ratio": "3/16",
+  "cwru_quarantine_overlap": false,
+  "external_id_prefix": "EXT_PU_",
+  "secondary_benchmark_evaluated": "MFPT Bearing Dataset"
+}

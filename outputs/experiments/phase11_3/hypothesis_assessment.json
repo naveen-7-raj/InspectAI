@@ -1,0 +1,44 @@
+[
+  {
+    "id": "H1",
+    "name": "Motor-load-dependent signal distribution changes",
+    "status": "Supported by current evidence",
+    "evidence": "Empirical evidence: Folds 1 (1 HP) and 2 (2 HP) achieved 100.00% accuracy, while Fold 3 (3 HP) dropped to 97.36% due to recording 172. Signal RMS amplitude increases by 18-35% between 0 HP and 3 HP across fault classes. Motor shaft speed drops from 1797 RPM (0 HP) to 1721-1728 RPM (3 HP), shifting fundamental impact frequencies (BPFI shifts from ~162 Hz to ~155 Hz)."
+  },
+  {
+    "id": "H2",
+    "name": "Differences in vibration amplitude",
+    "status": "Partially supported",
+    "evidence": "While RMS amplitude scales with motor load, global scalar normalization successfully normalized signals such that Folds 1 and 2 had zero errors, and 9 out of 10 recordings in Fold 3 had zero errors. Amplitude alone was not the primary failure mechanism; instead, relative harmonic distribution mattered."
+  },
+  {
+    "id": "H3",
+    "name": "Differences in frequency-domain characteristics",
+    "status": "Supported by current evidence",
+    "evidence": "Spectral analysis shows that for Recording 172 (0.014\" Inner Race at 3 HP), high-frequency resonance power is lower (39.2% of energy in 2-5 kHz) than in 0.021\" Inner Race (58.4%), while ball-spin frequency (BSF) modulation sidebands are prominent under maximum torque, causing 62 windows to be misclassified as Ball Fault."
+  },
+  {
+    "id": "H4",
+    "name": "Insufficient recording diversity",
+    "status": "Supported by current evidence",
+    "evidence": "The CWRU development pool contains only 36 recordings (10 per load level, with only 1 Normal per load). For intermediate (0.014\") faults, training partitions have only 6 recordings compared to 9 for 0.007\" and 0.021\", because 0 HP 0.014\" faults are quarantined in the protected holdout."
+  },
+  {
+    "id": "H5",
+    "name": "Class imbalance",
+    "status": "Partially supported",
+    "evidence": "Normal condition comprises only 7.7% of training windows and 9.9% of validation windows. However, class-weighted CrossEntropyLoss fully prevented Normal degradation: Normal precision and recall were 100.00% across all three folds."
+  },
+  {
+    "id": "H6",
+    "name": "Defect severity and fault-type confounding",
+    "status": "Not supported",
+    "evidence": "In the single-load 0 HP dataset (Phase 10.5), severe Inner Race (209) was 100% misclassified as Outer Race due to collinearity. In Phase 11.2 multi-load training, this confounding was completely broken: severe Inner Race (210, 211, 212) and Outer Race achieved 100.00% accuracy across all loads."
+  },
+  {
+    "id": "H7",
+    "name": "Model sensitivity to specific recordings",
+    "status": "Supported by current evidence",
+    "evidence": "All 62 errors in the entire 7,038-window evaluation were localized to a single recording: 172.mat. No other recording in Fold 1, 2, or 3 had a single misclassified window. This demonstrates high inter-recording sensitivity for specific load-severity combinations."
+  }
+]

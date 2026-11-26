@@ -1,0 +1,41 @@
+recording_id,filename,fault_class,fault_type,fault_size_mils,fault_size_inches,load_hp,nominal_rpm,verified_rpm,is_holdout,raw_samples,cleaned_samples,num_windows
+97,97.mat,Normal,Normal,0,0.0,0,1797,1796.0,True,243938,60985,116
+98,98.mat,Normal,Normal,0,0.0,1,1772,1772.0,False,483903,120976,233
+99,99.mat,Normal,Normal,0,0.0,2,1750,1750.0,False,485063,121266,233
+100,100.mat,Normal,Normal,0,0.0,3,1730,1725.0,False,485643,121411,234
+105,105.mat,Inner Race Fault,InnerRace,7,0.007,0,1797,1797.0,False,121265,121265,233
+106,106.mat,Inner Race Fault,InnerRace,7,0.007,1,1772,1772.0,False,121991,121991,235
+107,107.mat,Inner Race Fault,InnerRace,7,0.007,2,1750,1748.0,False,122136,122136,235
+108,108.mat,Inner Race Fault,InnerRace,7,0.007,3,1730,1721.0,False,122917,122917,237
+169,169.mat,Inner Race Fault,InnerRace,14,0.014,0,1797,1796.0,True,121846,121846,234
+170,170.mat,Inner Race Fault,InnerRace,14,0.014,1,1772,1774.0,False,121846,121846,234
+171,171.mat,Inner Race Fault,InnerRace,14,0.014,2,1750,1752.0,False,121846,121846,234
+172,172.mat,Inner Race Fault,InnerRace,14,0.014,3,1730,1728.0,False,121701,121701,234
+209,209.mat,Inner Race Fault,InnerRace,21,0.021,0,1797,1797.0,False,122136,122136,235
+210,210.mat,Inner Race Fault,InnerRace,21,0.021,1,1772,1774.0,False,121556,121556,234
+211,211.mat,Inner Race Fault,InnerRace,21,0.021,2,1750,1752.0,False,121846,121846,234
+212,212.mat,Inner Race Fault,InnerRace,21,0.021,3,1730,1728.0,False,121991,121991,235
+118,118.mat,Ball Fault,Ball,7,0.007,0,1797,1796.0,False,122571,122571,236
+119,119.mat,Ball Fault,Ball,7,0.007,1,1772,1772.0,False,121410,121410,234
+120,120.mat,Ball Fault,Ball,7,0.007,2,1750,1748.0,False,121556,121556,234
+121,121.mat,Ball Fault,Ball,7,0.007,3,1730,1722.0,False,121556,121556,234
+185,185.mat,Ball Fault,Ball,14,0.014,0,1797,1796.0,True,121846,121846,234
+186,186.mat,Ball Fault,Ball,14,0.014,1,1772,1772.0,False,122136,122136,235
+187,187.mat,Ball Fault,Ball,14,0.014,2,1750,1749.0,False,121991,121991,235
+188,188.mat,Ball Fault,Ball,14,0.014,3,1730,1724.0,False,122136,122136,235
+222,222.mat,Ball Fault,Ball,21,0.021,0,1797,1796.0,False,121991,121991,235
+223,223.mat,Ball Fault,Ball,21,0.021,1,1772,1774.0,False,121701,121701,234
+224,224.mat,Ball Fault,Ball,21,0.021,2,1750,1754.0,False,122136,122136,235
+225,225.mat,Ball Fault,Ball,21,0.021,3,1730,1729.0,False,122136,122136,235
+130,130.mat,Outer Race Fault,OuterRace_Centred,7,0.007,0,1797,1796.0,False,121991,121991,235
+131,131.mat,Outer Race Fault,OuterRace_Centred,7,0.007,1,1772,1773.0,False,122426,122426,236
+132,132.mat,Outer Race Fault,OuterRace_Centred,7,0.007,2,1750,1750.0,False,121410,121410,234
+133,133.mat,Outer Race Fault,OuterRace_Centred,7,0.007,3,1730,1725.0,False,122571,122571,236
+197,197.mat,Outer Race Fault,OuterRace_Centred,14,0.014,0,1797,1796.0,True,121846,121846,234
+198,198.mat,Outer Race Fault,OuterRace_Centred,14,0.014,1,1772,1772.0,False,122136,122136,235
+199,199.mat,Outer Race Fault,OuterRace_Centred,14,0.014,2,1749,1749.0,False,121846,121846,234
+200,200.mat,Outer Race Fault,OuterRace_Centred,14,0.014,3,1723,1723.0,False,121991,121991,235
+234,234.mat,Outer Race Fault,OuterRace_Centred,21,0.021,0,1797,1796.0,False,122426,122426,236
+235,235.mat,Outer Race Fault,OuterRace_Centred,21,0.021,1,1771,1771.0,False,121991,121991,235
+236,236.mat,Outer Race Fault,OuterRace_Centred,21,0.021,2,1748,1748.0,False,122281,122281,235
+237,237.mat,Outer Race Fault,OuterRace_Centred,21,0.021,3,1721,1721.0,False,121991,121991,235

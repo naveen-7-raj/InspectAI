@@ -1,0 +1,2327 @@
+{
+  "baseline": {
+    "summary": {
+      "experiment_id": "baseline",
+      "description": "Frozen Baseline 1D CNN",
+      "mean_fold_accuracy": 0.9891,
+      "std_fold_accuracy": 0.0155,
+      "mean_fold_macro_f1": 0.9909,
+      "std_fold_macro_f1": 0.0129,
+      "pooled_accuracy": 0.9891,
+      "pooled_macro_f1": 0.9909,
+      "fold_1_f1": 1.0,
+      "fold_2_f1": 1.0,
+      "fold_3_f1": 0.9726,
+      "recording_172_accuracy": 0.6709,
+      "recording_172_errors": 77,
+      "parameters": 73156,
+      "latency_median_ms": 1.1001,
+      "latency_p95_ms": 2.0313
+    },
+    "folds": [
+      {
+        "experiment_name": "baseline",
+        "fold": 1,
+        "held_out_load_hp": 1,
+        "best_epoch": 11,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 233
+          },
+          "Ball Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          },
+          "Inner Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 706
+          }
+        },
+        "confusion_matrix": [
+          [
+            233,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            703,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            703,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            706
+          ]
+        ],
+        "recording_results": {
+          "106": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "119": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "131": {
+            "total_windows": 236,
+            "correct_windows": 236,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "170": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "186": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "198": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "210": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "223": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "235": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "98": {
+            "total_windows": 233,
+            "correct_windows": 233,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          }
+        },
+        "recording_172": null,
+        "parameter_count": 73156,
+        "latency_ms": {
+          "single_window_median_ms": 1.1001,
+          "single_window_p95_ms": 2.0313,
+          "single_window_mean_ms": 1.2746
+        },
+        "training_duration_sec": 1.55,
+        "history": {
+          "train_loss": [],
+          "val_loss": [],
+          "val_macro_f1": []
+        }
+      },
+      {
+        "experiment_name": "baseline",
+        "fold": 2,
+        "held_out_load_hp": 2,
+        "best_epoch": 8,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 233
+          },
+          "Ball Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 704
+          },
+          "Inner Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          }
+        },
+        "confusion_matrix": [
+          [
+            233,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            704,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            703,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            703
+          ]
+        ],
+        "recording_results": {
+          "107": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "120": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "132": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "171": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "187": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "199": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "211": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "224": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "236": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "99": {
+            "total_windows": 233,
+            "correct_windows": 233,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          }
+        },
+        "recording_172": null,
+        "parameter_count": 73156,
+        "latency_ms": {
+          "single_window_median_ms": 0.9817,
+          "single_window_p95_ms": 1.5902,
+          "single_window_mean_ms": 1.0121
+        },
+        "training_duration_sec": 1.58,
+        "history": {
+          "train_loss": [],
+          "val_loss": [],
+          "val_macro_f1": []
+        }
+      },
+      {
+        "experiment_name": "baseline",
+        "fold": 3,
+        "held_out_load_hp": 3,
+        "best_epoch": 4,
+        "accuracy": 0.9672,
+        "balanced_accuracy": 0.9727,
+        "macro_precision": 0.9754,
+        "macro_recall": 0.9727,
+        "macro_f1": 0.9726,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 234
+          },
+          "Ball Fault": {
+            "precision": 0.9014,
+            "recall": 1.0,
+            "f1": 0.9481,
+            "support": 704
+          },
+          "Inner Race Fault": {
+            "precision": 1.0,
+            "recall": 0.8909,
+            "f1": 0.9423,
+            "support": 706
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 706
+          }
+        },
+        "confusion_matrix": [
+          [
+            234,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            704,
+            0,
+            0
+          ],
+          [
+            0,
+            77,
+            629,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            706
+          ]
+        ],
+        "recording_results": {
+          "100": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          },
+          "108": {
+            "total_windows": 237,
+            "correct_windows": 237,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "121": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "133": {
+            "total_windows": 236,
+            "correct_windows": 236,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "172": {
+            "total_windows": 234,
+            "correct_windows": 157,
+            "error_windows": 77,
+            "accuracy": 0.6709,
+            "fault_class": "Inner Race Fault"
+          },
+          "188": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "200": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "212": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "225": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "237": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          }
+        },
+        "recording_172": {
+          "total_windows": 234,
+          "correct_windows": 157,
+          "error_windows": 77,
+          "accuracy": 0.6709,
+          "fault_class": "Inner Race Fault"
+        },
+        "parameter_count": 73156,
+        "latency_ms": {
+          "single_window_median_ms": 0.9531,
+          "single_window_p95_ms": 1.371,
+          "single_window_mean_ms": 0.9137
+        },
+        "training_duration_sec": 1.62,
+        "history": {
+          "train_loss": [],
+          "val_loss": [],
+          "val_macro_f1": []
+        }
+      }
+    ],
+    "pooled_confusion_matrix": [
+      [
+        700,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2111,
+        0,
+        0
+      ],
+      [
+        0,
+        77,
+        2035,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2115
+      ]
+    ]
+  },
+  "experiment_a": {
+    "summary": {
+      "experiment_id": "experiment_a",
+      "description": "Training-Only Signal Augmentation",
+      "mean_fold_accuracy": 0.9763,
+      "std_fold_accuracy": 0.0323,
+      "mean_fold_macro_f1": 0.98,
+      "std_fold_macro_f1": 0.0273,
+      "pooled_accuracy": 0.9763,
+      "pooled_macro_f1": 0.9802,
+      "fold_1_f1": 0.9986,
+      "fold_2_f1": 1.0,
+      "fold_3_f1": 0.9414,
+      "recording_172_accuracy": 0.3034,
+      "recording_172_errors": 163,
+      "parameters": 73156,
+      "latency_median_ms": 0.9179,
+      "latency_p95_ms": 1.3086
+    },
+    "folds": [
+      {
+        "experiment_name": "experiment_a",
+        "fold": 1,
+        "held_out_load_hp": 1,
+        "best_epoch": 4,
+        "accuracy": 0.9983,
+        "balanced_accuracy": 0.9986,
+        "macro_precision": 0.9986,
+        "macro_recall": 0.9986,
+        "macro_f1": 0.9986,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 233
+          },
+          "Ball Fault": {
+            "precision": 1.0,
+            "recall": 0.9943,
+            "f1": 0.9971,
+            "support": 703
+          },
+          "Inner Race Fault": {
+            "precision": 0.9943,
+            "recall": 1.0,
+            "f1": 0.9972,
+            "support": 703
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 706
+          }
+        },
+        "confusion_matrix": [
+          [
+            233,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            699,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            703,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            706
+          ]
+        ],
+        "recording_results": {
+          "106": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "119": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "131": {
+            "total_windows": 236,
+            "correct_windows": 236,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "170": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "186": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "198": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "210": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "223": {
+            "total_windows": 234,
+            "correct_windows": 230,
+            "error_windows": 4,
+            "accuracy": 0.9829,
+            "fault_class": "Ball Fault"
+          },
+          "235": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "98": {
+            "total_windows": 233,
+            "correct_windows": 233,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          }
+        },
+        "recording_172": null,
+        "parameter_count": 73156,
+        "latency_ms": {
+          "single_window_median_ms": 0.9179,
+          "single_window_p95_ms": 1.3086,
+          "single_window_mean_ms": 0.8893
+        },
+        "training_duration_sec": 1.5,
+        "history": {
+          "train_loss": [],
+          "val_loss": [],
+          "val_macro_f1": []
+        }
+      },
+      {
+        "experiment_name": "experiment_a",
+        "fold": 2,
+        "held_out_load_hp": 2,
+        "best_epoch": 13,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 233
+          },
+          "Ball Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 704
+          },
+          "Inner Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          }
+        },
+        "confusion_matrix": [
+          [
+            233,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            704,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            703,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            703
+          ]
+        ],
+        "recording_results": {
+          "107": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "120": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "132": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "171": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "187": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "199": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "211": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "224": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "236": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "99": {
+            "total_windows": 233,
+            "correct_windows": 233,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          }
+        },
+        "recording_172": null,
+        "parameter_count": 73156,
+        "latency_ms": {
+          "single_window_median_ms": 1.7193,
+          "single_window_p95_ms": 3.2802,
+          "single_window_mean_ms": 1.9449
+        },
+        "training_duration_sec": 1.82,
+        "history": {
+          "train_loss": [],
+          "val_loss": [],
+          "val_macro_f1": []
+        }
+      },
+      {
+        "experiment_name": "experiment_a",
+        "fold": 3,
+        "held_out_load_hp": 3,
+        "best_epoch": 3,
+        "accuracy": 0.9306,
+        "balanced_accuracy": 0.9423,
+        "macro_precision": 0.953,
+        "macro_recall": 0.9423,
+        "macro_f1": 0.9414,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 234
+          },
+          "Ball Fault": {
+            "precision": 0.812,
+            "recall": 1.0,
+            "f1": 0.8962,
+            "support": 704
+          },
+          "Inner Race Fault": {
+            "precision": 1.0,
+            "recall": 0.7691,
+            "f1": 0.8695,
+            "support": 706
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 706
+          }
+        },
+        "confusion_matrix": [
+          [
+            234,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            704,
+            0,
+            0
+          ],
+          [
+            0,
+            163,
+            543,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            706
+          ]
+        ],
+        "recording_results": {
+          "100": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          },
+          "108": {
+            "total_windows": 237,
+            "correct_windows": 237,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "121": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "133": {
+            "total_windows": 236,
+            "correct_windows": 236,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "172": {
+            "total_windows": 234,
+            "correct_windows": 71,
+            "error_windows": 163,
+            "accuracy": 0.3034,
+            "fault_class": "Inner Race Fault"
+          },
+          "188": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "200": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "212": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "225": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "237": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          }
+        },
+        "recording_172": {
+          "total_windows": 234,
+          "correct_windows": 71,
+          "error_windows": 163,
+          "accuracy": 0.3034,
+          "fault_class": "Inner Race Fault"
+        },
+        "parameter_count": 73156,
+        "latency_ms": {
+          "single_window_median_ms": 0.9302,
+          "single_window_p95_ms": 1.4056,
+          "single_window_mean_ms": 1.3347
+        },
+        "training_duration_sec": 1.68,
+        "history": {
+          "train_loss": [
+            0.30032,
+            0.01699,
+            0.00977,
+            0.02382,
+            0.00602,
+            0.00149,
+            0.00127,
+            0.00275,
+            0.01744,
+            0.00112
+          ],
+          "val_loss": [
+            0.13939,
+            0.02296,
+            0.00108,
+            0.00186,
+            0.003,
+            0.00891,
+            0.00426,
+            1.3065,
+            0.01384,
+            0.1701
+          ],
+          "val_macro_f1": [
+            0.93815,
+            0.99522,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.86684,
+            0.99894,
+            0.91683
+          ]
+        }
+      }
+    ],
+    "pooled_confusion_matrix": [
+      [
+        700,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2107,
+        4,
+        0
+      ],
+      [
+        0,
+        163,
+        1949,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2115
+      ]
+    ]
+  },
+  "experiment_b": {
+    "summary": {
+      "experiment_id": "experiment_b",
+      "description": "Hilbert Envelope-Spectrum Dual-Branch CNN",
+      "mean_fold_accuracy": 0.9977,
+      "std_fold_accuracy": 0.0032,
+      "mean_fold_macro_f1": 0.9981,
+      "std_fold_macro_f1": 0.0027,
+      "pooled_accuracy": 0.9977,
+      "pooled_macro_f1": 0.9981,
+      "fold_1_f1": 1.0,
+      "fold_2_f1": 0.9943,
+      "fold_3_f1": 1.0,
+      "recording_172_accuracy": 1.0,
+      "recording_172_errors": 0,
+      "parameters": 89604,
+      "latency_median_ms": 1.2024,
+      "latency_p95_ms": 1.9295
+    },
+    "folds": [
+      {
+        "experiment_name": "experiment_b",
+        "fold": 1,
+        "held_out_load_hp": 1,
+        "best_epoch": 5,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 233
+          },
+          "Ball Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          },
+          "Inner Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 706
+          }
+        },
+        "confusion_matrix": [
+          [
+            233,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            703,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            703,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            706
+          ]
+        ],
+        "recording_results": {
+          "106": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "119": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "131": {
+            "total_windows": 236,
+            "correct_windows": 236,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "170": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "186": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "198": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "210": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "223": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "235": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "98": {
+            "total_windows": 233,
+            "correct_windows": 233,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          }
+        },
+        "recording_172": null,
+        "parameter_count": 89604,
+        "latency_ms": {
+          "single_window_median_ms": 1.2024,
+          "single_window_p95_ms": 1.9295,
+          "single_window_mean_ms": 1.1839
+        },
+        "training_duration_sec": 1.88,
+        "history": {
+          "train_loss": [
+            0.30572,
+            0.0109,
+            0.01798,
+            0.01602,
+            0.00279,
+            0.00186,
+            0.00123,
+            0.00421,
+            0.01201,
+            0.00551,
+            0.00235,
+            0.00718
+          ],
+          "val_loss": [
+            0.59719,
+            1.18582,
+            0.04272,
+            0.17873,
+            0.0145,
+            0.33079,
+            0.26935,
+            0.0621,
+            0.82166,
+            1.34447,
+            1.58848,
+            0.11339
+          ],
+          "val_macro_f1": [
+            0.86667,
+            0.86658,
+            0.99787,
+            0.90105,
+            0.9984,
+            0.87048,
+            0.88392,
+            0.98047,
+            0.84087,
+            0.86658,
+            0.86658,
+            0.96143
+          ]
+        }
+      },
+      {
+        "experiment_name": "experiment_b",
+        "fold": 2,
+        "held_out_load_hp": 2,
+        "best_epoch": 7,
+        "accuracy": 0.9932,
+        "balanced_accuracy": 0.9943,
+        "macro_precision": 0.9944,
+        "macro_recall": 0.9943,
+        "macro_f1": 0.9943,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 233
+          },
+          "Ball Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 704
+          },
+          "Inner Race Fault": {
+            "precision": 0.9777,
+            "recall": 1.0,
+            "f1": 0.9887,
+            "support": 703
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 0.9772,
+            "f1": 0.9885,
+            "support": 703
+          }
+        },
+        "confusion_matrix": [
+          [
+            233,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            704,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            703,
+            0
+          ],
+          [
+            0,
+            0,
+            16,
+            687
+          ]
+        ],
+        "recording_results": {
+          "107": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "120": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "132": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "171": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "187": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "199": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "211": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "224": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "236": {
+            "total_windows": 235,
+            "correct_windows": 219,
+            "error_windows": 16,
+            "accuracy": 0.9319,
+            "fault_class": "Outer Race Fault"
+          },
+          "99": {
+            "total_windows": 233,
+            "correct_windows": 233,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          }
+        },
+        "recording_172": null,
+        "parameter_count": 89604,
+        "latency_ms": {
+          "single_window_median_ms": 1.4079,
+          "single_window_p95_ms": 2.9133,
+          "single_window_mean_ms": 1.7159
+        },
+        "training_duration_sec": 1.97,
+        "history": {
+          "train_loss": [
+            0.31077,
+            0.01583,
+            0.01212,
+            0.00789,
+            0.00348,
+            0.00257,
+            0.00127,
+            0.00402,
+            0.01127,
+            0.00697,
+            0.00199,
+            0.00624,
+            0.00094,
+            0.00046
+          ],
+          "val_loss": [
+            0.2954,
+            0.20525,
+            0.03278,
+            0.01518,
+            0.56461,
+            0.00362,
+            0.00134,
+            0.03129,
+            0.00543,
+            0.12954,
+            0.42795,
+            0.00204,
+            0.00168,
+            0.00326
+          ],
+          "val_macro_f1": [
+            0.86684,
+            0.88518,
+            0.99947,
+            0.99947,
+            0.81888,
+            0.99947,
+            0.99947,
+            0.98888,
+            0.99734,
+            0.94399,
+            0.86973,
+            0.99947,
+            0.99947,
+            0.9992
+          ]
+        }
+      },
+      {
+        "experiment_name": "experiment_b",
+        "fold": 3,
+        "held_out_load_hp": 3,
+        "best_epoch": 17,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 234
+          },
+          "Ball Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 704
+          },
+          "Inner Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 706
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 706
+          }
+        },
+        "confusion_matrix": [
+          [
+            234,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            704,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            706,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            706
+          ]
+        ],
+        "recording_results": {
+          "100": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          },
+          "108": {
+            "total_windows": 237,
+            "correct_windows": 237,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "121": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "133": {
+            "total_windows": 236,
+            "correct_windows": 236,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "172": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "188": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "200": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "212": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "225": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "237": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          }
+        },
+        "recording_172": {
+          "total_windows": 234,
+          "correct_windows": 234,
+          "error_windows": 0,
+          "accuracy": 1.0,
+          "fault_class": "Inner Race Fault"
+        },
+        "parameter_count": 89604,
+        "latency_ms": {
+          "single_window_median_ms": 1.4,
+          "single_window_p95_ms": 2.2344,
+          "single_window_mean_ms": 1.3622
+        },
+        "training_duration_sec": 1.91,
+        "history": {
+          "train_loss": [
+            0.29007,
+            0.00934,
+            0.02,
+            0.00374,
+            0.01492,
+            0.00154,
+            0.00105,
+            0.0007,
+            0.00258,
+            0.00383,
+            0.00219,
+            0.00261,
+            0.00041,
+            0.00028,
+            0.00028,
+            0.00886,
+            0.00201,
+            0.00045,
+            0.00042,
+            0.00037,
+            0.0002,
+            0.0005,
+            0.00274,
+            0.00901
+          ],
+          "val_loss": [
+            0.06611,
+            0.01436,
+            0.3427,
+            0.11008,
+            0.01196,
+            0.06705,
+            0.04115,
+            0.00055,
+            0.00631,
+            0.04835,
+            0.03102,
+            0.00039,
+            0.00134,
+            0.00174,
+            0.00413,
+            0.01101,
+            9e-05,
+            0.00084,
+            0.00017,
+            0.00364,
+            0.00062,
+            0.00921,
+            0.0991,
+            0.00221
+          ],
+          "val_macro_f1": [
+            0.98832,
+            0.99947,
+            0.84065,
+            0.94849,
+            0.99947,
+            0.97392,
+            0.98672,
+            1.0,
+            0.99947,
+            0.98353,
+            0.9915,
+            1.0,
+            0.99947,
+            0.99947,
+            0.99947,
+            0.99628,
+            1.0,
+            1.0,
+            1.0,
+            0.99947,
+            1.0,
+            0.99788,
+            0.95992,
+            0.99947
+          ]
+        }
+      }
+    ],
+    "pooled_confusion_matrix": [
+      [
+        700,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2111,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2112,
+        0
+      ],
+      [
+        0,
+        0,
+        16,
+        2099
+      ]
+    ]
+  },
+  "experiment_c": {
+    "summary": {
+      "experiment_id": "experiment_c",
+      "description": "Training Schedule Adjustment (Min-Epoch Floor = 5)",
+      "mean_fold_accuracy": 0.9891,
+      "std_fold_accuracy": 0.0155,
+      "mean_fold_macro_f1": 0.9909,
+      "std_fold_macro_f1": 0.0129,
+      "pooled_accuracy": 0.9891,
+      "pooled_macro_f1": 0.9909,
+      "fold_1_f1": 1.0,
+      "fold_2_f1": 1.0,
+      "fold_3_f1": 0.9726,
+      "recording_172_accuracy": 0.6709,
+      "recording_172_errors": 77,
+      "parameters": 73156,
+      "latency_median_ms": 0.97,
+      "latency_p95_ms": 1.4052
+    },
+    "folds": [
+      {
+        "experiment_name": "experiment_c",
+        "fold": 1,
+        "held_out_load_hp": 1,
+        "best_epoch": 11,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 233
+          },
+          "Ball Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          },
+          "Inner Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 706
+          }
+        },
+        "confusion_matrix": [
+          [
+            233,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            703,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            703,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            706
+          ]
+        ],
+        "recording_results": {
+          "106": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "119": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "131": {
+            "total_windows": 236,
+            "correct_windows": 236,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "170": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "186": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "198": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "210": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "223": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "235": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "98": {
+            "total_windows": 233,
+            "correct_windows": 233,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          }
+        },
+        "recording_172": null,
+        "parameter_count": 73156,
+        "latency_ms": {
+          "single_window_median_ms": 0.97,
+          "single_window_p95_ms": 1.4052,
+          "single_window_mean_ms": 0.9534
+        },
+        "training_duration_sec": 1.46,
+        "history": {
+          "train_loss": [
+            0.29804,
+            0.02386,
+            0.02513,
+            0.00809,
+            0.00234,
+            0.00175,
+            0.00109,
+            0.00198,
+            0.00966,
+            0.01249,
+            0.00097,
+            0.00331,
+            0.00058,
+            0.0004,
+            0.00034,
+            0.0002,
+            0.00035,
+            0.00018
+          ],
+          "val_loss": [
+            0.27304,
+            0.43216,
+            0.4787,
+            0.12872,
+            0.22294,
+            0.02463,
+            0.18148,
+            0.61961,
+            0.7511,
+            0.00273,
+            0.00045,
+            0.07482,
+            0.03704,
+            0.13867,
+            0.48671,
+            0.08606,
+            0.38668,
+            0.3766
+          ],
+          "val_macro_f1": [
+            0.84819,
+            0.86549,
+            0.86602,
+            0.9345,
+            0.89085,
+            0.99521,
+            0.92042,
+            0.86621,
+            0.86667,
+            1.0,
+            1.0,
+            0.97708,
+            0.99255,
+            0.93692,
+            0.86795,
+            0.96519,
+            0.86987,
+            0.87051
+          ]
+        }
+      },
+      {
+        "experiment_name": "experiment_c",
+        "fold": 2,
+        "held_out_load_hp": 2,
+        "best_epoch": 8,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 233
+          },
+          "Ball Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 704
+          },
+          "Inner Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 703
+          }
+        },
+        "confusion_matrix": [
+          [
+            233,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            704,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            703,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            703
+          ]
+        ],
+        "recording_results": {
+          "107": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "120": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "132": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "171": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "187": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "199": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "211": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "224": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "236": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "99": {
+            "total_windows": 233,
+            "correct_windows": 233,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          }
+        },
+        "recording_172": null,
+        "parameter_count": 73156,
+        "latency_ms": {
+          "single_window_median_ms": 0.9894,
+          "single_window_p95_ms": 1.5414,
+          "single_window_mean_ms": 1.4505
+        },
+        "training_duration_sec": 1.6,
+        "history": {
+          "train_loss": [
+            0.30011,
+            0.03048,
+            0.02669,
+            0.00614,
+            0.004,
+            0.01122,
+            0.00376,
+            0.01305,
+            0.00633,
+            0.00103,
+            0.00068,
+            0.00189,
+            0.0004,
+            0.00063,
+            0.00032
+          ],
+          "val_loss": [
+            0.02716,
+            0.03589,
+            0.01605,
+            0.01754,
+            0.44195,
+            0.0094,
+            0.31453,
+            0.00034,
+            0.20048,
+            0.00735,
+            0.00513,
+            0.00194,
+            0.00236,
+            0.04777,
+            0.04194
+          ],
+          "val_macro_f1": [
+            1.0,
+            0.99682,
+            1.0,
+            0.99894,
+            0.86523,
+            1.0,
+            0.87858,
+            1.0,
+            0.89055,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.98672,
+            0.98938
+          ]
+        }
+      },
+      {
+        "experiment_name": "experiment_c",
+        "fold": 3,
+        "held_out_load_hp": 3,
+        "best_epoch": 4,
+        "accuracy": 0.9672,
+        "balanced_accuracy": 0.9727,
+        "macro_precision": 0.9754,
+        "macro_recall": 0.9727,
+        "macro_f1": 0.9726,
+        "per_class": {
+          "Normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 234
+          },
+          "Ball Fault": {
+            "precision": 0.9014,
+            "recall": 1.0,
+            "f1": 0.9481,
+            "support": 704
+          },
+          "Inner Race Fault": {
+            "precision": 1.0,
+            "recall": 0.8909,
+            "f1": 0.9423,
+            "support": 706
+          },
+          "Outer Race Fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 706
+          }
+        },
+        "confusion_matrix": [
+          [
+            234,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            704,
+            0,
+            0
+          ],
+          [
+            0,
+            77,
+            629,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            706
+          ]
+        ],
+        "recording_results": {
+          "100": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Normal"
+          },
+          "108": {
+            "total_windows": 237,
+            "correct_windows": 237,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "121": {
+            "total_windows": 234,
+            "correct_windows": 234,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "133": {
+            "total_windows": 236,
+            "correct_windows": 236,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "172": {
+            "total_windows": 234,
+            "correct_windows": 157,
+            "error_windows": 77,
+            "accuracy": 0.6709,
+            "fault_class": "Inner Race Fault"
+          },
+          "188": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "200": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          },
+          "212": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Inner Race Fault"
+          },
+          "225": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Ball Fault"
+          },
+          "237": {
+            "total_windows": 235,
+            "correct_windows": 235,
+            "error_windows": 0,
+            "accuracy": 1.0,
+            "fault_class": "Outer Race Fault"
+          }
+        },
+        "recording_172": {
+          "total_windows": 234,
+          "correct_windows": 157,
+          "error_windows": 77,
+          "accuracy": 0.6709,
+          "fault_class": "Inner Race Fault"
+        },
+        "parameter_count": 73156,
+        "latency_ms": {
+          "single_window_median_ms": 0.9199,
+          "single_window_p95_ms": 1.2951,
+          "single_window_mean_ms": 0.8677
+        },
+        "training_duration_sec": 1.67,
+        "history": {
+          "train_loss": [
+            0.30558,
+            0.01811,
+            0.00405,
+            0.0087,
+            0.0052,
+            0.0017,
+            0.00102,
+            0.00309,
+            0.02487,
+            0.00124,
+            0.00158
+          ],
+          "val_loss": [
+            0.22354,
+            0.01363,
+            0.02058,
+            0.00032,
+            0.01211,
+            0.01641,
+            0.00957,
+            1.85861,
+            0.02433,
+            0.36397,
+            0.00385
+          ],
+          "val_macro_f1": [
+            0.87847,
+            1.0,
+            0.99469,
+            1.0,
+            0.99894,
+            0.99894,
+            0.99947,
+            0.86684,
+            0.99735,
+            0.87131,
+            0.99947
+          ]
+        }
+      }
+    ],
+    "pooled_confusion_matrix": [
+      [
+        700,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2111,
+        0,
+        0
+      ],
+      [
+        0,
+        77,
+        2035,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2115
+      ]
+    ]
+  }
+}

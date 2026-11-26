@@ -1,0 +1,29 @@
+[
+  {
+    "priority": 1,
+    "title": "Speed-Informed Kinematic Order Tracking or Resampling",
+    "target_failure": "Harmonic shift between 0 HP (1797 RPM) and 3 HP (1725 RPM) causing intermediate IR/Ball confusion in Recording 172.",
+    "rationale": "Converting time-domain signals to angle-domain (order tracking) aligns bearing impact rates per motor revolution, rendering impact spacing strictly invariant to load-induced speed variations.",
+    "disadvantages": "Requires motor shaft encoder or accurate instantaneous shaft speed estimation.",
+    "testing_strategy": "Implement digital tachometer tracking from vibration spectral peaks and evaluate on LOLO Fold 3.",
+    "adoption_criteria": "Fold 3 accuracy on recording 172 must improve from 73.5% to >95% without degrading Folds 1 and 2."
+  },
+  {
+    "priority": 2,
+    "title": "Kinematic Feature Fusion (Envelope Autocorrelation / Cyclic Spectral Analysis)",
+    "target_failure": "Residual confusion between intermediate Inner Race impacts and Ball-spin modulations.",
+    "rationale": "Explicitly feeding bearing characteristic fault frequency indicators (BPFI, BPFO, BSF) alongside 1D CNN representations ensures the network discriminates ball-spin modulation periodicity from inner ring ball pass impacts.",
+    "disadvantages": "Slightly increases feature extraction compute latency (~2-5 ms per window).",
+    "testing_strategy": "Ablate dual-branch CNN with 1D raw waveform + envelope autocorrelation branch across all 3 LOLO folds.",
+    "adoption_criteria": "Eliminates all 62 misclassifications on recording 172 while maintaining >=99.5% Macro-F1 across all folds."
+  },
+  {
+    "priority": 3,
+    "title": "Load-Balanced Recording-Level Hard-Negative Mining & Epoch Tuning",
+    "target_failure": "Premature early stopping in Fold 3 (selected E* = 2 based on inner validation).",
+    "rationale": "In Fold 3, inner validation triggered early stopping at epoch 2, which underfitted the full outer training partition (6,098 windows). A minimum epoch floor (e.g., E_min = 5) or cosine annealing schedule would prevent premature convergence.",
+    "disadvantages": "Increases training compute duration slightly.",
+    "testing_strategy": "Compare learning rate warm-up with cosine decay against fixed step early stopping across LOLO splits.",
+    "adoption_criteria": "Higher inner-validation Macro-F1 stability and zero underfitting on held-out 3 HP load."
+  }
+]

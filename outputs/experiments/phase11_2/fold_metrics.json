@@ -1,0 +1,431 @@
+{
+  "fold_1": {
+    "fold_id": 1,
+    "held_out_load_hp": 1,
+    "train_loads_hp": [
+      0,
+      2,
+      3
+    ],
+    "best_epoch": 4,
+    "evaluated_recordings": 10,
+    "evaluated_windows": 2345,
+    "correct_windows": 2345,
+    "incorrect_windows": 0,
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "per_class": {
+      "Normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 233
+      },
+      "Ball Fault": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 703
+      },
+      "Inner Race Fault": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 703
+      },
+      "Outer Race Fault": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 706
+      }
+    },
+    "confusion_matrix": [
+      [
+        233,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        703,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        703,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        706
+      ]
+    ],
+    "severity_breakdown": [
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.007,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.014,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.021,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.007,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.014,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.021,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Normal",
+        "fault_size_inches": 0.0,
+        "windows": 233,
+        "correct_windows": 233,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.007,
+        "windows": 236,
+        "correct_windows": 236,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.014,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.021,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  "fold_2": {
+    "fold_id": 2,
+    "held_out_load_hp": 2,
+    "train_loads_hp": [
+      0,
+      1,
+      3
+    ],
+    "best_epoch": 21,
+    "evaluated_recordings": 10,
+    "evaluated_windows": 2343,
+    "correct_windows": 2343,
+    "incorrect_windows": 0,
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "per_class": {
+      "Normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 233
+      },
+      "Ball Fault": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 704
+      },
+      "Inner Race Fault": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 703
+      },
+      "Outer Race Fault": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 703
+      }
+    },
+    "confusion_matrix": [
+      [
+        233,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        704,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        703,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        703
+      ]
+    ],
+    "severity_breakdown": [
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.007,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.014,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.021,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.007,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.014,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.021,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Normal",
+        "fault_size_inches": 0.0,
+        "windows": 233,
+        "correct_windows": 233,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.007,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.014,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.021,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  "fold_3": {
+    "fold_id": 3,
+    "held_out_load_hp": 3,
+    "train_loads_hp": [
+      0,
+      1,
+      2
+    ],
+    "best_epoch": 2,
+    "evaluated_recordings": 10,
+    "evaluated_windows": 2350,
+    "correct_windows": 2288,
+    "incorrect_windows": 62,
+    "accuracy": 0.9736,
+    "balanced_accuracy": 0.978,
+    "macro_precision": 0.9798,
+    "macro_recall": 0.978,
+    "macro_f1": 0.978,
+    "per_class": {
+      "Normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 234
+      },
+      "Ball Fault": {
+        "precision": 0.9191,
+        "recall": 1.0,
+        "f1": 0.9578,
+        "support": 704
+      },
+      "Inner Race Fault": {
+        "precision": 1.0,
+        "recall": 0.9122,
+        "f1": 0.9541,
+        "support": 706
+      },
+      "Outer Race Fault": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 706
+      }
+    },
+    "confusion_matrix": [
+      [
+        234,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        704,
+        0,
+        0
+      ],
+      [
+        0,
+        62,
+        644,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        706
+      ]
+    ],
+    "severity_breakdown": [
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.007,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.014,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Ball Fault",
+        "fault_size_inches": 0.021,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.007,
+        "windows": 237,
+        "correct_windows": 237,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.014,
+        "windows": 234,
+        "correct_windows": 172,
+        "accuracy": 0.735
+      },
+      {
+        "fault_class": "Inner Race Fault",
+        "fault_size_inches": 0.021,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Normal",
+        "fault_size_inches": 0.0,
+        "windows": 234,
+        "correct_windows": 234,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.007,
+        "windows": 236,
+        "correct_windows": 236,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.014,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      },
+      {
+        "fault_class": "Outer Race Fault",
+        "fault_size_inches": 0.021,
+        "windows": 235,
+        "correct_windows": 235,
+        "accuracy": 1.0
+      }
+    ]
+  }
+}

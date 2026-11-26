@@ -1,0 +1,57 @@
+{
+  "dataset": "Paderborn University Bearing Dataset (KAt-DataCenter)",
+  "license": "CC BY-NC 4.0",
+  "official_url": "https://mb.uni-paderborn.de/kat/forschung/bearing-datacenter",
+  "bearings": {
+    "K001": {
+      "class": "Normal",
+      "description": "Undamaged healthy reference bearing run-in > 50h",
+      "filename": "K001.rar",
+      "expected_bytes": 173881721,
+      "estimated_mb": 165.83
+    },
+    "KI04": {
+      "class": "Inner Race Fault",
+      "description": "Inner ring fatigue spall damage from accelerated lifetime test",
+      "filename": "KI04.rar",
+      "expected_bytes": 172644279,
+      "estimated_mb": 164.65
+    },
+    "KA04": {
+      "class": "Outer Race Fault",
+      "description": "Outer ring fatigue spall damage from accelerated lifetime test",
+      "filename": "KA04.rar",
+      "expected_bytes": 180920703,
+      "estimated_mb": 172.54
+    },
+    "KB23": {
+      "class": "Ball Fault",
+      "description": "Combined fatigue with flaking on rolling elements",
+      "filename": "KB23.rar",
+      "expected_bytes": 170933916,
+      "estimated_mb": 163.02
+    }
+  },
+  "secondary_benchmark": {
+    "dataset": "MFPT Bearing Dataset",
+    "license": "CC BY 4.0",
+    "doi": "10.6084/m9.figshare.28606802",
+    "files": {
+      "baseline_1.mat": {
+        "class": "Normal",
+        "load_lbs": 270,
+        "fs": 97656
+      },
+      "InnerRaceFault_v_270.mat": {
+        "class": "Inner Race Fault",
+        "load_lbs": 270,
+        "fs": 48828
+      },
+      "OuterRaceFault_1.mat": {
+        "class": "Outer Race Fault",
+        "load_lbs": 270,
+        "fs": 48828
+      }
+    }
+  }
+}

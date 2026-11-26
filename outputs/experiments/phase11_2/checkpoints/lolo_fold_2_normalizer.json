@@ -1,0 +1,9 @@
+{
+  "strategy": "global",
+  "mean": -5.19824698130833e-06,
+  "std": 0.35445868968963623,
+  "epsilon": 1e-08,
+  "is_fitted": true,
+  "fit_sample_count": 6105,
+  "fit_recording_ids": []
+}

@@ -1,0 +1,49 @@
+experiment,fold,held_out_load_hp,class_name,precision,recall,f1_score,support
+baseline,1,1,Normal,1.0,1.0,1.0,233
+baseline,1,1,Ball Fault,1.0,1.0,1.0,703
+baseline,1,1,Inner Race Fault,1.0,1.0,1.0,703
+baseline,1,1,Outer Race Fault,1.0,1.0,1.0,706
+baseline,2,2,Normal,1.0,1.0,1.0,233
+baseline,2,2,Ball Fault,1.0,1.0,1.0,704
+baseline,2,2,Inner Race Fault,1.0,1.0,1.0,703
+baseline,2,2,Outer Race Fault,1.0,1.0,1.0,703
+baseline,3,3,Normal,1.0,1.0,1.0,234
+baseline,3,3,Ball Fault,0.9014,1.0,0.9481,704
+baseline,3,3,Inner Race Fault,1.0,0.8909,0.9423,706
+baseline,3,3,Outer Race Fault,1.0,1.0,1.0,706
+experiment_a,1,1,Normal,1.0,1.0,1.0,233
+experiment_a,1,1,Ball Fault,1.0,0.9943,0.9971,703
+experiment_a,1,1,Inner Race Fault,0.9943,1.0,0.9972,703
+experiment_a,1,1,Outer Race Fault,1.0,1.0,1.0,706
+experiment_a,2,2,Normal,1.0,1.0,1.0,233
+experiment_a,2,2,Ball Fault,1.0,1.0,1.0,704
+experiment_a,2,2,Inner Race Fault,1.0,1.0,1.0,703
+experiment_a,2,2,Outer Race Fault,1.0,1.0,1.0,703
+experiment_a,3,3,Normal,1.0,1.0,1.0,234
+experiment_a,3,3,Ball Fault,0.812,1.0,0.8962,704
+experiment_a,3,3,Inner Race Fault,1.0,0.7691,0.8695,706
+experiment_a,3,3,Outer Race Fault,1.0,1.0,1.0,706
+experiment_b,1,1,Normal,1.0,1.0,1.0,233
+experiment_b,1,1,Ball Fault,1.0,1.0,1.0,703
+experiment_b,1,1,Inner Race Fault,1.0,1.0,1.0,703
+experiment_b,1,1,Outer Race Fault,1.0,1.0,1.0,706
+experiment_b,2,2,Normal,1.0,1.0,1.0,233
+experiment_b,2,2,Ball Fault,1.0,1.0,1.0,704
+experiment_b,2,2,Inner Race Fault,0.9777,1.0,0.9887,703
+experiment_b,2,2,Outer Race Fault,1.0,0.9772,0.9885,703
+experiment_b,3,3,Normal,1.0,1.0,1.0,234
+experiment_b,3,3,Ball Fault,1.0,1.0,1.0,704
+experiment_b,3,3,Inner Race Fault,1.0,1.0,1.0,706
+experiment_b,3,3,Outer Race Fault,1.0,1.0,1.0,706
+experiment_c,1,1,Normal,1.0,1.0,1.0,233
+experiment_c,1,1,Ball Fault,1.0,1.0,1.0,703
+experiment_c,1,1,Inner Race Fault,1.0,1.0,1.0,703
+experiment_c,1,1,Outer Race Fault,1.0,1.0,1.0,706
+experiment_c,2,2,Normal,1.0,1.0,1.0,233
+experiment_c,2,2,Ball Fault,1.0,1.0,1.0,704
+experiment_c,2,2,Inner Race Fault,1.0,1.0,1.0,703
+experiment_c,2,2,Outer Race Fault,1.0,1.0,1.0,703
+experiment_c,3,3,Normal,1.0,1.0,1.0,234
+experiment_c,3,3,Ball Fault,0.9014,1.0,0.9481,704
+experiment_c,3,3,Inner Race Fault,1.0,0.8909,0.9423,706
+experiment_c,3,3,Outer Race Fault,1.0,1.0,1.0,706

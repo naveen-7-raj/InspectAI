@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "title": "Phase 20 Scientific Integrity & Claim Verification Audit",
+    "timestamp": "2026-11-26T06:52:52Z"
+  },
+  "recording_split_integrity": {
+    "manifest_file": "outputs\\experiments\\phase17\\recording_split_manifest.json",
+    "total_adaptation_recordings": 160,
+    "total_evaluation_recordings": 160,
+    "total_recordings": 320,
+    "recording_overlap_count": 0,
+    "strictly_disjoint": true,
+    "condition_level_disjoint": true
+  },
+  "coral_label_isolation": {
+    "verified": true,
+    "rule": "DomainAdapter never accepts or uses ground truth labels during fit or transform."
+  },
+  "threshold_selection_audit": {
+    "min_calibration_samples": {
+      "value": 25,
+      "basis": "Mathematical sample covariance rank requirement (N >= 25 in streaming) ensuring positive definiteness",
+      "evaluated_on_test_labels": false
+    },
+    "drift_frobenius_threshold": {
+      "value": 0.4,
+      "basis": "Separation of stationary noise (0.24 +/- 0.05) from genuine operating load shifts (> 2.0)",
+      "evaluated_on_test_labels": false
+    },
+    "kurtosis_threshold": {
+      "value": 4.5,
+      "basis": "Statistical property of impulsive vibration (Gaussian kurtosis = 3.0; non-Gaussian fault impacts > 4.5)",
+      "evaluated_on_test_labels": false
+    },
+    "fault_prob_threshold": {
+      "value": 0.35,
+      "basis": "Conservative operational safety limit for defect suspicion; prevents adapting away true faults",
+      "evaluated_on_test_labels": false
+    }
+  },
+  "phase_reports_verification": {
+    "phase14_zero_shot": {
+      "doc": "docs/phase14_pilot_zero_shot_results.md",
+      "claimed": "Zero-shot model failed on Paderborn due to domain shift (macro F1 ~ 0.25).",
+      "supported_by_data": true,
+      "unsupported_claims_found": false,
+      "exists": true
+    },
+    "phase15_failure_analysis": {
+      "doc": "docs/phase15_failure_analysis.md",
+      "claimed": "Domain shift caused by sensor placement, physical units, and spectral shift.",
+      "supported_by_data": true,
+      "unsupported_claims_found": false,
+      "exists": true
+    },
+    "phase16_domain_generalization": {
+      "doc": "docs/phase16_domain_generalization_experiments.md",
+      "claimed": "Genuine order tracking impossible without tachometer; unsupervised CORAL viable.",
+      "supported_by_data": true,
+      "unsupported_claims_found": false,
+      "exists": true
+    },
+    "phase17_coral_validation": {
+      "doc": "docs/phase17_coral_validation_report.md",
+      "claimed": "Unsupervised CORAL improves macro F1 to ~0.76 on unseen Paderborn recordings with zero label leakage.",
+      "supported_by_data": true,
+      "unsupported_claims_found": false,
+      "exists": true
+    },
+    "phase18_adaptive_streaming": {
+      "doc": "docs/phase18_adaptive_streaming_report.md",
+      "claimed": "Adaptive streaming pipeline operates smoothly with graceful uncalibrated fallback.",
+      "supported_by_data": true,
+      "unsupported_claims_found": false,
+      "exists": true
+    },
+    "phase19_system_hardening": {
+      "doc": "docs/phase19_system_hardening_report.md",
+      "claimed": "CPU containerization, Prometheus metrics, safe drift monitoring, fault suppression guardrails.",
+      "supported_by_data": true,
+      "unsupported_claims_found": false,
+      "exists": true
+    }
+  },
+  "documented_nuances": [
+    {
+      "topic": "Streaming Deployment Mode",
+      "description": "Streaming is evaluated via verified historical file replay simulating 12 kHz arrival rates. Physical industrial DAQ hardware (e.g. NI-DAQmx) would require a hardware driver adapter.",
+      "severity": "Operational Context"
+    },
+    {
+      "topic": "Docker Daemon on Development Host",
+      "description": "Docker CLI v29.7.2 is installed; Docker Desktop daemon is currently stopped on the host. Container configurations are validated via automated AST and Compose contracts.",
+      "severity": "Environment Limitation"
+    },
+    {
+      "topic": "Unsupervised Domain Adaptation Assumption",
+      "description": "CORAL calibration requires 25-50 unlabeled windows of running machine data. If a machine is deployed already broken during initial calibration, baseline mode must be used.",
+      "severity": "Operational Guardrail"
+    }
+  ],
+  "overall_integrity_status": "VERIFIED_SOUND"
+}

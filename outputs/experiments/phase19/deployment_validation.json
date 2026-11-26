@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Phase 19 Deployment & Containerization Validation",
+    "timestamp": "2026-11-26T06:32:20Z"
+  },
+  "docker_environment": {
+    "docker_cli_version": "Docker version 29.7.2, build a7dcaa6",
+    "daemon_running": false,
+    "daemon_status_detail": "Docker CLI v29.7.2 is installed. Docker Desktop engine is not running on host.",
+    "daemon_diagnostic_message": "WARNING: Docker Desktop engine is not running on host: failed to connect to the docker API at npipe:////./pipe/docker_engine"
+  },
+  "dockerfile_audit": {
+    "exists": true,
+    "base_image": "python:3.11-slim",
+    "cpu_pytorch_wheel": true,
+    "non_root_user_configured": true,
+    "healthcheck_defined": true,
+    "exposed_ports": [
+      8000,
+      8501
+    ],
+    "secrets_excluded": true
+  },
+  "compose_audit": {
+    "exists": true,
+    "services": [
+      "backend",
+      "frontend"
+    ],
+    "backend_service": {
+      "image": "inspectai-backend:latest",
+      "restart_policy": "unless-stopped",
+      "healthcheck": true,
+      "cpu_limit": "2.0",
+      "memory_limit": "4G",
+      "read_only_volumes": [
+        "./data:/app/data:ro",
+        "./models:/app/models:ro",
+        "./configs:/app/configs:ro"
+      ]
+    },
+    "frontend_service": {
+      "image": "inspectai-frontend:latest",
+      "restart_policy": "unless-stopped",
+      "healthcheck": true,
+      "depends_on_healthy_backend": true
+    },
+    "network": "inspectai_network"
+  },
+  "startup_instructions": {
+    "build_command": "docker compose build",
+    "start_command": "docker compose up -d",
+    "logs_command": "docker compose logs -f",
+    "shutdown_command": "docker compose down -v"
+  }
+}

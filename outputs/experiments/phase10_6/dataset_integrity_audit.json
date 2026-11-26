@@ -1,0 +1,60 @@
+{
+  "audit_timestamp": "2026-11-24T03:26:28.649258",
+  "total_files_audited": 40,
+  "files_all_exist": true,
+  "all_de_channels_present": true,
+  "signal_length_range": [
+    121265,
+    485643
+  ],
+  "total_samples": 6088536,
+  "total_duration_hours": 0.1409,
+  "total_file_size_mb": 133.82,
+  "holdout_recordings_audit": {
+    "expected_count": 4,
+    "found_count": 4,
+    "holdouts_marked_test_only": true,
+    "holdout_details": [
+      {
+        "recording_id": "97",
+        "fault_class": "Normal",
+        "sha256": "16bf48babcf1c7ac224bc1a81cd9eafdb27e42d5cf559761907e067e8eeadf3c",
+        "size_bytes": 3903344,
+        "de_channel": "X097_DE_time",
+        "length": 243938
+      },
+      {
+        "recording_id": "169",
+        "fault_class": "Inner Race Fault",
+        "sha256": "f5448673725c4ea2735fe7d3fe4b16ad82b217eac6b62c4bf351c4549b0a5229",
+        "size_bytes": 2924712,
+        "de_channel": "X169_DE_time",
+        "length": 121846
+      },
+      {
+        "recording_id": "185",
+        "fault_class": "Ball Fault",
+        "sha256": "5bea2c60f177215ba3ec4ae287faf745d7e14aed1a12efe9e37b27c27044bafc",
+        "size_bytes": 2924712,
+        "de_channel": "X185_DE_time",
+        "length": 121846
+      },
+      {
+        "recording_id": "197",
+        "fault_class": "Outer Race Fault",
+        "sha256": "fa571b47cd942f9514a920b403fb7c053cd442bb2963a360a96d0f61432f03e9",
+        "size_bytes": 2924712,
+        "de_channel": "X197_DE_time",
+        "length": 121846
+      }
+    ]
+  },
+  "multi_load_balance": {
+    "load_0hp_fault_recordings": 9,
+    "load_1hp_fault_recordings": 9,
+    "load_2hp_fault_recordings": 9,
+    "load_3hp_fault_recordings": 9,
+    "normal_load_recordings": 4
+  },
+  "audit_passed": true
+}

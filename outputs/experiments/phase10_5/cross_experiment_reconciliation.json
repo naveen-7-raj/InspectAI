@@ -1,0 +1,39 @@
+{
+  "Phase_10_2": {
+    "experiment": "Phase 10.2 Normalization Ablation (global baseline)",
+    "model_architecture": "VibrationCNN1D",
+    "fc_units": 128,
+    "trainable_parameters": 106244,
+    "oof_accuracy": 0.8626,
+    "oof_macro_f1": 0.8378,
+    "fold_0_accuracy": 0.7995,
+    "fold_0_macro_f1": 0.6669,
+    "fold_1_accuracy": 0.9414,
+    "fold_1_macro_f1": 0.9409
+  },
+  "Phase_10_3": {
+    "experiment": "Phase 10.3 Multiscale Ablation (baseline_1d_cnn)",
+    "model_architecture": "VibrationCNN1D",
+    "fc_units": 128,
+    "trainable_parameters": 106244,
+    "oof_accuracy": 0.8626,
+    "oof_macro_f1": 0.8378,
+    "fold_0_accuracy": 0.7995,
+    "fold_0_macro_f1": 0.6669,
+    "fold_1_accuracy": 0.9414,
+    "fold_1_macro_f1": 0.9409
+  },
+  "Phase_10_4": {
+    "experiment": "Phase 10.4 Frequency Ablation (baseline_waveform)",
+    "model_architecture": "VibrationCNN1D",
+    "fc_units": 64,
+    "trainable_parameters": 73156,
+    "oof_accuracy": 0.8469,
+    "oof_macro_f1": 0.8109,
+    "fold_0_accuracy": 0.7995,
+    "fold_0_macro_f1": 0.6667,
+    "fold_1_accuracy": 0.9062,
+    "fold_1_macro_f1": 0.9057
+  },
+  "discrepancy_explanation": "Phase 10.2 and Phase 10.3 evaluated identical baseline models instantiated with fc_units=128 (106,244 parameters), yielding identical OOF Macro-F1 of 83.78% and accuracy of 86.26%. The prompt reference to Phase 10.3 having '86.26%' was an accidental citation of OOF accuracy rather than Macro-F1. In Phase 10.4, the baseline was explicitly instantiated with fc_units=64 (73,156 parameters) per prompt instruction, resulting in an expected slight decrease in Fold 1 capacity (val Macro-F1 90.57% vs 94.09%), yielding pooled OOF Macro-F1 of 81.09% and accuracy of 84.69%."
+}
